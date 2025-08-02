@@ -31,7 +31,8 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const splideRef = useRef<any>(null);
+  // Using unknown type instead of any to satisfy linting rules
+  const splideRef = useRef<{ go: (direction: string) => void } | null>(null);
 
   const goNext = () => {
     if (splideRef.current) {
