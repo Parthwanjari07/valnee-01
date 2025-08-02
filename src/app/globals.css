@@ -29,3 +29,16 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-cal-sans), var(--font-sf-pro), sans-serif;
 }
+
+@keyframes scroll-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-scroll-vertical {
+  animation: scroll-vertical 30s linear infinite;
+}

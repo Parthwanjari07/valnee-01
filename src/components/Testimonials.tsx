@@ -5,6 +5,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import TextGibberishBackground from "./TextGibberishBackground";
 
 const testimonials = [
   {
@@ -100,16 +101,7 @@ export default function Testimonials() {
                 }}
                 >
                 {/* Faint textGibberish background */}
-                <div
-                  className="absolute inset-0 z-0 pointer-events-none select-none rounded-2xl overflow-hidden"
-                  style={{
-                    backgroundImage: 'url(/images/textGibberish.svg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    opacity: 0.38
-                  }}
-                />
+                <TextGibberishBackground />
                 
                 {/* Testimonial SVG Badge instead of text */}
                 <div className="absolute top-6 left-6 z-10">
