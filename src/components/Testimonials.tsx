@@ -45,7 +45,7 @@ export default function Testimonials() {
     }
   };
   return (
-    <div className="h-full">
+    <>
     <section className="relative w-full bg-[#00020D]">
     <div className="max-w-7xl mx-auto px-4 pt-20 z-20">
         <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-[var(--font-sf-pro)] bg-gradient-to-b from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
@@ -54,25 +54,16 @@ export default function Testimonials() {
         </h1>
     </div>
     </section>
-    <section className="relative w-full h-full bg-[#00020D] py-20">
-      {/* Background image with preserved top and bottom edges */}
-      <div className="absolute inset-x-0 top-0 bottom-0 z-10 w-full h-full pointer-events-none">
-        <div className="relative w-full h-full">
-          <Image
-            src="/images/testimonialsBg.svg"
-            alt="Background pattern"
-            width={2000}
-            height={1000}
-            className="w-full h-full"
-            style={{ 
-              objectFit: 'cover',
-              width: '100%',
-              height: '100%',
-              objectPosition: 'center'
-            }}
-            priority
-          />
-        </div>
+    <section className="relative w-full bg-[#00020D] py-20">
+      {/* Background image - positioned to start after the tagline */}
+      <div className="absolute inset-0 top-0 z-10 w-screen h-auto pointer-events-none">
+        <Image
+          src="/images/testimonialsBg.svg"
+          alt="Background pattern"
+          fill
+          className="object-cover object-center"
+          style={{ objectFit: 'cover', width: '100%' }}
+        />
       </div>
       
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#00020D] via-[#00020D]/80 to-transparent pointer-events-none"></div>
@@ -96,17 +87,17 @@ export default function Testimonials() {
           >
             {testimonials.map((t, i) => (
               <SplideSlide key={i}>
-              <div
+                <div
                 className="relative rounded-2xl p-8 min-h-[420px] h-[520px] flex flex-col 
-                bg-[#00102A]/20 border border-[#ffffff]/6
-                shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm
+                bg-[#00102A]/20 border border-[#ffffff]/40
+                shadow-[inset_0_3px_5px_rgba(255,255,255,0.3)] backdrop-blur-sm
                 transition-all duration-300"
                 style={{ 
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between' 
                 }}
-              >
+                >
                 {/* Faint textGibberish background */}
                 <div
                   className="absolute inset-0 z-0 pointer-events-none select-none rounded-2xl overflow-hidden"
@@ -181,19 +172,21 @@ export default function Testimonials() {
         <div className="flex gap-4 justify-end mt-8">
           <button 
             onClick={goPrev}
-            className="w-12 h-12 rounded-full bg-[#00102A]/40 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-[#00102A]/80 transition-all"
+            className="w-12 h-12 rounded-sm flex items-center justify-center text-white hover:bg-[#00102A]/80 transition-all bg-[#00102A]/20 border border-[#ffffff]/40
+                shadow-[inset_0_1px_3px_rgba(255,255,255,0.3)] backdrop-blur-sm"
           >
             <ChevronLeft size={24} />
           </button>
           <button 
             onClick={goNext}
-            className="w-12 h-12 rounded-full bg-[#00102A]/40 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-[#00102A]/80 transition-all"
+            className="w-12 h-12 rounded-sm flex items-center justify-center text-white hover:bg-[#00102A]/80 transition-all bg-[#00102A]/20 border border-[#ffffff]/40
+                shadow-[inset_0_1px_3px_rgba(255,255,255,0.3)] backdrop-blur-sm"
           >
             <ChevronRight size={24} />
           </button>
         </div>
       </div>
     </section>
-    </div>
+    </>
   );
 }

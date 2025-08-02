@@ -1,3 +1,4 @@
+import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 
@@ -6,6 +7,7 @@ export default function HomePage() {
     <main className="relative">
       <Hero />
       <Testimonials />
+      <Contact />
     </main>
   );
 }

@@ -17,6 +17,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleBookCall = () => {
+    window.open("https://calendly.com/parthwanjari07/30min", "_blank");
+  };
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-colors duration-700 ${
@@ -57,14 +61,14 @@ const Navbar = () => {
               About us
             </Link>
             <Link
-              href="/contact"
+              href="/#contact"
               className="flex items-center h-full px-2 text-white font-medium hover:text-blue-300 hover:scale-105 transition-all duration-200"
             >
               Contact
             </Link>
           </div>
         </div>
-        <button className="ml-4 bg-white hidden md:flex text-black rounded-md px-6 py-2 font-semibold hover:bg-blue-300 hover:text-white hover:scale-105 transition-all duration-200 shadow-md">
+        <button onClick={handleBookCall} className="ml-4 bg-white hidden md:flex text-black rounded-md px-6 py-2 font-semibold hover:bg-blue-300 hover:text-white hover:scale-105 transition-all duration-200 shadow-md">
             Book a call
         </button>
 
@@ -83,8 +87,11 @@ const Navbar = () => {
           <Link href="/" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/services" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>Services</Link>
           <Link href="/about" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>About us</Link>
-          <Link href="/contact" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>Contact</Link>
-          <button className="w-full bg-white text-black rounded-md px-6 py-3 font-semibold hover:bg-blue-300 hover:text-white transition-all duration-200 mt-2">
+          <Link href="/#contact" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>Contact</Link>
+          <button onClick={() => {
+            setIsOpen(false);
+            handleBookCall();
+          }} className="w-full bg-white text-black rounded-md px-6 py-3 font-semibold hover:bg-blue-300 hover:text-white transition-all duration-200 mt-2">
             Book a call
           </button>
         </div>
