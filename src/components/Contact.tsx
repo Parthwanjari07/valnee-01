@@ -32,18 +32,8 @@ export default function Contact() {
   return (
     <section
         id="contact"
-        className="relative w-full bg-[#00020D] py-24 overflow-hidden"
+        className="relative w-full bg-[#00020D] py-24"
     >
-        {/* Background image */}
-        <div className="absolute inset-0 top-0 z-10 w-screen h-auto pointer-events-none">
-            <Image
-                src="/images/testimonialsBg.svg"
-                alt="Background pattern"
-                fill
-                className="object-cover object-center"
-                style={{ objectFit: 'cover', width: '100%' }}
-            />
-            </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#00020D] via-[#00020D]/80 to-transparent pointer-events-none"></div>
 

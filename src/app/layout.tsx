@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${calSans.variable} ${sfPro.variable} font-sans antialiased overflow-x-hidden`}
+        className={`${calSans.variable} ${sfPro.variable} font-sans antialiased overflow-x-hidden bg-[#00091A]`}
       >
         <Navbar />
         {children}

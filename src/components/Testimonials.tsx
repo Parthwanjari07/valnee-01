@@ -48,19 +48,19 @@ export default function Testimonials() {
   };
   return (
     <>
-    <section className="relative w-full bg-[#00020D]">
+    <section className="relative w-full bg-gradient-to-b to-[#00091A] from-[#00020D]">
     <div className="max-w-7xl mx-auto px-4 pt-20 z-20">
-        <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-[var(--font-sf-pro)] bg-gradient-to-b from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
-          Valnee Builds Future-Ready Tech That Solves Real<br />
-          Problems and Drives Business Forward.
-        </h1>
+      <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-[var(--font-sf-pro)] bg-gradient-to-b from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
+        Valnee Builds Future-Ready Tech That Solves Real<br />
+        Problems and Drives Business Forward.
+      </h1>
     </div>
     </section>
-    <section className="relative w-full bg-[#00020D] py-20">
+    <section className="relative w-full py-20 bg-[#00091A]">
       {/* Background image - positioned to start after the tagline */}
       <div className="absolute inset-0 top-0 z-10 w-screen h-auto pointer-events-none">
         <Image
-          src="/images/testimonialsBg.svg"
+          src="/images/testimonialsBg.png"
           alt="Background pattern"
           fill
           className="object-cover object-center"
