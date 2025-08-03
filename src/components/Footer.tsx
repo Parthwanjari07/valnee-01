@@ -46,16 +46,16 @@ export default function Footer() {
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Main footer content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
+        <div className="grid grid-cols-1 items-center text-center md:text-start md:grid-cols-4 gap-10 mb-16">
           {/* Logo and company info */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 justify-self-center md:justify-self-start">
             <Link href="/" className="inline-block mb-6">
               <Image src="/valneeLogo.svg" alt="Valnee" width={140} height={48} />
             </Link>
             <p className="text-gray-400 text-sm mb-6 max-w-xs">
               Empowering businesses through innovative software solutions and digital transformation.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-start">
               <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-full bg-[#00102A]/40 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-blue-600/30 transition-all hover:scale-110">
                 <FacebookIcon />
               </a>

@@ -5,10 +5,10 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-auto">
+    <section className="relative h-screen bg-[#00020D] w-auto">
       {/* Video on bottom half */}
       <video
-        className="absolute inset-0 w-full h-screen object-cover"
+        className="absolute inset-0 bottom-0 w-full h-screen lg:h-auto object-cover"
         src="/herobg.mp4"
         autoPlay
         loop
@@ -39,7 +39,8 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-30 flex flex-col items-center justify-center h-full text-center px-4">
+      <div className="absolute inset-0 flex flex-col items-center justify-around text-white z-20">
+      <div className="relative z-30 flex flex-col items-center py-36 h-full text-center px-4">
         <div className="flex gap-2 mb-6 flex-wrap items-center text-center justify-around">
           <span className="bg-white/10 text-white px-3 py-1 rounded-full inline-flex text-sm border border-white/20">
             <Stars className="mr-1 w-5 h-5" />
@@ -90,13 +91,16 @@ export default function Hero() {
           Custom-built digital solutions designed to scale your business,
           enhance user experience, and future-proof your tech
         </p>
+        </div>
 
         {/* Bottom text */}
+        <div className="items-end">
         <div className="absolute bottom-4 left-4 text-gray-400 text-sm z-40">
           One-Stop Digital Innovation Partner
         </div>
         <div className="absolute bottom-4 right-4 text-gray-400 text-sm z-40">
           Valnee Solutions
+        </div>
         </div>
       </div>
     </section>
