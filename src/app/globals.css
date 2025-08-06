@@ -42,3 +42,56 @@ h1, h2, h3, h4, h5, h6 {
 .animate-scroll-vertical {
   animation: scroll-vertical 30s linear infinite;
 }
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+
+.flow-path-edge {
+  stroke-dasharray: 5;
+  animation: flowPath 30s linear infinite;
+  stroke: #4FC3F7 !important;
+  stroke-width: 4 !important;
+  filter: drop-shadow(0 0 8px #4FC3F7);
+  opacity: 1 !important;
+}
+
+@keyframes flowPath {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.react-flow__edge-path {
+  filter: drop-shadow(0 0 8px #4FC3F7);
+  stroke: #4FC3F7 !important;
+  stroke-width: 4 !important;
+  opacity: 1 !important;
+}
+
+@keyframes flowPath {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.react-flow__edge-path {
+  filter: drop-shadow(0 0 8px #4FC3F7);
+}
+
+.react-flow__edge {
+  z-index: 1;
+}
+
