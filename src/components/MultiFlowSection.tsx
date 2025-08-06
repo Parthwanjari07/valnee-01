@@ -4,7 +4,6 @@ import React from "react";
 import ReactFlow, {
   Node,
   Edge,
-  Position,
 } from "reactflow";
 
 import "reactflow/dist/style.css";

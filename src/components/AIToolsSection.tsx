@@ -2,57 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import ReactFlow, {
-  Node,
-  Edge,
-  useNodesState,
-  useEdgesState,
-} from "reactflow";
 import "reactflow/dist/style.css";
-import CustomEdge from "./CustomEdge";
-import CustomNode from "./CustomNode";
-import RotatingNode from "./RotatingNode";
-
-const edgeStyle = {
-  stroke: "#4FC3F7",
-  strokeWidth: 4,
-  opacity: 1,
-};
-
-const edgeTypes = {
-  'custom': CustomEdge,
-};
-
-const initialNodes: Node[] = [
-  { id: "1", type: "custom", position: { x: 60, y: 50 }, data: { label: "Client's request", sourceHandlePosition: "bottom", targetHandlePosition: "left" } },
-  { id: "2", type: "custom", position: { x: 250, y: 150 }, data: { label: "Valnee", sourceHandlePosition: "right", targetHandlePosition: "top" } },
-  { id: "3", type: "custom", position: { x: 400, y: 150 }, data: { label: "Processing", sourceHandlePosition: "right", targetHandlePosition: "left" } },
-  { id: "4", type: "custom", position: { x: 650, y: 100 }, data: { label: "Design", sourceHandlePosition: "right", targetHandlePosition: "left" } },
-  { id: "5", type: "custom", position: { x: 600, y: 200 }, data: { label: "Development", sourceHandlePosition: "right", targetHandlePosition: "left" } },
-  { id: "6", type: "custom", position: { x: 60, y: 300 }, data: { label: "Ready", sourceHandlePosition: "left", targetHandlePosition: "right" } },
-  { id: "loading", type: "rotating", position: { x: 480, y: 293 }, data: {} },
-];
-
-const initialEdges: Edge[] = [
-  { id: "e1-2", source: "1", target: "2", type: "custom" },
-  { id: "e2-3", source: "2", target: "3", type: "custom" },
-  { id: "e3-4", source: "3", target: "4", type: "custom" },
-  { id: "e3-5", source: "3", target: "5", type: "custom" },
-  { id: "e4-6", source: "4", target: "loading", type: "custom" },
-  { id: "e5-6", source: "5", target: "loading", type: "custom" },
-  { id: "e6-loading", source: "loading", target: "6", type: "custom" },
-  { id: "e6-6", source: "6", target: "1", type: "custom" }
-];
 
 
-const nodeTypes = {
-  custom: CustomNode,
-  rotating: RotatingNode,
-};
 
 export default function AIToolsSection() {
-  const [nodes] = useNodesState(initialNodes);
-  const [edges] = useEdgesState(initialEdges);
 
   return (
     <section className="relative w-full bg-[#00020D] text-white py-20">
