@@ -105,8 +105,8 @@ export default function FlowDiagramSection() {
               nodesConnectable={false}
               elementsSelectable={false}
               panOnScroll={false}
-              zoomOnScroll={false}
-              zoomOnPinch={false}
+              zoomOnScroll={true}
+              zoomOnPinch={true}
               panOnDrag={false}
               edgeUpdaterRadius={10}
               proOptions={{ hideAttribution: true }}
