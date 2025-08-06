@@ -1,8 +1,10 @@
 // src/app/page.tsx
+import AIToolsSection from "@/components/AIToolsSection";
 import Contact from "@/components/Contact";
 import FlowDiagramSection from "@/components/FlowDiagramSection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import MultiFlowSection from "@/components/MultiFlowSection";
 import Testimonials from "@/components/Testimonials";
 
 export default function HomePage() {
@@ -10,6 +12,7 @@ export default function HomePage() {
     <main className="relative">
       <Hero />
       <FlowDiagramSection/>
+      <AIToolsSection />
       <Testimonials />
       <Contact />
       <Footer />

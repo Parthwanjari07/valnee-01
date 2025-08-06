@@ -49,7 +49,7 @@ const nodeTypes = {
   rotating: RotatingNode,
 };
 
-export default function FlowDiagramSection() {
+export default function AIToolsSection() {
   const [nodes] = useNodesState(initialNodes);
   const [edges] = useEdgesState(initialEdges);
 
@@ -57,7 +57,12 @@ export default function FlowDiagramSection() {
     <section className="relative w-full bg-[#00020D] text-white py-20">
       <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center justify-between">
         {/* Left Text Column */}
-        <div className="lg:w-[37%] w-full">
+        <div className="w-full lg:w-1/2 relative min-h-[500px] rounded-md cursor-default bg-cover bg-center" style={{ backgroundImage: "url(/images/aitoolsbg.png)" }}>
+          
+        </div>
+
+        {/* Right Column with Background */}
+        <div className="lg:w-1/2 w-full">
           <div className="inline-flex items-center gap-2 px-4 py-1 bg-[#001F3F]/40 rounded-full border border-blue-400 text-sm mb-4">
             <div className="w-2 h-2 bg-blue-400 rounded-full" />
             <span>Innovative Solutions</span>
@@ -88,46 +93,6 @@ export default function FlowDiagramSection() {
               <span>Scalable cloud solutions</span>
             </li>
           </ul>
-        </div>
-
-        {/* Right Column with Background */}
-        <div className="w-full lg:w-[63%] relative min-h-[500px] rounded-md cursor-default bg-cover bg-center" style={{ backgroundImage: "url(/images/workflow.png)" }}>
-          {/* Top 75% - React Flow */}
-          <div className="items-start relative mt-5 mx-5 rounded-md border cursor-default border-white/30 bg-white/2 " style={{ height: "300px" }}>
-            <ReactFlow
-              nodes={nodes}
-              edges={edges}
-              nodeTypes={nodeTypes}
-              edgeTypes={edgeTypes}
-              className="cursor-default"
-              fitView
-              nodesDraggable={true}
-              nodesConnectable={true}
-              elementsSelectable={true}
-              panOnScroll={true}
-              zoomOnScroll={true}
-              zoomOnPinch={true}
-              panOnDrag={true}
-              edgeUpdaterRadius={10}
-              proOptions={{ hideAttribution: true }}
-              style={{ background: "transparent" }}
-              defaultEdgeOptions={{
-                style: edgeStyle,
-                animated: true,
-              }}
-            >
-              {/* Optionally include controls */}
-              {/* <Controls /> */}
-            </ReactFlow>
-          </div>
-
-          {/* Bottom 25% - Title + subtitle */}
-          <div className="h-[25%] flex flex-col mt-20 px-4">
-            <h2 className="text-white text-xl font-regular">Built with clarity, delivered with precision.</h2>
-            <p className="text-gray-400 mt-2 max-w-md text-sm">
-              Every step in our workflow is optimized to bring your ideas to life seamlessly.
-            </p>
-          </div>
         </div>
       </div>
     </section>
