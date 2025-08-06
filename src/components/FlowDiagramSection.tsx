@@ -101,13 +101,13 @@ export default function FlowDiagramSection() {
               edgeTypes={edgeTypes}
               className="cursor-default"
               fitView
-              nodesDraggable={false}
-              nodesConnectable={false}
-              elementsSelectable={false}
-              panOnScroll={false}
-              zoomOnScroll={false}
-              zoomOnPinch={false}
-              panOnDrag={false}
+              nodesDraggable={true}
+              nodesConnectable={true}
+              elementsSelectable={true}
+              panOnScroll={true}
+              zoomOnScroll={true}
+              zoomOnPinch={true}
+              panOnDrag={true}
               edgeUpdaterRadius={10}
               proOptions={{ hideAttribution: true }}
               style={{ background: "transparent" }}
