@@ -22,4 +22,6 @@ const RotatingNode = memo(() => {
   );
 });
 
+RotatingNode.displayName = "RotatingNode";
+
 export default RotatingNode;

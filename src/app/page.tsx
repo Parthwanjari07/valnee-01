@@ -4,7 +4,6 @@ import FlowDiagramSection from "@/components/FlowDiagramSection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
-import WorkflowDiagram from "@/components/WorkflowDiagram";
 
 export default function HomePage() {
   return (

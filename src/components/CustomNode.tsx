@@ -33,7 +33,13 @@ const sharedStyle: React.CSSProperties = {
   position: "relative",
 };
 
-const CustomNode = memo(({ data }: any) => {
+interface CustomNodeData {
+  sourceHandlePosition?: string;
+  targetHandlePosition?: string;
+  label: string;
+}
+
+const CustomNode = memo(({ data }: { data: CustomNodeData }) => {
   const sourcePos = getHandlePosition(data.sourceHandlePosition);
   const targetPos = getHandlePosition(data.targetHandlePosition);
 
@@ -57,5 +63,7 @@ const CustomNode = memo(({ data }: any) => {
     </div>
   );
 });
+
+CustomNode.displayName = "CustomNode";
 
 export default CustomNode;

@@ -16,7 +16,7 @@ function getMinimalStepPath({
   targetPosition: 'top' | 'right' | 'bottom' | 'left';
 }) {
   const offset = 30;
-  let pathSegments = [`M${sourceX},${sourceY}`];
+  const pathSegments = [`M${sourceX},${sourceY}`];
 
   // Define direction vectors for each handle
   const directions = {
