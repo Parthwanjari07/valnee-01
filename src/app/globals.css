@@ -87,3 +87,31 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 
+
+.glowing-key {
+  box-shadow: 0px 0px 15px transparent;
+  border-color: currentColor !important;
+  animation: animate-key-border-shadow 1000ms linear forwards;
+}
+
+@keyframes animate-key-border-shadow {
+  0% {
+    box-shadow: 0px 0px 15px transparent;
+  }
+  100% {
+    box-shadow: 0px 0px 20px currentColor;
+  }
+}
+
+.blur-in {
+  animation: blur-in 400ms ease-in-out forwards;
+}
+
+@keyframes blur-in {
+  0% {
+    filter: blur(1px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
