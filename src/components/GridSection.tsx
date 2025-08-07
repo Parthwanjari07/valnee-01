@@ -48,11 +48,11 @@ export default function GridSection() {
             </div>
             <h2 className="font-sans font-normal text-xl md:text-2xl mb-4 text-center" 
               style={{ fontFamily: "SF Pro Display, SF Pro Text, SF UI, sans-serif" }}>
-              Let's Build Your Next Big Thing
+              Let&apos;s Build Your Next Big Thing
             </h2>
             <p className="font-sans font-normal text-base text-white/80 text-center max-w-md" 
               style={{ fontFamily: "SF Pro Display, SF Pro Text, SF UI, sans-serif" }}>
-              Let's schedule a free, no-obligation call to discuss your project and see how we can help bring your ideas to life.
+              Let&apos;s schedule a free, no-obligation call to discuss your project and see how we can help bring your ideas to life.
             </p>
           </div>
 
@@ -105,7 +105,7 @@ export default function GridSection() {
                     textShadow: "0 2px 8px #7FDBFF, 0 1px 2px #7FDBFF"
                   }}
                 >
-                  You're<br />
+                  You&apos;re<br />
                   Part of<br />
                   The Team
                 </h3>
@@ -114,7 +114,7 @@ export default function GridSection() {
                 className="font-sans text-xs lg:text-sm text-white/80 max-w-[200px] mt-auto"
                 style={{ fontFamily: "SF Pro Display, SF Pro Text, SF UI, sans-serif" }}
               >
-                Realtime updates of your project's progress.
+                Realtime updates of your project&apos;s progress.
               </p>
             </div>
           </div>
