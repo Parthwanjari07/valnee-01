@@ -59,20 +59,41 @@ export default function Testimonials() {
     </div>
     </section>
     <section className="relative w-full py-20 bg-[#00091A]">
-      {/* Background image - positioned to start after the tagline */}
-      <div className="absolute inset-0 top-0 z-10 w-screen h-auto pointer-events-none">
+      {/* Background image */}
+      <div className="absolute inset-0 top-0 z-10 w-screen pointer-events-none">
+        {/* Full-height background */}
+
+        <Image
+          src="/images/testimonialsMask.png"
+          alt="Background pattern"
+          fill
+          className="object-cover object-center opacity-10"
+          style={{ objectFit: "cover", width: "100%" }}
+        />
         <Image
           src="/images/testimonialsBg.png"
           alt="Background pattern"
           fill
           className="object-cover object-center"
-          style={{ objectFit: 'cover', width: '100%' }}
+          style={{ objectFit: "cover", width: "100%" }}
         />
+
+        {/* Short overlay background */}
+        <div className="absolute top-0 left-0 w-full">
+          <Image
+            src="/images/testimonialsHeaderBg.png"
+            alt="Header overlay"
+            width={1445}
+            height={446}
+            className="w-full h-auto object-cover"
+            priority
+          />
+        </div>
       </div>
-      
+            
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#00020D] via-[#00020D]/80 to-transparent pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+      <div className="max-w-7xl mx-auto mt-10 lg:mt-50 px-4 relative z-10">
         <div className="relative">
           <Splide
             ref={splideRef}
