@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16 md:h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Image src="/valneeLogo.svg" alt="Valnee" width={120} height={40} />
+          <Image src="/valneeLogo.svg" alt="Valnee" width={50} height={50} />
         </Link>
 
         {/* Desktop Nav */}
