@@ -7,13 +7,12 @@ import { getJobBySlug } from "@/lib/supabase";
 import JobDetailClient from "@/components/JobDetailClient";
 import Link from "next/link";
 
-interface JobDetailPageProps {
-  params: {
-    slug: string;
-  };
+interface PageProps {
+  params: Promise<{ slug: string }>;
 }
 
-export default async function JobDetailPage({ params }: JobDetailPageProps) {
+
+export default async function JobDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const job = await getJobBySlug(slug);
 
@@ -255,7 +254,7 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
 }
 
 // Generate metadata for SEO
-export async function generateMetadata({ params }: JobDetailPageProps) {
+export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const job = await getJobBySlug(slug);
   
