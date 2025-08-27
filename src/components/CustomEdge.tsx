@@ -81,12 +81,14 @@ const CustomEdge = ({
         path={edgePath}
         markerEnd={markerEnd}
         style={{
-          stroke: "#bbb",
-          strokeWidth: 2,
+          stroke: "#000",
+          strokeWidth: 0.4,
           fill: "none",
           strokeLinejoin: "round",
+          strokeDasharray: '0'
         }}
       />
+
       <path id={id} d={edgePath} fill="none" stroke="none" />
       <circle r={4} fill="#4FC3F7">
         <animateMotion dur="2s" repeatCount="indefinite" rotate="auto">
