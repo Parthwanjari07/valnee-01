@@ -1,27 +1,34 @@
 <svg width="402" height="263" viewBox="0 0 402 263" fill="none" xmlns="http://www.w3.org/2000/svg">
-<foreignObject x="-140" y="0" width="684" height="689"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(11.3px);clip-path:url(#bgblur_0_1265_5540_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_d_1265_5540)" data-figma-bg-blur-radius="22.5986">
-<ellipse cx="202" cy="347.5" rx="298" ry="300.5" fill="url(#paint0_radial_1265_5540)" shape-rendering="crispEdges"/>
-<path d="M202 47.5C366.301 47.5 499.5 181.811 499.5 347.5C499.5 513.189 366.301 647.5 202 647.5C37.6992 647.5 -95.5 513.189 -95.5 347.5C-95.5 181.811 37.6992 47.5 202 47.5Z" stroke="url(#paint1_linear_1265_5540)" stroke-opacity="0.06" shape-rendering="crispEdges"/>
+<foreignObject x="-140" y="0" width="684" height="689"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(11.3px);clip-path:url(#bgblur_0_1852_69_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_dd_1852_69)" data-figma-bg-blur-radius="22.5986">
+<ellipse cx="202" cy="347.5" rx="298" ry="300.5" fill="url(#paint0_radial_1852_69)" shape-rendering="crispEdges"/>
+<path d="M202 47.5C366.301 47.5 499.5 181.811 499.5 347.5C499.5 513.189 366.301 647.5 202 647.5C37.6992 647.5 -95.5 513.189 -95.5 347.5C-95.5 181.811 37.6992 47.5 202 47.5Z" stroke="url(#paint1_linear_1852_69)" shape-rendering="crispEdges"/>
 </g>
 <defs>
-<filter id="filter0_d_1265_5540" x="-140" y="0" width="684" height="689" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_dd_1852_69" x="-140" y="0" width="684" height="689" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="-3"/>
 <feGaussianBlur stdDeviation="22"/>
 <feComposite in2="hardAlpha" operator="out"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0.0470588 0 0 0 0 0.0235294 0 0 0 0 0.12549 0 0 0 1 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1265_5540"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1265_5540" result="shape"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1852_69"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="-1"/>
+<feGaussianBlur stdDeviation="10"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.414634 0 0 0 0 1 0 0 0 1 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_1852_69" result="effect2_dropShadow_1852_69"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_1852_69" result="shape"/>
 </filter>
-<clipPath id="bgblur_0_1265_5540_clip_path" transform="translate(140 0)"><ellipse cx="202" cy="347.5" rx="298" ry="300.5"/>
-</clipPath><radialGradient id="paint0_radial_1265_5540" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(202 47) rotate(90) scale(601 596)">
+<clipPath id="bgblur_0_1852_69_clip_path" transform="translate(140 0)"><ellipse cx="202" cy="347.5" rx="298" ry="300.5"/>
+</clipPath><radialGradient id="paint0_radial_1852_69" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(202 47) rotate(90) scale(601 596)">
 <stop stop-color="white" stop-opacity="0.04"/>
 <stop offset="0.326939" stop-color="white" stop-opacity="0"/>
 </radialGradient>
-<linearGradient id="paint1_linear_1265_5540" x1="202" y1="47" x2="202" y2="276.131" gradientUnits="userSpaceOnUse">
-<stop stop-color="white"/>
-<stop offset="0.853325" stop-color="white" stop-opacity="0"/>
+<linearGradient id="paint1_linear_1852_69" x1="202" y1="32" x2="202" y2="276.131" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.7"/>
+<stop offset="0.464758" stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white" stop-opacity="0.2"/>
 </linearGradient>
 </defs>
 </svg>

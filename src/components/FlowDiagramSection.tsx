@@ -91,7 +91,7 @@ export default function FlowDiagramSection() {
         </div>
 
         {/* Right Column with Background */}
-        <div className="w-full lg:w-[63%] relative min-h-[500px] rounded-md cursor-default bg-cover bg-center" style={{ backgroundImage: "url(/images/workflow.png)" }}>
+        <div className="w-full lg:w-[63%] relative min-h-[500px] rounded-lg cursor-default bg-cover bg-center" style={{ backgroundImage: "url(/images/workflow.png)" }}>
           {/* Top 75% - React Flow */}
           <div className="items-start relative mt-5 mx-5 rounded-md border cursor-default border-white/30 bg-white/2 " style={{ height: "300px" }}>
             <ReactFlow

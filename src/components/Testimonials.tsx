@@ -124,8 +124,10 @@ export default function Testimonials() {
                 }}
                 >
                 {/* Faint textGibberish background */}
-                <TextGibberishBackground />
-                
+                <div className="z-0">
+                  <TextGibberishBackground />
+                </div>
+
                 {/* Testimonial SVG Badge instead of text */}
                 <div className="absolute top-6 left-6 z-10">
                   <Image
@@ -145,13 +147,13 @@ export default function Testimonials() {
                 </div>
 
                 {/* Semi-circle background - full width at bottom */}
-                <div className="absolute bottom-0 left-0 w-full z-0">
+                <div className="absolute bottom-0 left-0 w-full z-10">
                   <Image
                     src="/images/semicircle.svg"
                     alt="background decoration"
                     width={1000}
                     height={100}
-                    className="w-full h-auto object-cover opacity-80"
+                    className="w-full h-auto object-cover opacity-100"
                     style={{ 
                       position: 'absolute',
                       bottom: 0,
@@ -164,13 +166,13 @@ export default function Testimonials() {
 
                 {/* Profile section */}
                 <div className="relative z-10 flex flex-col items-center mt-auto mb-24">
-                  <div className="bg-gray-700/70 rounded-lg p-3 mb-3 backdrop-blur-sm border border-gray-600/30">
+                  <div className="bg-gray-700/70 rounded-lg p-3 mb-3 z-20 backdrop-blur-sm border border-gray-600/30">
                     <Image
                       src={t.avatar}
                       alt={t.name}
                       width={48}
                       height={48}
-                      className="opacity-90"
+                      className="opacity-100"
                     />
                   </div>
                   <p className="text-white font-semibold text-sm">{t.name}</p>

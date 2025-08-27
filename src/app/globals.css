@@ -48,10 +48,10 @@ h1, h2, h3, h4, h5, h6 {
 .flow-path-edge {
   stroke-dasharray: 5;
   animation: flowPath 30s linear infinite;
-  stroke: #4FC3F7 !important;
-  stroke-width: 4 !important;
-  filter: drop-shadow(0 0 8px #4FC3F7);
-  opacity: 1 !important;
+  stroke: #fff !important;
+  stroke-width: 2 !important;
+  filter: drop-shadow(0 0 8px #fff);
+  opacity: 0.3 !important;
 }
 
 @keyframes flowPath {
@@ -64,10 +64,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .react-flow__edge-path {
-  filter: drop-shadow(0 0 8px #4FC3F7);
-  stroke: #4FC3F7 !important;
-  stroke-width: 4 !important;
-  opacity: 1 !important;
+  stroke: #fff !important;
+  stroke-width: 2 !important;
+  opacity: 0.3 !important;
 }
 
 @keyframes flowPath {
