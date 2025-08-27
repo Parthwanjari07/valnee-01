@@ -61,6 +61,12 @@ const Navbar = () => {
               About us
             </Link>
             <Link
+              href="/opportunities"
+              className="flex items-center h-full px-2 text-white font-medium hover:text-blue-300 hover:scale-105 transition-all duration-200"
+            >
+              Careers
+            </Link>
+            <Link
               href="/#contact"
               className="flex items-center h-full px-2 text-white font-medium hover:text-blue-300 hover:scale-105 transition-all duration-200"
             >
@@ -87,6 +93,7 @@ const Navbar = () => {
           <Link href="/" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/services" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>Services</Link>
           <Link href="/about" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>About us</Link>
+          <Link href="/opportunities" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>Careers</Link>
           <Link href="/#contact" className="block text-white py-2 hover:text-blue-300 transition-all duration-200" onClick={() => setIsOpen(false)}>Contact</Link>
           <button onClick={() => {
             setIsOpen(false);
