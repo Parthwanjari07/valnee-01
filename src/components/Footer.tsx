@@ -90,10 +90,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/careers"
+                  href="/opportunities"
                   className="text-gray-300 hover:text-blue-300 transition-colors text-sm inline-flex items-center group"
                 >
-                  Careers
+                  Opportunities
                   <ArrowUpRight
                     size={14}
                     className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity"

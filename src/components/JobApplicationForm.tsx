@@ -8,9 +8,10 @@ import { submitJobApplication, uploadResumeFile, type JobApplication } from "@/l
 type JobApplicationFormProps = {
   jobSlug: string;
   jobTitle: string;
+  containerClassName?: string;
 };
 
-export default function JobApplicationForm({ jobSlug, jobTitle }: JobApplicationFormProps) {
+export default function JobApplicationForm({ jobSlug, jobTitle, containerClassName }: JobApplicationFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -98,7 +99,8 @@ export default function JobApplicationForm({ jobSlug, jobTitle }: JobApplication
   return (
     <form
       className={clsx(
-        "mx-auto grid w-full max-w-3xl gap-8",
+        "mx-auto grid w-full gap-8",
+        containerClassName ? containerClassName : "max-w-3xl",
         loading && "pointer-events-none opacity-75"
       )}
       onSubmit={handleSubmit}
@@ -264,7 +266,7 @@ export default function JobApplicationForm({ jobSlug, jobTitle }: JobApplication
               id="salary"
               name="salary"
               type="text"
-              placeholder="₹50,000/month"
+              placeholder=""
               className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base text-white placeholder-gray-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
             />
           </div>

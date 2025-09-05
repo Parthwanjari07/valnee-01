@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Image from "next/image";
-import { MapPin, Users, Calendar, DollarSign, Timer, ArrowLeft } from "lucide-react";
 import Footer from "@/components/Footer";
 import { getJobBySlug } from "@/lib/supabase";
 import JobDetailClient from "@/components/JobDetailClient";
-import Link from "next/link";
+// no Link usage in this layout
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,235 +19,165 @@ export default async function JobDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const formatApplyBy = (dateString: string | null | undefined) => {
-    if (!dateString) return null;
-    try {
-      const date = new Date(dateString);
-      return date.toLocaleDateString('en-GB', {
-        day: 'numeric',
-        month: 'short',
-        year: '2-digit'
-      });
-    } catch {
-      return dateString;
-    }
-  };
+  const responsibilities: string[] = Array.isArray(job.responsibilities) ? job.responsibilities : [];
+  const requirements: string[] = Array.isArray(job.requirements) ? job.requirements : [];
+  const whoCanApply: string[] = Array.isArray(job.who_can_apply) ? job.who_can_apply : [];
+  const perks: string[] = Array.isArray(job.perks) ? job.perks : [];
 
   return (
     <>
-    <main className="relative min-h-screen bg-[#00091A] pb-20 pt-32 text-white">
-      {/* Decorative Background */}
-      <Image
-        src="/images/gridbg.png"
-        alt="background grid"
-        fill
-        className="pointer-events-none select-none object-cover opacity-10"
-        priority
-      />
+      <main className="relative flex justify-center text-white pt-24 pb-10 bg-[#00091A] min-h-screen">
+        <div className="w-[1440px] min-h-[2643px] relative bg-slate-950 overflow-visible">
+          <div className="w-[1456.83px] h-56 left-[-8.42px] top-0 absolute bg-gradient-to-b from-blue-400/40 to-blue-600/40 blur-[207.27px]" />
+          <div className="w-[628px] h-64 left-[665px] top-[1365px] absolute origin-top-left rotate-180 opacity-40 bg-blue-400 blur-[163.46px]" />
+          <div className="w-[628px] h-64 left-[1403px] top-[1691px] absolute origin-top-left rotate-180 opacity-40 bg-blue-400 blur-[163.46px]" />
+          <div className="w-[628px] h-64 left-[838px] top-[2114px] absolute origin-top-left rotate-180 opacity-40 bg-blue-400 blur-[163.46px]" />
+          <div className="w-[751px] h-80 left-[1325px] top-[988px] absolute origin-top-left rotate-180 opacity-40 bg-blue-400 blur-[163.46px]" />
 
-      {/* Sparkles effect */}
-      <div className="absolute inset-0 h-1/3 w-full pointer-events-none">
-        <Image
-          src="/images/sparkles.png"
-          alt="sparkles"
-          fill
-          className="object-cover object-top opacity-20"
-          priority
-        />
-      </div>
+          {/* Removed large decorative glow box for cleaner layout */}
 
-      {/* Back Button */}
-      <div className="absolute top-8 left-6 z-20">
-        <Link
-          href="/opportunities"
-          aria-label="Back to opportunities"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-cyan-400 border border-cyan-500/30 font-medium transition-colors shadow"
-        >
-          <ArrowLeft className="w-5 h-5" />
-        </Link>
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
-        <article className="space-y-12">
-          {/* Job Header */}
-          <header className="text-center space-y-8 pb-8 border-b border-white/10">
-            <h1 className="text-5xl font-bold md:text-7xl lg:text-8xl bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent leading-tight">
+          {/* Header Title */}
+          <div className="w-[1440px] left-0 top-[231px] absolute inline-flex flex-col justify-center items-center gap-14">
+            <div className="justify-start text-white text-5xl font-bold [font-family:var(--font-sf-pro)]">
               {job.title}
-            </h1>
-            
-            {/* Job Meta */}
-            <div className="flex flex-wrap justify-center gap-8 text-base text-gray-300">
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-cyan-400" />
-                <span className="font-medium">{job.location}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Calendar className="w-5 h-5 text-cyan-400" />
-                <span className="font-medium">{job.type}</span>
-              </div>
-              {job.salary_range && (
-                <div className="flex items-center gap-3">
-                  <DollarSign className="w-5 h-5 text-cyan-400" />
-                  <span className="font-medium">{job.salary_range}</span>
-                </div>
-              )}
-              <div className="flex items-center gap-3">
-                <Users className="w-5 h-5 text-cyan-400" />
-                <span className="font-medium">{job.openings} opening{job.openings > 1 ? 's' : ''}</span>
-              </div>
-              {job.apply_by && (
-                <div className="flex items-center gap-3">
-                  <Timer className="w-5 h-5 text-cyan-400" />
-                  <span className="font-medium">Apply by {formatApplyBy(job.apply_by)}</span>
-                </div>
-              )}
-            </div>
-          </header>
-
-          {/* Job Description */}
-          <section className="space-y-6 text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-white">About this role</h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              {job.description}
-            </p>
-          </section>
-
-          {/* Job Details (Horizontal Alignment) */}
-          {(job.start_date || job.duration || job.salary_range) && (
-            <section className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <div className="flex flex-wrap gap-12 justify-center">
-                {job.start_date && (
-                  <div className="flex flex-col items-center min-w-[160px]">
-                    <h3 className="text-xl font-semibold text-white mb-3">Start date</h3>
-                    <p className="text-lg text-gray-300 font-medium">{job.start_date}</p>
-                  </div>
-                )}
-                {job.duration && (
-                  <div className="flex flex-col items-center min-w-[160px]">
-                    <h3 className="text-xl font-semibold text-white mb-3">Duration</h3>
-                    <p className="text-lg text-gray-300 font-medium">
-                      {job.duration}
-                      {job.duration && !/month|year|week|day/i.test(job.duration) && (
-                        <span className="ml-1 text-gray-400">months</span>
-                      )}
-                    </p>
-                  </div>
-                )}
-                {job.salary_range && (
-                  <div className="flex flex-col items-center min-w-[160px]">
-                    <h3 className="text-xl font-semibold text-white mb-3">Salary</h3>
-                    <p className="text-lg text-gray-300 font-medium">
-                      {job.salary_range}
-                      <span className="ml-1 text-gray-400">/month</span>
-                    </p>
-                  </div>
-                )}
-              </div>
-            </section>
-          )}
-
-          {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column */}
-            <div className="space-y-10">
-              {/* Responsibilities */}
-              {job.responsibilities && job.responsibilities.length > 0 && (
-                <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white">Responsibilities</h3>
-                  <ul className="space-y-4">
-                    {job.responsibilities.map((responsibility, index) => (
-                      <li key={index} className="flex items-start gap-4 text-gray-300">
-                        <span className="text-cyan-400 mt-2 text-lg">•</span>
-                        <span className="text-lg leading-relaxed">{responsibility}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              )}
-
-              {/* Requirements */}
-              {job.requirements && job.requirements.length > 0 && (
-                <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white">Requirements</h3>
-                  <ul className="space-y-4">
-                    {job.requirements.map((requirement, index) => (
-                      <li key={index} className="flex items-start gap-4 text-gray-300">
-                        <span className="text-cyan-400 mt-2 text-lg">•</span>
-                        <span className="text-lg leading-relaxed">{requirement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              )}
-
-              {/* Who Can Apply */}
-              {job.who_can_apply && job.who_can_apply.length > 0 && (
-                <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white">Who can apply</h3>
-                  <ul className="space-y-4">
-                    {job.who_can_apply.map((criteria, index) => (
-                      <li key={index} className="flex items-start gap-4 text-gray-300">
-                        <span className="text-cyan-400 mt-2 text-lg">•</span>
-                        <span className="text-lg leading-relaxed">{criteria}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              )}
             </div>
 
-            {/* Right Column */}
-            <div className="space-y-10">
-              {/* Skills Required */}
-              {job.skills_required && job.skills_required.length > 0 && (
-                <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white">Skills & tools required</h3>
-                  <div className="flex flex-wrap gap-3">
-                    {job.skills_required.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="px-4 py-2 bg-white/10 text-cyan-400 border border-cyan-500/30 rounded-full text-base font-medium hover:bg-white/20 transition-colors"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+            {/* Two column content */}
+            <div className="inline-flex justify-start items-start flex-wrap content-start">
+              {/* Left Column */}
+              <div className="w-[870px] inline-flex flex-col justify-start items-end">
+                {/* Job Description */}
+                <div className="self-stretch pl-20 pr-14 pt-14 pb-10 border-b border-white/10 flex flex-col justify-start items-start gap-1.5">
+                  <div className="self-stretch justify-start text-white text-xl leading-loose [font-family:var(--font-sf-pro)]">Job Description</div>
+                  <div className="self-stretch justify-start text-neutral-400 text-base leading-normal [font-family:var(--font-sf-pro)]">{job.description}</div>
+                </div>
+
+                {/* Responsibilities */}
+                {(responsibilities.length > 0) && (
+                  <div className="self-stretch pl-20 pr-14 pt-10 pb-14 flex flex-col justify-start items-start gap-6 overflow-hidden">
+                    <div className="self-stretch flex flex-col justify-start items-start gap-5">
+                      <div className="self-stretch justify-start text-white text-xl leading-loose [font-family:var(--font-sf-pro)]">Responsiblities</div>
+                      <div className="self-stretch justify-start text-neutral-400 text-base leading-normal [font-family:var(--font-sf-pro)]">
+                        {responsibilities.map((r, i) => (
+                          <span key={i}>{r}{i < responsibilities.length - 1 ? <><br/></> : null}</span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Requirements */}
+                    {(requirements.length > 0) && (
+                      <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
+                        <div className="self-stretch justify-start text-white text-xl leading-loose [font-family:var(--font-sf-pro)]">Requirements</div>
+                        <div className="self-stretch justify-start text-neutral-400 text-base leading-normal [font-family:var(--font-sf-pro)]">
+                          {requirements.map((req, i) => (
+                            <span key={i}>{req}{i < requirements.length - 1 ? <><br/></> : null}</span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Who can apply */}
+                    {(whoCanApply.length > 0) && (
+                      <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
+                        <div className="self-stretch justify-start text-white text-xl leading-loose [font-family:var(--font-sf-pro)]">Who can apply</div>
+                        <div className="self-stretch justify-start text-neutral-400 text-base leading-normal [font-family:var(--font-sf-pro)]">
+                          {whoCanApply.map((w, i) => (
+                            <span key={i}>{w}{i < whoCanApply.length - 1 ? <><br/></> : null}</span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </section>
-              )}
+                )}
+              </div>
 
-              {/* Perks */}
-              {job.perks && job.perks.length > 0 && (
-                <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white">Perks</h3>
-                  <ul className="space-y-4">
-                    {job.perks.map((perk, index) => (
-                      <li key={index} className="flex items-start gap-4 text-gray-300">
-                        <span className="text-cyan-400 mt-2 text-lg">•</span>
-                        <span className="text-lg leading-relaxed">{perk}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              )}
+              {/* Right Column */}
+              <div className="w-[570px] h-[895px] border-l border-white/10 inline-flex flex-col justify-center items-center">
+                <div className="self-stretch pl-14 pr-20 py-14 flex flex-col justify-start items-start gap-10">
+                  {/* Meta chips */}
+                  <div className="self-stretch inline-flex justify-start items-start gap-5 flex-wrap content-start">
+                    {job.location && (
+                      <div className="px-2.5 py-[5px] bg-white/5 rounded-lg flex justify-center items-center gap-1.5">
+                        <Image src="/icons/mdi_location.svg" alt="Location" width={25} height={25} />
+                        <div className="justify-start text-white/50 text-sm [font-family:var(--font-sf-pro)]">{job.location}</div>
+                      </div>
+                    )}
+                    {job.salary_range && (
+                      <div className="px-2.5 py-[5px] bg-white/5 rounded-lg flex justify-center items-center gap-1.5">
+                        <Image src="/icons/tdesign_money-filled.svg" alt="Salary" width={25} height={25} />
+                        <div className="justify-start text-white/50 text-sm [font-family:var(--font-sf-pro)]">{job.salary_range}{job.salary_range && !job.salary_range.includes('/month') ? '/month' : ''}</div>
+                      </div>
+                    )}
+                    {job.type && (
+                      <div className="px-2.5 py-[5px] bg-white/5 rounded-lg flex justify-center items-center gap-1.5">
+                        <Image src="/icons/Group.svg" alt="Type" width={21} height={23} />
+                        <div className="justify-start text-white/50 text-sm [font-family:var(--font-sf-pro)]">{job.type}{job.duration ? ` (${job.duration})` : ''}</div>
+                      </div>
+                    )}
+                    <div className="px-2.5 py-[5px] bg-white/5 rounded-lg flex justify-center items-center gap-1.5">
+                      <Image src="/icons/material-symbols_group.svg" alt="Openings" width={25} height={25} />
+                      <div className="justify-start text-white/50 text-sm [font-family:var(--font-sf-pro)]">{job.openings} Opening{job.openings > 1 ? 's' : ''}</div>
+                    </div>
+                  </div>
 
-              {/* Additional Info */}
-              {job.additional_info && (
-                <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white">Additional Information</h3>
-                  <p className="text-lg text-gray-300 leading-relaxed">{job.additional_info}</p>
-                </section>
-              )}
+                  {/* Skills */}
+                  {(job.skills_required && job.skills_required.length > 0) && (
+                    <div className="self-stretch flex flex-col justify-start items-start gap-3.5">
+                      <div className="self-stretch justify-start text-white text-xl leading-loose [font-family:var(--font-sf-pro)]">Skills required</div>
+                      <div className="self-stretch inline-flex justify-start items-start gap-2.5 flex-wrap content-start">
+                        {job.skills_required.map((s, i) => (
+                          <div key={i} className="px-2.5 py-[5px] bg-white/5 rounded-md flex justify-center items-center gap-2.5">
+                            <div className="justify-start text-blue-400 text-2xl [font-family:var(--font-sf-pro)]">{s}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Perks and Additional Info */}
+                <div className="self-stretch flex-1 pl-14 pr-20 flex flex-col justify-start items-start gap-6">
+                  {(perks.length > 0) && (
+                    <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
+                      <div className="self-stretch justify-start text-white text-xl leading-loose [font-family:var(--font-sf-pro)]">Perks</div>
+                      <div className="self-stretch justify-start text-neutral-400 text-base leading-normal [font-family:var(--font-sf-pro)]">
+                        {perks.map((p, i) => (
+                          <span key={i}>{p}{i < perks.length - 1 ? <><br/></> : null}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {job.additional_info && (
+                    <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
+                      <div className="self-stretch justify-start text-white text-xl leading-loose [font-family:var(--font-sf-pro)]">Additional Information</div>
+                      <div className="self-stretch justify-start text-neutral-400 text-base leading-normal [font-family:var(--font-sf-pro)]">{job.additional_info}</div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Apply CTA */}
+            <div className="self-stretch flex flex-col justify-center items-center gap-2.5">
+              <a href="#apply" className="px-7 py-4 bg-white rounded-xl inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-black text-sm [font-family:var(--font-sf-pro)]">Apply</div>
+                <Image src="/icons/arrow_up_right.svg" alt="Arrow up right" width={20} height={20} />
+              </a>
             </div>
           </div>
 
-          {/* Client-side Application Form */}
-          <Suspense fallback={<div className="text-center py-8 text-gray-300">Loading application form...</div>}>
-            <JobDetailClient jobSlug={job.slug} jobTitle={job.title} />
-          </Suspense>
-        </article>
+          {/* Top nav preview removed; global Navbar handles navigation */}
+        </div>
+      </main>
+
+      {/* Application form anchor */}
+      <div id="apply" className="max-w-5xl mx-auto w-full px-6 -mt-16">
+        <Suspense fallback={<div className="text-center py-8 text-gray-300">Loading application form...</div>}>
+          <JobDetailClient jobSlug={job.slug} jobTitle={job.title} autoOpenFromHash noSectionChrome />
+        </Suspense>
       </div>
-    </main>
-    <Footer />
+
+      <Footer />
     </>
   );
 }
