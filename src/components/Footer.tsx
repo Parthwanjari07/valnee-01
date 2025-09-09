@@ -176,13 +176,13 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/105150302"
                   className="text-gray-300 hover:text-blue-300 transition-colors text-sm"
                 >
                   LinkedIn
                 </a>
               </li>
-            </ul>
+            </ul>  
           </div>
         </div>
 
