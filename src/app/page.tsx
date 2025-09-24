@@ -1,6 +1,6 @@
 // src/app/page.tsx
 import AIToolsSection from "@/components/AIToolsSection";
-import Contact from "@/components/Contact";
+import Services from "@/components/services";
 import FlowDiagramSection from "@/components/FlowDiagramSection";
 import Footer from "@/components/Footer";
 import GridSection from "@/components/GridSection";
@@ -16,8 +16,8 @@ export default function HomePage() {
       <FlowDiagramSection/>
       <AIToolsSection />
       <GridSection />
+      <Services />
       <Testimonials />
-      <Contact />
       <Footer />
     </main>
   );

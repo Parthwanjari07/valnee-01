@@ -29,7 +29,7 @@ export default function Hero() {
       </div>
 
       {/* Sparkles */}
-      <div className="absolute w-full inset-0 h-1/3 z-10 pointer-events-none">
+      {/* <div className="absolute w-full inset-0 h-1/3 z-10 pointer-events-none">
         <Image
           src="/images/sparkles.png"
           alt="sparkles"
@@ -37,7 +37,7 @@ export default function Hero() {
           className="object-cover object-top"
           priority
         />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-around text-white z-20">
