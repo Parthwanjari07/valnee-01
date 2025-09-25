@@ -67,7 +67,7 @@ const Navbar = () => {
               Careers
             </Link>
             <Link
-              href="/#contact"
+              href="/contact"
               className="flex items-center h-full px-2 text-white font-medium hover:text-blue-300 hover:scale-105 transition-all duration-200"
             >
               Contact

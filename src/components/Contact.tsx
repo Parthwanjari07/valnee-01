@@ -31,15 +31,15 @@ export default function Contact() {
   return (
     <section
         id="contact"
-        className="relative w-full bg-[#00020D] py-24"
+        className="relative w-full py-24 bg-[url('/images/contact_bg.png')] bg-cover bg-center bg-no-repeat bg-blend-overlay"
     >
 
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#00020D] via-[#00020D]/80 to-transparent pointer-events-none"></div>
+        {/* <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#00020D] via-[#00020D]/80 to-transparent pointer-events-none"></div> */}
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-            <h1 className="text-2xl md:text-3xl font-[var(--font-sf-pro)] bg-gradient-to-b from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight mb-6">
-            Get in Touch
+            <h1 className="text-5xl md:text-6xl font-[var(--font-sf-pro)] bg-gradient-to-b from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight mb-6">
+            Let&apos;s Talk  Let&apos;s Build
             </h1>
             <p className="text-gray-300 max-w-2xl mx-auto text-lg">
             Ready to transform your ideas into reality? Contact us for innovative
@@ -47,20 +47,20 @@ export default function Contact() {
             </p>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-10">
+        <div className="grid md:grid-cols-5 gap-12">
             {/* Left side - Contact details */}
-            <div className="md:col-span-2 bg-[#00102A]/30 backdrop-blur-sm border border-white/10 p-8 rounded-3xl shadow-lg">
-            <h3 className="text-xl text-white font-light mb-8">
+            <div className="md:col-span-2 bg-[#00102A]/30 backdrop-blur-sm border border-white/10 p-10 rounded-3xl shadow-lg">
+            <h3 className="text-xl text-white font-light mb-10">
                 Contact Information
             </h3>
 
-            <div className="space-y-8">
+            <div className="space-y-10">
                 <div className="flex items-start group">
-                <div className="bg-blue-600/20 group-hover:bg-blue-600/30 p-4 rounded-xl mr-4 transition-all">
+                <div className="bg-blue-600/20 group-hover:bg-blue-600/30 p-4 rounded-xl mr-5 transition-all">
                     <Mail className="text-blue-300 w-5 h-5" />
                 </div>
                 <div>
-                    <p className="text-gray-400 text-sm">Email</p>
+                    <p className="text-gray-400 text-sm mb-1">Email</p>
                     <p className="text-white text-lg font-medium">
                     contact@valnee.com
                     </p>
@@ -68,11 +68,11 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start group">
-                <div className="bg-blue-600/20 group-hover:bg-blue-600/30 p-4 rounded-xl mr-4 transition-all">
+                <div className="bg-blue-600/20 group-hover:bg-blue-600/30 p-4 rounded-xl mr-5 transition-all">
                     <MessageSquare className="text-blue-300 w-5 h-5" />
                 </div>
                 <div>
-                    <p className="text-gray-400 text-sm">Live Chat</p>
+                    <p className="text-gray-400 text-sm mb-1">Live Chat</p>
                     <p className="text-white text-lg font-medium">
                     Available Mon-Fri, 9AM-5PM
                     </p>
@@ -97,27 +97,27 @@ export default function Contact() {
             </div>
 
             {/* Right side - Contact form */}
-            <div className="md:col-span-3 bg-[#00102A]/30 backdrop-blur-sm border border-white/10 p-8 rounded-3xl shadow-lg">
-            <h3 className="text-xl text-white font-light mb-8">
+            <div className="md:col-span-3 bg-[#00102A]/30 backdrop-blur-sm border border-white/10 p-10 rounded-3xl shadow-lg">
+            <h3 className="text-xl text-white font-light mb-10">
                 Send us a Message
             </h3>
 
-            <form onSubmit={onSubmit} className="space-y-7">
+            <form onSubmit={onSubmit} className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                     <User className="text-gray-400 w-5 h-5" />
                     </div>
                     <input
                     name="name"
                     required
                     placeholder="Your Name"
-                    className="w-full bg-[#00102A]/50 text-white border border-white/10 rounded-xl py-3 pl-11 pr-4 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full bg-[#00102A]/50 text-white border border-white/10 rounded-xl py-4 pl-12 pr-5 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     />
                 </div>
 
                 <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                     <Mail className="text-gray-400 w-5 h-5" />
                     </div>
                     <input
@@ -125,28 +125,28 @@ export default function Contact() {
                     type="email"
                     required
                     placeholder="Your Email"
-                    className="w-full bg-[#00102A]/50 text-white border border-white/10 rounded-xl py-3 pl-11 pr-4 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full bg-[#00102A]/50 text-white border border-white/10 rounded-xl py-4 pl-12 pr-5 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     />
                 </div>
                 </div>
 
                 <div className="relative">
-                <div className="absolute top-3 left-3 pointer-events-none">
+                <div className="absolute top-4 left-4 pointer-events-none">
                     <MessageSquare className="text-gray-400 w-5 h-5" />
                 </div>
                 <textarea
                     name="message"
-                    rows={5}
+                    rows={6}
                     required
                     placeholder="Your Message"
-                    className="w-full bg-[#00102A]/50 text-white border border-white/10 rounded-xl py-3 pl-11 pr-4 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full bg-[#00102A]/50 text-white border border-white/10 rounded-xl py-4 pl-12 pr-5 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
                 ></textarea>
                 </div>
 
                 <div>
                 <button
                     type="submit"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-xl px-7 py-3 font-medium hover:from-blue-700 hover:to-blue-500 transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-500/30 hover:scale-[1.02]"
+                    className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-xl px-8 py-4 font-medium hover:from-blue-700 hover:to-blue-500 transition-all duration-200 shadow-lg shadow-blue-600/20 hover:shadow-blue-500/30 hover:scale-[1.02]"
                 >
                     <Send className="w-5 h-5" />
                     Send Message
