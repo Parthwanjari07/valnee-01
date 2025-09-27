@@ -234,3 +234,56 @@ export async function deleteJob(id: string): Promise<void> {
     throw new Error(`Failed to delete job: ${error.message}`)
   }
 }
+
+// 1. ADD BLOG TYPE DEFINITION
+export type Blog = {
+  id: string
+  created_at: string
+  imageStored: string
+  blogAboveTitle: string
+  blogTitle: string
+  blogDescription: string
+  slug: string
+  blogSlugTitle: string
+  blogSlugHeadings: string[]
+  blogSlugContent: string[]
+  blogSlugPublicationDate: string
+  blogSlugCategory: string
+  blogSlugReadingTime: string
+  blogSlugAuthorName: string
+  is_active: boolean
+}
+
+// 2. ADD FUNCTION TO GET ALL BLOGS
+export async function getAllBlogs(): Promise<Blog[]> {
+  const { data, error } = await supabase
+    .from('blogs') // Assuming your table is named 'blogs'
+    .select('*')
+    .eq('is_active', true)
+    .order('created_at', { ascending: false })
+
+  if (error) {
+    throw new Error(`Failed to fetch blogs: ${error.message}`)
+  }
+
+  return data || []
+}
+
+// 3. ADD FUNCTION TO GET A SINGLE BLOG BY ITS SLUG
+export async function getBlogBySlug(slug: string): Promise<Blog | null> {
+  const { data, error } = await supabase
+    .from('blogs') // Assuming your table is named 'blogs'
+    .select('*')
+    .eq('slug', slug)
+    .eq('is_active', true)
+    .single()
+
+  if (error) {
+    if (error.code === 'PGRST116') { // Code for "No rows found"
+      return null
+    }
+    throw new Error(`Failed to fetch blog by slug: ${error.message}`)
+  }
+
+  return data
+}
