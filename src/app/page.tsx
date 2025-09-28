@@ -7,6 +7,7 @@ import GridSection from "@/components/GridSection";
 import Hero from "@/components/Hero";
 import ProcessSlider from "@/components/ProcessSlider";
 import Testimonials from "@/components/Testimonials";
+import FaqSection from "@/components/FAQ";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <GridSection />
       <Services />
       <Testimonials />
+      <FaqSection/>
       <Footer />
     </main>
   );
