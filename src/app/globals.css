@@ -144,3 +144,15 @@ h1, h2, h3, h4, h5, h6 {
 .animate-fadeInLeft {
   animation: fadeInLeft 0.3s ease-out forwards;
 }
+
+.blogs-heading{
+  color: #FFF;
+
+text-shadow: 0 0 44px #006AFF;
+-webkit-text-stroke-width: 1.5px;
+-webkit-text-stroke-color: #006AFF;
+font-size: 64px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
