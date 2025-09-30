@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Footer from "@/components/Footer";
 import BlogSlugClient from "@/components/BlogSlugClient";
 import {getAllBlogs, getBlogBySlug} from "@/lib/supabase"
+import Image from "next/image";
 
 
 
@@ -11,9 +12,9 @@ import {getAllBlogs, getBlogBySlug} from "@/lib/supabase"
 export default async function BlogDetailPage({
 	params,
 }: {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }) {
-	const { slug } = params;
+	const { slug } = await params;
 
 	const blogData = await getBlogBySlug(slug);
 	const allBlogs = await getAllBlogs();
@@ -188,7 +189,7 @@ export default async function BlogDetailPage({
 
 	return (
 		<div className="relative min-h-screen">
-				<img className="absolute inset-0 h-full w-full z-[-100] bg-cover" src="/images/main-background.png" alt="background" />
+				<Image className="absolute inset-0 h-full w-full z-[-100] bg-cover" src="/images/main-background.png" alt="background" />
 			<main>
 				<BlogSlugClient blog={blogData} moreBlogs={moreBlogs} />
 			</main>

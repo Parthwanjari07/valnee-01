@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 type BlogCardProps = {
 	blogImage: string;
@@ -16,7 +17,6 @@ export default function BlogCard({
 	blogAboveTitle,
 	blogTitle,
 	blogDescription,
-	blogLink,
 	slug
 }: BlogCardProps) {
 	return (
@@ -28,7 +28,7 @@ export default function BlogCard({
 			}}>
 			{/* Card Header  */}
 			<div>
-				<img src={`${blogImage}`} alt="blog image" />
+				<Image src={`${blogImage}`} alt="blog image" />
 			</div>
 			{/* Card Body  */}
 			<div className="flex flex-col gap-2">

@@ -2,7 +2,8 @@
 "use client";
 
 import { useState } from "react";
-import { Minus, Info } from "lucide-react";
+import { Info, ChevronDown } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
 interface FaqItem {
@@ -129,20 +130,32 @@ export default function FaqSection() {
                     {faq.question}
                   </span>
                 </div>
-                <Minus className="w-4 h-4 text-blue-400" />
+                <motion.span
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  className="text-blue-400"
+                >
+                  <ChevronDown className="w-4 h-4" />
+                </motion.span>
               </button>
-              {openIndex === index && faq.answer && (
-                <div className="px-12 pb-4 text-gray-200 text-lg">
-                  {faq.answer}
-                </div>
-              )}
+              <AnimatePresence initial={false}>
+                {openIndex === index && faq.answer && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-12 pb-4 text-gray-200 text-lg">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
-        </div>
-        <div className="flex md:col-span-3 justify-center mt-8">
-          <button className="bg-white text-black px-6 py-2 rounded-md font-medium text-lg hover:bg-gray-200 transition">
-            Get connected
-          </button>
         </div>
       </div>
     </section>

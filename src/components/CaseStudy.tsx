@@ -79,7 +79,7 @@ function CaseStudy() {
                     <path
                       d="M25.6 12H14.4C13.0745 12 12 13.0745 12 14.4V25.6C12 26.9255 13.0745 28 14.4 28H25.6C26.9255 28 28 26.9255 28 25.6V14.4C28 13.0745 26.9255 12 25.6 12Z"
                       fill="url(#paint0_linear_2292_116741)"
-                      fill-opacity="0.24"
+                      fillOpacity="0.24"
                       stroke="white"
                     />
                     <path

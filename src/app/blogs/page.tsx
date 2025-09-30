@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer";
 import { getAllBlogs, type Blog } from "@/lib/supabase";
 import BlogsClient from "@/components/BlogsClient"; // Import the new client component
-import { notFound } from "next/navigation";
+import Image from "next/image";
 
 export default async function BlogsPage() {
 	let allBlogs: Blog[] = [];
@@ -60,10 +60,11 @@ export default async function BlogsPage() {
 	return (
 		<>
 			<section className="relative min-h-screen  overflow-hidden">
-				<img
+				<Image
 					className="absolute inset-0 h-full w-full z-[-100] bg-cover"
 					src="/images/main-background.png"
 					alt="background img"
+					fill
 				/>
 				{/* Static Background Elements */}
 				<div
@@ -91,7 +92,7 @@ export default async function BlogsPage() {
 							Dive deep into the AI universe with our collection of
 							insightful podcasts. Explore the latest trends,
 							breakthroughs, and discussions on artificial intelligence.
-							Whether you're an enthusiast or a professional, our AI
+							Whether you&apos;re an enthusiast or a professional, our AI
 							podcasts offer a gateway to knowledge and innovation.
 						</p>
 					</header>

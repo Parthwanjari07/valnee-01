@@ -64,7 +64,7 @@ export default function ProcessSlider() {
   };
 
   return (
-    <section className="relative w-full py-10 bg-[#00091A]">
+    <section className="relative w-full py-10">
       <div className="relative max-w-6xl mx-auto px-4">
         {/* Bento Card */}
         <div className="relative rounded-3xl border border-white/20 shadow-[0_0_20px_rgba(0,255,255,0.2)] backdrop-blur-md overflow-hidden min-h-[88vh] md:min-h-[84vh] sm:min-h-[70vh]">

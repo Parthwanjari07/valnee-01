@@ -7,10 +7,12 @@ export const FlipWords = ({
   words,
   duration = 3000,
   className,
+  textClassName,
 }: {
   words: string[];
   duration?: number;
   className?: string;
+  textClassName?: string;
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
@@ -58,7 +60,7 @@ export const FlipWords = ({
           position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+          "z-10 inline-block relative text-left px-2",
           className
         )}
         key={currentWord}
@@ -84,12 +86,12 @@ export const FlipWords = ({
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
                   duration: 0.2,
                 }}
-                className="inline-block"
+                className={cn("inline-block", textClassName)}
               >
                 {letter}
               </motion.span>
             ))}
-            <span className="inline-block">&nbsp;</span>
+            <span className={cn("inline-block", textClassName)}>&nbsp;</span>
           </motion.span>
         ))}
       </motion.div>
