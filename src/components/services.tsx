@@ -85,12 +85,7 @@ const serviceSections: ServiceSection[] = [
 
 export default function Services() {
   return (
-    <section className="relative w-full bg-[#00020D] py-32 text-white">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-24 -right-40 h-[420px] w-[420px] rounded-full bg-blue-500/40 blur-[180px]" />
-        <div className="absolute -bottom-32 -left-24 h-[360px] w-[360px] rounded-full bg-indigo-500/40 blur-[180px]" />
-      </div>
-
+    <section className="relative w-full py-32 text-white">
       <div className="relative mx-auto flex max-w-[1400px] flex-col gap-20 px-6 md:px-10 lg:px-12">
         <header className="flex flex-col items-start gap-6">
           <span className="text-5xl inline-flex bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-400 bg-clip-text font-semibold uppercase tracking-[0.4em] text-transparent">
@@ -105,14 +100,11 @@ export default function Services() {
           return (
             <article
               key={service.id}
-              className={`relative flex flex-col gap-14 py-6 md:py-10 lg:items-center lg:gap-32 ${
-                isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
-              }`}
-            >
-              {service.gradients?.map((gradient, index) => (
-                <div key={index} className={gradient} />
-              ))}
-              <div className={`relative z-10 flex-1 ${service.contentSpacing ?? ""}`}>
+            className={`relative flex flex-col gap-14 py-6 md:py-10 lg:items-center lg:gap-32 ${
+              isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
+            }`}
+          >
+            <div className={`relative z-10 flex-1 ${service.contentSpacing ?? ""}`}>
                 <div className="relative mt-8">
                   {service.backgroundImage ? (
                     <div className="pointer-events-none absolute -top-16 -left-10 hidden h-[18rem] w-[18rem] select-none opacity-40 mix-blend-screen md:block">

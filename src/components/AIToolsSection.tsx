@@ -9,7 +9,7 @@ import "reactflow/dist/style.css";
 export default function AIToolsSection() {
 
   return (
-    <section className="relative w-full bg-[#00020D] text-white py-20">
+    <section className="relative w-full text-white py-20">
       <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center justify-between">
         {/* Left Text Column */}
         <div className="w-full lg:w-1/2 relative min-h-[500px] rounded-md cursor-default bg-cover bg-center" style={{ backgroundImage: "url(/images/aitoolsbg.png)" }}>

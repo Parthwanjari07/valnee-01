@@ -41,9 +41,15 @@ export default function RootLayout({
         data-website-id="663753ac-dc44-4cd9-81d6-5b2a2b691b40"
       />
       <body
-        className={`${calSans.variable} ${sfPro.variable} font-sans antialiased overflow-x-hidden bg-[#00091A]`}
+        className={`${calSans.variable} ${sfPro.variable} font-sans antialiased overflow-x-hidden`}
+        style={{
+          backgroundImage: "url('/images/homebg.png')",
+          backgroundSize: "100% auto",
+          backgroundPosition: "top center",
+          backgroundRepeat: "no-repeat",
+        }}
       >
-        {/* <DisableZoom /> */}
+        <DisableZoom />
         <Navbar />
         {children}
       </body>

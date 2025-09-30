@@ -67,14 +67,14 @@ const Navbar = () => {
               Careers
             </Link>
             <Link
-              href="/contact"
+              href="/blogs"
               className="flex items-center h-full px-2 text-white font-medium hover:text-blue-300 hover:scale-105 transition-all duration-200"
             >
-              Contact
+              Blogs
             </Link>
           </div>
         </div>
-        <button onClick={handleBookCall} className="ml-4 bg-white hidden md:flex text-black rounded-md px-6 py-2 font-semibold hover:bg-blue-300 hover:text-white hover:scale-105 transition-all duration-200 shadow-md">
+        <button onClick={handleBookCall} className="ml-4 bg-white hidden md:flex text-black rounded-md px-6 py-2 font-semibold hover:bg-blue-700 hover:text-white hover:scale-105 transition-all duration-200 shadow-md">
             Book a call
         </button>
 

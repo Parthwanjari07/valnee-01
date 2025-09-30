@@ -64,7 +64,7 @@ export default function ProcessSlider() {
   };
 
   return (
-    <section className="relative w-full py-10 bg-[#00091A]">
+    <section className="relative w-full py-10">
       <div className="relative max-w-6xl mx-auto px-4">
         {/* Bento Card */}
         <div className="relative rounded-3xl border border-white/20 shadow-[0_0_20px_rgba(0,255,255,0.2)] backdrop-blur-md overflow-hidden min-h-[88vh] md:min-h-[84vh] sm:min-h-[70vh]">
@@ -140,7 +140,7 @@ export default function ProcessSlider() {
             </div>
 
             {/* Arrows (normal behavior: left goes left, right goes right) */}
-            <div className="flex justify-between w-full mt-6">
+            <div className="flex justify-between w-fu   ll mt-6">
               <button
                 onClick={goPrev}
                 className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 border border-white/30 text-white hover:bg-white/20"

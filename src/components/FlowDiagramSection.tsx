@@ -54,7 +54,7 @@ export default function FlowDiagramSection() {
   const [edges] = useEdgesState(initialEdges);
 
   return (
-    <section className="relative w-full bg-[#00020D] text-white py-20">
+    <section className="relative w-full text-white py-20">
       <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center justify-between">
         {/* Left Text Column */}
         <div className="lg:w-[37%] w-full">
