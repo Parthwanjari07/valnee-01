@@ -2,64 +2,25 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-interface Author {
-  name: string;
-  image: string;
-}
-
-interface Tag {
-  id: string;
-  name: string;
-}
-
-interface Post {
-  id: string;
-  title: string;
-  image: string;
-  description: string;
-  slug: string;
-  authorId: string;
-  teamId: string;
-  createdAt: string;
-  updatedAt: string;
-  published: boolean;
-  author: Author;
-  tags: Tag[];
-}
-
-interface PostsResponse {
-  posts: Post[];
-  pagination: {
-    page: number;
-    limit: number;
-    totalPages: number;
-    totalPosts: number;
-    nextPage: number;
-    prevPage: number | null;
-  };
-}
+import { getAllCaseStudies, CaseStudy as CaseStudyType } from "@/lib/supabase";
 
 function CaseStudy() {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [caseStudies, setCaseStudies] = useState<CaseStudyType[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchCaseStudies = async () => {
       try {
-        const response = await fetch(
-          "https://www.wisp.blog/api/v1/483de279-bd8c-4659-9b67-3be5fcc912fa/posts?page=1&limit=10"
-        );
-        const result: PostsResponse = await response.json();
-        setPosts(result.posts);
+        const data = await getAllCaseStudies();
+        setCaseStudies(data);
       } catch (error) {
-        console.error("Error fetching posts:", error);
+        console.error("Error fetching case studies:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchPosts();
+    fetchCaseStudies();
   }, []);
 
   if (loading) {
@@ -104,18 +65,18 @@ function CaseStudy() {
 
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {caseStudies.map((caseStudy) => (
             <Link
-              key={post.id}
-              href={`/casestudies/${post.slug}`}
+              key={caseStudy.id}
+              href={`/casestudies/${caseStudy.slug}`}
               className="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2"
             >
               {/* Image */}
-              {post.image && (
+              {caseStudy.image && (
                 <div className="relative h-56 overflow-hidden">
                   <Image
-                    src={post.image}
-                    alt={post.title}
+                    src={caseStudy.image}
+                    alt={caseStudy.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -126,7 +87,7 @@ function CaseStudy() {
               {/* Content */}
               <div className="p-6 space-y-4">
                 {/* Tag */}
-                {post.tags.length > 0 && (
+                {caseStudy.tags && caseStudy.tags.length > 0 && (
                   <div className="flex items-center gap-2">
                     <svg
                       width="14"
@@ -141,35 +102,35 @@ function CaseStudy() {
                       />
                     </svg>
                     <span className="text-blue-400 text-sm font-medium uppercase tracking-wide">
-                      {post.tags[0].name}
+                      {caseStudy.category || caseStudy.tags[0]}
                     </span>
                   </div>
                 )}
 
                 {/* Title */}
                 <h2 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors line-clamp-2">
-                  {post.title}
+                  {caseStudy.title}
                 </h2>
 
                 {/* Description */}
                 <p className="text-gray-400 line-clamp-3 leading-relaxed">
-                  {post.description}
+                  {caseStudy.description}
                 </p>
 
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-4 border-t border-white/10">
                   <div className="flex items-center gap-3">
-                    {post.author.image && (
+                    {caseStudy.author_image && (
                       <div className="w-8 h-8 rounded-full relative overflow-hidden">
                         <Image
-                          src={post.author.image}
-                          alt={post.author.name}
+                          src={caseStudy.author_image}
+                          alt={caseStudy.author_name}
                           fill
                           className="object-cover"
                         />
                       </div>
                     )}
-                    <span className="text-sm text-gray-400">{post.author.name}</span>
+                    <span className="text-sm text-gray-400">{caseStudy.author_name}</span>
                   </div>
                   <span className="text-blue-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
                     Read more →

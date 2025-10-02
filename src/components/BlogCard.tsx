@@ -28,7 +28,7 @@ export default function BlogCard({
 			}}>
 			{/* Card Header  */}
 			<div>
-				<Image src={`${blogImage}`} alt="blog image" />
+				<Image src={`${blogImage}`} alt="blog image" width={500} height={300} />
 			</div>
 			{/* Card Body  */}
 			<div className="flex flex-col gap-2">
