@@ -7,7 +7,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import TextGibberishBackground from "./TextGibberishBackground";
 
 const testimonials = [
   {
@@ -34,7 +33,6 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  // Using unknown type instead of any to satisfy linting rules
   const splideRef = useRef<{ go: (direction: string) => void } | null>(null);
 
   const goNext = () => {
@@ -48,163 +46,110 @@ export default function Testimonials() {
       splideRef.current.go('-1');
     }
   };
+
   return (
     <>
-    <section className="relative w-full bg-gradient-to-b to-[#00091A] from-[#00020D]">
-    <div className="max-w-7xl mx-auto px-4 pt-20 z-20">
-      <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-[var(--font-sf-pro)] bg-gradient-to-b from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
-        Valnee Builds Future-Ready Tech That Solves Real<br />
-        Problems and Drives Business Forward.
-      </h1>
-    </div>
-    </section>
-    <section className="relative w-full py-20 bg-[#00091A]">
-      {/* Background image */}
-      <div className="absolute inset-0 top-0 z-10 w-screen pointer-events-none">
-        {/* Full-height background */}
-
-        <Image
-          src="/images/testimonialsMask.png"
-          alt="Background pattern"
-          fill
-          className="object-cover object-center opacity-10"
-          style={{ objectFit: "cover", width: "100%" }}
-        />
-        <Image
-          src="/images/testimonialsBg.png"
-          alt="Background pattern"
-          fill
-          className="object-cover object-center"
-          style={{ objectFit: "cover", width: "100%" }}
-        />
-
-        {/* Short overlay background */}
-        <div className="absolute top-0 left-0 w-full">
-          <Image
-            src="/images/testimonialsHeaderBg.png"
-            alt="Header overlay"
-            width={1445}
-            height={446}
-            className="w-full h-auto object-cover"
-            priority
-          />
+      <section className="relative w-full bg-gradient-to-b to-[#00091A] from-[#00020D]">
+        <div className="max-w-7xl mx-auto px-4 pt-20 z-20">
+          <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-[var(--font-sf-pro)] bg-gradient-to-b from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
+            Valnee Builds Future-Ready Tech That Solves Real<br />
+            Problems and Drives Business Forward.
+          </h1>
         </div>
-      </div>
-            
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#00020D] via-[#00020D]/80 to-transparent pointer-events-none"></div>
+      </section>
 
-      <div className="max-w-7xl mx-auto mt-10 lg:mt-50 px-4 relative z-10">
-        <div className="relative">
-          <Splide
-            ref={splideRef}
-            options={{
-              type: "loop",
-              perPage: 3,
-              gap: "1.5rem",
-              arrows: false,
-              pagination: false,
-              breakpoints: {
-                1024: { perPage: 2 },
-                640: { perPage: 1 },
-              },
-            }}
-            className="z-20"
-          >
-            {testimonials.map((t, i) => (
-              <SplideSlide key={i}>
-                <div
-                className="relative rounded-2xl p-8 min-h-[420px] h-[520px] flex flex-col 
-                bg-[#00102A]/20 border border-[#ffffff]/40
-                shadow-[inset_0_3px_5px_rgba(255,255,255,0.3)] backdrop-blur-sm
-                transition-all duration-300"
-                style={{ 
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between' 
-                }}
-                >
-                {/* Faint textGibberish background */}
-                <div className="z-0">
-                  <TextGibberishBackground />
-                </div>
+      <section className="relative w-full py-20 bg-[#00091A]">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Cool Stuff With
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto"></div>
+          </div>
 
-                {/* Testimonial SVG Badge instead of text */}
-                <div className="absolute top-6 left-6 z-10">
-                  <Image
-                    src="/images/testimonial.svg"
-                    alt="Testimonial"
-                    width={150}
-                    height={48}
-                    className="opacity-90"
-                  />
-                </div>
+          {/* Testimonials Grid */}
+          <div className="relative">
+            <Splide
+              ref={splideRef}
+              options={{
+                type: "loop",
+                perPage: 2,
+                gap: "2rem",
+                arrows: false,
+                pagination: false,
+                breakpoints: {
+                  1024: { perPage: 2 },
+                  768: { perPage: 1 },
+                },
+              }}
+              className="z-20"
+            >
+              {testimonials.map((t, i) => (
+                <SplideSlide key={i}>
+                  <div className="bg-[#0A1628]/60 backdrop-blur-sm rounded-2xl p-8 border border-blue-900/30 hover:border-blue-700/50 transition-all duration-300 min-h-[320px]">
+                    {/* Profile section at top */}
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="relative flex-shrink-0">
+                        <Image
+                          src={t.avatar}
+                          alt={t.name}
+                          width={64}
+                          height={64}
+                          className="rounded-full"
+                        />
+                        {/* Verified badge */}
+                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center border-2 border-[#00091A]">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                      </div>
+                      
+                      <div className="flex-1">
+                        <h3 className="text-white font-semibold text-lg mb-1">
+                          {t.name}
+                        </h3>
+                        <p className="text-gray-400 text-sm">
+                          {t.title} @ {t.company}
+                        </p>
+                      </div>
+                    </div>
 
-                {/* Content */}
-                <div className="relative z-10 mt-20 mb-auto">
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {t.text}
-                  </p>
-                </div>
+                    {/* Additional info */}
+                    <p className="text-gray-500 text-xs mb-4 border-b border-gray-800 pb-4">
+                      Previously Co-Founder and CEO • Speaker • Community Builder
+                    </p>
 
-                {/* Semi-circle background - full width at bottom */}
-                <div className="absolute bottom-0 left-0 w-full z-10">
-                  <Image
-                    src="/images/semicircle.svg"
-                    alt="background decoration"
-                    width={1000}
-                    height={100}
-                    className="w-full h-auto object-cover opacity-100"
-                    style={{ 
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      objectPosition: 'bottom center'
-                    }}
-                  />
-                </div>
-
-                {/* Profile section */}
-                <div className="relative z-10 flex flex-col items-center mt-auto mb-24">
-                  <div className="bg-gray-700/70 rounded-lg p-3 mb-3 z-20 backdrop-blur-sm border border-gray-600/30">
-                    <Image
-                      src={t.avatar}
-                      alt={t.name}
-                      width={48}
-                      height={48}
-                      className="opacity-100"
-                    />
+                    {/* Testimonial text */}
+                    <p className="text-gray-300 leading-relaxed text-sm">
+                      {t.text}
+                    </p>
                   </div>
-                  <p className="text-white font-semibold text-sm">{t.name}</p>
-                  <p className="text-gray-400 text-xs">
-                    {t.company}, {t.title}
-                  </p>
-                </div>
-              </div>
-            </SplideSlide>
-          ))}
-        </Splide>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
+
+          {/* Custom navigation arrows */}
+          <div className="flex gap-4 justify-center mt-12">
+            <button 
+              onClick={goPrev}
+              className="w-12 h-12 rounded-lg flex items-center justify-center text-white hover:bg-blue-900/30 transition-all bg-[#0A1628]/60 border border-blue-900/30 backdrop-blur-sm"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={goNext}
+              className="w-12 h-12 rounded-lg flex items-center justify-center text-white hover:bg-blue-900/30 transition-all bg-[#0A1628]/60 border border-blue-900/30 backdrop-blur-sm"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
         </div>
-        
-        {/* Custom navigation arrows */}
-        <div className="flex gap-4 justify-end mt-8">
-          <button 
-            onClick={goPrev}
-            className="w-12 h-12 rounded-sm flex items-center justify-center text-white hover:bg-[#00102A]/80 transition-all bg-[#00102A]/20 border border-[#ffffff]/40
-                shadow-[inset_0_1px_3px_rgba(255,255,255,0.3)] backdrop-blur-sm"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button 
-            onClick={goNext}
-            className="w-12 h-12 rounded-sm flex items-center justify-center text-white hover:bg-[#00102A]/80 transition-all bg-[#00102A]/20 border border-[#ffffff]/40
-                shadow-[inset_0_1px_3px_rgba(255,255,255,0.3)] backdrop-blur-sm"
-          >
-            <ChevronRight size={24} />
-          </button>
-        </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }
