@@ -1,5 +1,8 @@
 import CaseStudy from "@/components/CaseStudy";
 
-export default function ContactPage() {
-  return <CaseStudy/>;
+export default async function CaseStudiesPage() {
+
+	return (
+		<CaseStudy />
+	);
 } 

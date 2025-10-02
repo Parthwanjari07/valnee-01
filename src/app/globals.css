@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sf-pro), Arial, Helvetica, sans-serif;
 }
@@ -258,5 +262,121 @@ line-height: normal;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Case Study Content Typography - Matches Blog Styling */
+.case-study-content {
+  line-height: 1.75;
+  max-width: 100%;
+}
+
+.case-study-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.case-study-content h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.375;
+}
+
+.case-study-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.case-study-content p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  color: #98989A;
+}
+
+.case-study-content ul,
+.case-study-content ol {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1.625rem;
+  color: #98989A;
+}
+
+.case-study-content li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #98989A;
+}
+
+.case-study-content strong,
+.case-study-content b {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.case-study-content a {
+  color: #60A5FA;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.case-study-content a:hover {
+  color: #93C5FD;
+}
+
+.case-study-content code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  color: #FFFFFF;
+}
+
+.case-study-content pre {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.case-study-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #E5E7EB;
+}
+
+.case-study-content blockquote {
+  border-left: 4px solid #60A5FA;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: #D1D5DB;
+  font-style: italic;
+}
+
+@media (min-width: 640px) {
+  .case-study-content h1 {
+    font-size: 2.25rem;
+  }
+  
+  .case-study-content h2 {
+    font-size: 1.875rem;
+  }
+  
+  .case-study-content h3 {
+    font-size: 1.5rem;
   }
 }

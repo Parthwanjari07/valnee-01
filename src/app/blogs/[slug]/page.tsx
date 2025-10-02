@@ -189,7 +189,7 @@ export default async function BlogDetailPage({
 
 	return (
 		<div className="relative min-h-screen">
-				<Image className="absolute inset-0 h-full w-full z-[-100] bg-cover" src="/images/main-background.png" alt="background" />
+				<Image className="absolute inset-0 h-full w-full z-[-100] bg-cover" src="/images/main-background.png" alt="background" width={1920} height={1080} />
 			<main>
 				<BlogSlugClient blog={blogData} moreBlogs={moreBlogs} />
 			</main>
