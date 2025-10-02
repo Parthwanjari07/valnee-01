@@ -11,17 +11,17 @@ import TextGibberishBackground from "./TextGibberishBackground";
 
 const testimonials = [
   {
-    name: "Michael Rodriguez",
-    title: "CEO",
-    company: "Michlen&co.",
-    text: "As a startup founder, i needed a quick way to build a professional-looking product. this component library was exactly what i needed. the documentation is clear, and the components are production-ready",
+    name: "Vinay Israni",
+    title: "Student",
+    company: "Mumbai University",
+    text: "I had the opportunity to work with Parth, and he built an AI Resume Analyzer project for me. This project was a great help, and I was able to include it in my college portfolio. His support and technical skills made a big difference in completing my work successfully.",
     avatar: "/images/avatar.png",
   },
   {
-    name: "Sarah Johnson",
-    title: "CTO",
-    company: "TechNova",
-    text: "Great experience with the team. The delivery was smooth and the design exceeded expectations.",
+    name: "Anshika Agrawal",
+    title: "Executive Director",
+    company: "Sci-fi Systems and Solutions",
+    text: "The final landing page was professional, on-brand, and easy to use. We appreciated your patience, commitment, and willingness to refine the design until it matched our vision, and we'd recommend your services with confidence.",
     avatar: "/images/avatar.png",
   },
   {
