@@ -71,7 +71,7 @@ export default async function BlogsPage() {
 					className="absolute inset-0 z-0"
 					style={{
 						background:
-							"radial-gradient(circle at center, rgba(0, 29, 76, 0.2) 0%, transparent 60%);",
+							"radial-gradient(circle at center, rgba(0, 29, 76, 0.2) 0%, transparent 60%)",
 					}}
 				/>
 				<div className="pointer-events-none absolute inset-x-0 top-0 h-[720px] overflow-hidden">

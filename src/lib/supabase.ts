@@ -287,3 +287,55 @@ export async function getBlogBySlug(slug: string): Promise<Blog | null> {
 
   return data
 }
+
+// CASE STUDY TYPE DEFINITION
+export type CaseStudy = {
+  id: string
+  created_at: string
+  title: string
+  slug: string
+  description: string
+  image: string
+  content: string
+  author_name: string
+  author_image: string
+  tags: string[]
+  category: string
+  reading_time?: string
+  is_active: boolean
+  updated_at: string
+}
+
+// FUNCTION TO GET ALL CASE STUDIES
+export async function getAllCaseStudies(): Promise<CaseStudy[]> {
+  const { data, error } = await supabase
+    .from('case_studies')
+    .select('*')
+    .eq('is_active', true)
+    .order('created_at', { ascending: false })
+
+  if (error) {
+    throw new Error(`Failed to fetch case studies: ${error.message}`)
+  }
+
+  return data || []
+}
+
+// FUNCTION TO GET A SINGLE CASE STUDY BY ITS SLUG
+export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
+  const { data, error } = await supabase
+    .from('case_studies')
+    .select('*')
+    .eq('slug', slug)
+    .eq('is_active', true)
+    .single()
+
+  if (error) {
+    if (error.code === 'PGRST116') {
+      return null
+    }
+    throw new Error(`Failed to fetch case study by slug: ${error.message}`)
+  }
+
+  return data
+}
