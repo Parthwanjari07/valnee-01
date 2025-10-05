@@ -85,7 +85,7 @@ const serviceSections: ServiceSection[] = [
 
 export default function Services() {
   return (
-    <section className="relative w-full py-32 text-white">
+    <section className="relative w-full py-32 text-white" style={{ backgroundColor: '#00020d' }}>
       <div className="relative mx-auto flex max-w-[1400px] flex-col gap-20 px-6 md:px-10 lg:px-12">
         <header className="flex flex-col items-start gap-6">
           <span className="text-5xl inline-flex bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-400 bg-clip-text font-semibold uppercase tracking-[0.4em] text-transparent">

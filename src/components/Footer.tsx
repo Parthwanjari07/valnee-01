@@ -48,7 +48,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative w-full bg-transparent pt-16 pb-0 overflow-hidden font-[var(--font-sf-pro)] rounded-t-3xl md:rounded-t-[40px] border-t-2 border-l border-r border-white/30 border-b-0 shadow-[0_-4px_20px_rgba(59,130,246,0.15)]">
+    <footer className="relative w-full bg-transparent pt-16 pb-0 overflow-hidden font-[var(--font-sf-pro)] rounded-t-none border-t-2 border-l border-r border-white/30 border-b-0 shadow-[0_-4px_20px_rgba(59,130,246,0.15)]" style={{ backgroundColor: '#00020d' }}>
       {/* Background video (same as hero) */}
       
 
