@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "lenis/dist/lenis.css";
+
 
 @custom-variant dark (&:is(.dark *));
 
