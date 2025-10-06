@@ -11,12 +11,13 @@ import FaqSection from "@/components/FAQ";
 import CTASection from "@/components/cta";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import CardEffect from "@/components/CardEffect";
+import NewFooter from "@/components/NewFooter";
 
 export default function HomePage() {
   return (
     <main className="relative">
       <Hero />
-      <ProcessSlider />
+      {/* <ProcessSlider /> */}
       <WhyChooseUs/>
       <CardEffect/>
       <FlowDiagramSection/>
@@ -26,7 +27,8 @@ export default function HomePage() {
       <Testimonials />
       <FaqSection/>
       <CTASection />
-      <Footer />
+      {/* <Footer /> */}
+      < NewFooter/>
     </main>
   );
 }
