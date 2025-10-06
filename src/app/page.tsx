@@ -9,12 +9,16 @@ import ProcessSlider from "@/components/ProcessSlider";
 import Testimonials from "@/components/Testimonials";
 import FaqSection from "@/components/FAQ";
 import CTASection from "@/components/cta";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import CardEffect from "@/components/CardEffect";
 
 export default function HomePage() {
   return (
     <main className="relative">
       <Hero />
       <ProcessSlider />
+      <WhyChooseUs/>
+      <CardEffect/>
       <FlowDiagramSection/>
       <AIToolsSection />
       <GridSection />
