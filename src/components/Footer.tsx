@@ -145,16 +145,13 @@ export default function Footer() {
             <h4 className="text-white text-lg font-light mb-5">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/terms" className="text-gray-300 hover:text-blue-300 transition-colors text-sm">Terms of Services</Link>
+                <Link href="/terms-of-service" className="text-gray-300 hover:text-blue-300 transition-colors text-sm">Terms of Service</Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-300 hover:text-blue-300 transition-colors text-sm">Cookies Policy</Link>
+                <Link href="/privacy-policy" className="text-gray-300 hover:text-blue-300 transition-colors text-sm">Privacy Policy</Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-300 hover:text-blue-300 transition-colors text-sm">Affiliate Policy</Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-gray-300 hover:text-blue-300 transition-colors text-sm">Privacy Policy</Link>
+                <Link href="/refund-policy" className="text-gray-300 hover:text-blue-300 transition-colors text-sm">Refund Policy</Link>
               </li>
             </ul>
           </div>
@@ -211,9 +208,9 @@ export default function Footer() {
         <div className="pt-10 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-xs mb-4 md:mb-0">&copy; {currentYear} Valnee. All rights reserved.</p>
           <div className="flex items-center gap-4 text-gray-400 text-xs pb-10">
-            <Link href="/privacy" className="hover:text-blue-300">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-blue-300">Privacy Policy</Link>
             <span className="opacity-50">|</span>
-            <Link href="/terms" className="hover:text-blue-300">Terms of Services</Link>
+            <Link href="/terms-of-service" className="hover:text-blue-300">Terms of Service</Link>
           </div>
         </div>
       </div>
