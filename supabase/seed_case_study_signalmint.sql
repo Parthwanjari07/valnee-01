@@ -23,6 +23,11 @@ INSERT INTO case_studies (
 <p>Our job was to <strong>listen carefully, interpret their intent, and translate it into a working product.</strong></p>
 <p>And because time-to-market mattered, we set ourselves an ambitious goal: <strong>ship a functional MVP in less than 21 days.</strong></p>
 
+<div class="case-study-image-container">
+<img src="/casestudies/signalmint/homepage.png" alt="SignalMint Homepage" class="case-study-image" />
+<p class="case-study-image-caption">The SignalMint platform homepage - A clean, intuitive interface for marketing intelligence</p>
+</div>
+
 <h2>Shipping the MVP in 21 Days</h2>
 <p>Speed was key. We identified the <strong>core features</strong> that would deliver immediate value and prove the concept:</p>
 <ul>
@@ -35,10 +40,20 @@ INSERT INTO case_studies (
 <p>In just <strong>three weeks</strong>, we turned a plain-language wishlist into a working tool.</p>
 <p>The MVP wasn''t meant to be perfect — but it worked. For the client, who had never seen a technical product come to life before, this was transformative. They could now <strong>see their vision in action</strong> and validate it with real users.</p>
 
+<div class="case-study-image-container">
+<img src="/casestudies/signalmint/ad discovery.png" alt="Ad Discovery Feature" class="case-study-image" />
+<p class="case-study-image-caption">Ad Discovery - Browse competitor ads with advanced filtering and search</p>
+</div>
+
 <h2>The Cohort Test: Early Validation</h2>
 <p>After the MVP launched, the client ran a <strong>cohort test</strong>. They invited <strong>brands, marketers, sales executives, and other industry professionals</strong> to try the platform.</p>
 <p>The response was <strong>overwhelmingly positive</strong>. Marketers loved the competitor insights, brands appreciated the creative breakdowns, and sales teams found the data actionable.</p>
 <p>This early feedback was critical. It gave the client confidence that the idea wasn''t just good on paper — it resonated with real users. It also gave us clarity on which features to prioritize as we scaled.</p>
+
+<div class="case-study-image-container">
+<img src="/casestudies/signalmint/ad discovery analysis.png" alt="Ad Analysis Dashboard" class="case-study-image" />
+<p class="case-study-image-caption">Detailed ad analysis showing engagement metrics and creative insights</p>
+</div>
 
 <h2>Scaling Beyond the MVP</h2>
 <p>With validation in hand, we shifted gears to build a <strong>robust, full-featured platform</strong>. The client continued to describe their needs in simple, non-technical terms:</p>
@@ -53,12 +68,27 @@ INSERT INTO case_studies (
 <li><strong>AI Agent</strong> → Conversational tool for querying brand and competitor strategies.</li>
 <li><strong>Social Listening</strong> → Monitoring audience sentiment in real time.</li>
 </ul>
+
+<div class="case-study-image-container">
+<img src="/casestudies/signalmint/ad creative analysis.png" alt="Creative Analysis Feature" class="case-study-image" />
+<p class="case-study-image-caption">AI-powered creative analysis breaking down ad hooks, angles, and formats</p>
+</div>
+
+<div class="case-study-image-container">
+<img src="/casestudies/signalmint/chatbot.png" alt="AI Agent Chatbot" class="case-study-image" />
+<p class="case-study-image-caption">Conversational AI agent for querying brand strategies and insights</p>
+</div>
 <p>On the technical side, we also upgraded the backbone:</p>
 <ul>
 <li><strong>Celery with Priority Queues</strong> for reliable, large-scale scraping and analysis.</li>
 <li><strong>Supabase</strong> for a scalable, secure database and authentication system.</li>
 </ul>
 <p>The MVP gave us the blueprint. The scaled platform made it sustainable.</p>
+
+<div class="case-study-image-container">
+<img src="/casestudies/signalmint/landing page audit.png" alt="Landing Page Audit Tool" class="case-study-image" />
+<p class="case-study-image-caption">Automated landing page audit evaluating speed, UX, and conversion elements</p>
+</div>
 
 <h2>The Flow in Action</h2>
 <p>Here''s what happens behind the scenes when a user tracks a brand:</p>
@@ -69,6 +99,16 @@ INSERT INTO case_studies (
 <li>A periodic beat refreshes the database so insights stay up to date.</li>
 </ol>
 <p>For the user, the complexity is invisible. They type in a brand, and a <strong>living, dynamic intelligence hub</strong> appears.</p>
+
+<div class="case-study-image-container">
+<img src="/casestudies/signalmint/ad templates.png" alt="Ad Templates" class="case-study-image" />
+<p class="case-study-image-caption">AI-driven ad generation from customizable templates</p>
+</div>
+
+<div class="case-study-image-container">
+<img src="/casestudies/signalmint/ad customization.png" alt="Ad Customization Interface" class="case-study-image" />
+<p class="case-study-image-caption">Intuitive ad customization with real-time preview</p>
+</div>
 
 <h2>What Stayed on Their Side</h2>
 <p>While we handled the build, the client took care of <strong>legalities, compliance, and official documentation.</strong> This clean separation let both teams focus on what they did best.</p>

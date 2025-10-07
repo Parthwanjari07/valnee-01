@@ -9,6 +9,7 @@ interface GradientCTAButtonProps {
   secondaryLabel?: string;
   className?: string;
   size?: "sm" | "md" | "lg";
+  fullWidth?: boolean;
 }
 
 export function GradientCTAButton({
@@ -17,6 +18,7 @@ export function GradientCTAButton({
   secondaryLabel,
   className,
   size = "md",
+  fullWidth = false,
 }: GradientCTAButtonProps) {
   const sizeStyles = {
     sm: {
@@ -26,10 +28,10 @@ export function GradientCTAButton({
       arrow: "ml-4 h-9 w-9",
     },
     md: {
-      padding: "px-10 py-3.5",
+      padding: "px-8 py-2.5 sm:px-10 sm:py-3.5",
       gap: "gap-4",
       text: "text-base",
-      arrow: "ml-5 h-10 w-10",
+      arrow: "ml-4 h-10 w-10 sm:ml-5",
     },
     lg: {
       padding: "px-12 py-4",
@@ -43,7 +45,9 @@ export function GradientCTAButton({
     <a
       href={href}
       className={cn(
-        "group relative inline-flex items-center justify-center overflow-hidden rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/40",
+        "group relative overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/40",
+        fullWidth ? "flex w-full" : "inline-flex",
+        "items-center justify-center",
         className,
       )}
     >
@@ -52,7 +56,8 @@ export function GradientCTAButton({
       <span className="pointer-events-none absolute -inset-5 z-0 rounded-3xl bg-[radial-gradient(circle_at_30%_20%,rgba(15,23,42,0.28),transparent_70%)] opacity-0 blur-[90px] transition-opacity duration-700 group-hover:opacity-80" />
       <span
         className={cn(
-          "relative z-20 inline-flex items-center rounded-2xl bg-white font-semibold text-slate-900 shadow-[0_18px_45px_rgba(15,23,42,0.25)] transition-all duration-500 group-hover:scale-[1.04] group-hover:shadow-[0_26px_70px_rgba(15,23,42,0.28)]",
+          "relative z-20 items-center rounded-2xl bg-white font-semibold text-slate-900 shadow-[0_18px_45px_rgba(15,23,42,0.25)] transition-all duration-500 group-hover:scale-[1.04] group-hover:shadow-[0_26px_70px_rgba(15,23,42,0.28)]",
+          fullWidth ? "flex w-full justify-center" : "inline-flex",
           sizeStyles[size].padding,
           sizeStyles[size].gap,
           sizeStyles[size].text,
