@@ -85,7 +85,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="bg-[url('/images/footer-wave.png')] bg-bottom bg-no-repeat lg:bg-cover mx-auto text-white px-6 lg:px-48 lg:pl-56 pt-24">
+        <div className="mx-auto text-white px-6 lg:px-48 lg:pl-56 pt-24">
           {/* Section 2: Footer Links */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 mb-60">
             {/* Column 1: Brand Info */}
@@ -140,7 +140,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/contact"
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     Contact Us
@@ -155,7 +155,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    href="#"
+                    href="/terms-of-service"
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     Terms of Services
@@ -163,7 +163,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/cookies-policy"
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     Cookies Policy
@@ -171,7 +171,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/affiliate-policy"
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     Affiliate Policy
@@ -179,7 +179,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/privacy-policy"
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     Privacy Policy
@@ -229,13 +229,13 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6">
               <Link
-                href="#"
+                href="/privacy-policy"
                 className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="#"
+                href="/terms-of-service"
                 className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
               >
                 Terms of Services

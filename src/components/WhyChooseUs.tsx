@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import PartnerYouNeed from "./PartnerYouNeed";
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative w-full bg-[#000718] text-white px-4 sm:px-6 md:px-12 lg:px-20 py-20 min-h-screen flex justify-center items-center overflow-hidden">
+    <section className="relative w-full bg-[#000718] text-white px-4 sm:px-6 md:px-12 lg:px-20 py-20 min-h-screen  overflow-hidden">
+        <PartnerYouNeed/>
+      <div className="flex justify-center items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-40 items-center">
         <div className="relative flex justify-center items-center mt-10 lg:mt-0 order-1 lg:order-2">
           <div className="relative w-[260px] h-[260px] sm:w-[400px] sm:h-[400px] md:w-[520px] md:h-[520px] lg:w-[680px] lg:h-[680px]">
@@ -106,6 +109,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
