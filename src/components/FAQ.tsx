@@ -42,40 +42,7 @@ export default function FaqSection() {
   };
 
   return (
-    // STEP 1: Add `relative` and `overflow-hidden` to the main container
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-[url('/images/contact_bg.png')] bg-cover bg-center bg-no-repeat px-6 py-16">
-      
-      <Image
-        height={300}
-        width={200}
-        src="/images/blueholotl.png"
-        alt="Background ring decoration"
-        className="absolute top-[-150px] left-[-100px] transform scale-x-[-1] w-[500px] h-auto opacity-80 pointer-events-none z-0"
-      />
-      <Image
-      height={300}
-        width={200}
-        src="/images/holosupport.png" 
-        alt="Background ring decoration"
-        className="absolute top-[-150px] left-[-0px] w-[500px] h-auto transform scale-x-[-1] opacity-60 pointer-events-none z-1"
-      />
-      {/* Ring 2: Bottom Right */}
-      <Image
-      height={300}
-        width={200}
-        src="/images/blueholobr.png" 
-        alt="Background ring decoration"
-        className="absolute bottom-[-200px] right-[-150px] w-[600px] h-auto opacity-80 pointer-events-none z-0"
-      />
-      <Image
-      height={300}
-        width={200}
-        src="/images/holosupport.png" 
-        alt="Background ring decoration"
-        className="absolute bottom-[-200px] right-[-150px] w-[600px] h-auto opacity-40 pointer-events-none z-0"
-      />
-
-      {/* STEP 3: Add `relative` and `z-10` to your content wrapper to place it above the rings */}
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-[#00020d] px-6 py-16">
       <div className="relative z-10 max-w-7xl w-full grid md:grid-cols-3 gap-12 text-white">
         {/* Left Info */}
         <div className="md:col-span-1 flex flex-col justify-start">
