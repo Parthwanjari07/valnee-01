@@ -9,11 +9,25 @@ import ProcessSlider from "@/components/ProcessSlider";
 import Testimonials from "@/components/Testimonials";
 import FaqSection from "@/components/FAQ";
 import CTASection from "@/components/cta";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
     <main className="relative">
       <Hero />
+      
+      {/* Blue Spiral Divider - slightly overlaps Hero */}
+      <div className="relative w-full bg-[#00020d] -mt-35 sm:-mt-55 md:-mt-55 pointer-events-none">
+        <Image
+          src="/images/blue spiral.png"
+          alt="Blue spiral decoration"
+          width={1920}
+          height={400}
+          className="w-full h-auto object-cover"
+          priority
+        />
+      </div>
+      
       <ProcessSlider />
       <FlowDiagramSection/>
       <AIToolsSection />

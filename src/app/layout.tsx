@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import localFont from "next/font/local";
+import { Lobster } from "next/font/google";
 import Script from "next/script";
 import type { Viewport } from "next";
 import DisableZoom from "@/components/DisableZoom";
@@ -13,6 +14,11 @@ const calSans = localFont({
 const sfPro = localFont({
   src: "../fonts/SF-Pro-Display-Regular.woff2",
   variable: "--font-sf-pro",
+});
+const lobster = Lobster({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-lobster",
 });
 
 export const metadata: Metadata = {
@@ -41,12 +47,9 @@ export default function RootLayout({
         data-website-id="663753ac-dc44-4cd9-81d6-5b2a2b691b40"
       />
       <body
-        className={`${calSans.variable} ${sfPro.variable} font-sans antialiased overflow-x-hidden`}
+        className={`${calSans.variable} ${sfPro.variable} ${lobster.variable} font-sans antialiased overflow-x-hidden`}
         style={{
-          backgroundImage: "url('/images/homebg.png')",
-          backgroundSize: "100% auto",
-          backgroundPosition: "top center",
-          backgroundRepeat: "no-repeat",
+          backgroundColor: "#00020d",
         }}
       >
         <DisableZoom />
