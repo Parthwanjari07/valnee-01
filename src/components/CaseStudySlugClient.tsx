@@ -21,6 +21,7 @@ type CaseStudy = {
 	created_at: string;
 	is_active: boolean;
 	updated_at: string;
+	page_url:string;
 };
 
 type MoreCaseStudy = {
@@ -70,52 +71,64 @@ export default function CaseStudySlugClient({
 			{/* Background Gradients */}
 			<div className="absolute inset-0 pointer-events-none">
 				{/* Top gradient */}
-				<div 
+				<div
 					className="absolute w-full h-[228px] top-0 left-0"
 					style={{
-						background: 'linear-gradient(183.31deg, rgba(76, 150, 255, 0.4) 2.91%, rgba(0, 106, 255, 0.4) 89.65%)',
-						mixBlendMode: 'plus-lighter',
-						filter: 'blur(207.273px)',
+						background:
+							"linear-gradient(183.31deg, rgba(76, 150, 255, 0.4) 2.91%, rgba(0, 106, 255, 0.4) 89.65%)",
+						mixBlendMode: "plus-lighter",
+						filter: "blur(207.273px)",
 					}}
 				/>
-				
+
 				{/* Blue glows */}
-				<div 
+				<div
 					className="absolute w-[660px] h-[757px] left-[66px] top-[663px]"
 					style={{
-						background: 'radial-gradient(100.48% 125.67% at 16.65% 14.14%, #4C6FDC 0%, #030E2E 71.64%)',
+						background:
+							"radial-gradient(100.48% 125.67% at 16.65% 14.14%, #4C6FDC 0%, #030E2E 71.64%)",
 						opacity: 0.6,
-						filter: 'blur(175px)',
-						transform: 'matrix(-0.95, -0.3, -0.22, 0.98, 0, 0)',
+						filter: "blur(175px)",
+						transform: "matrix(-0.95, -0.3, -0.22, 0.98, 0, 0)",
 					}}
 				/>
-				
-				<div 
+
+				<div
 					className="absolute w-[660px] h-[1213px] left-[493px] top-[1704px]"
 					style={{
-						background: 'radial-gradient(100.48% 125.67% at 16.65% 14.14%, #4C6FDC 0%, #030E2E 71.64%)',
+						background:
+							"radial-gradient(100.48% 125.67% at 16.65% 14.14%, #4C6FDC 0%, #030E2E 71.64%)",
 						opacity: 0.6,
-						filter: 'blur(175px)',
-						transform: 'matrix(0, 1, 1, -0.08, 0, 0)',
+						filter: "blur(175px)",
+						transform: "matrix(0, 1, 1, -0.08, 0, 0)",
 					}}
 				/>
 			</div>
 
 			{/* Hero Section with Intro */}
-			<header 
+			<header
 				className="relative min-h-[718px] w-full flex flex-col justify-end items-start px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-20 gap-2.5"
 				style={{
 					background: `linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgba(0, 0, 0, 0.880208) 62.7%, #000000 100%), url(${caseStudy.image})`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
-			>
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+				}}>
 				<div className="flex flex-col items-start gap-6 md:gap-8 lg:gap-10 w-full max-w-[1100px]">
+					<Link target="_blank" className="cursor-pointer" href={caseStudy.page_url}>
+						<div className="absolute backdrop-blur-lg flex gap-2 items-center border py-2 px-4 rounded-lg bottom-10 right-1 sm:bottom-20 sm:right-10 text-white">
+							<button>Explore</button>
+							<img
+								className="w-6 h-6 py-0.5"
+								src="/icons/new-window.svg"
+								alt="new window"
+							/>
+						</div>
+					</Link>
+
 					{/* Heading */}
-					<h1 
+					<h1
 						className="text-3xl md:text-4xl lg:text-[54px] font-[590] leading-[150%] tracking-[-0.03em] text-white"
-						style={{ fontFamily: 'SF Pro, sans-serif' }}
-					>
+						style={{ fontFamily: "SF Pro, sans-serif" }}>
 						{caseStudy.title}
 					</h1>
 
@@ -127,13 +140,17 @@ export default function CaseStudySlugClient({
 						{/* Tags */}
 						<div className="flex gap-3 md:gap-5 flex-wrap">
 							<div className="flex items-center justify-center px-3 md:px-4 py-1.5 md:py-2 bg-[rgba(171,206,255,0.05)] rounded-lg">
-								<span className="text-xs font-[590] text-white" style={{ fontFamily: 'SF Pro, sans-serif' }}>
+								<span
+									className="text-xs font-[590] text-white"
+									style={{ fontFamily: "SF Pro, sans-serif" }}>
 									{caseStudy.category}
 								</span>
 							</div>
 							{caseStudy.tags[0] && (
 								<div className="flex items-center justify-center px-3 md:px-4 py-1.5 md:py-2 bg-[rgba(171,206,255,0.05)] rounded-lg">
-									<span className="text-xs font-[590] text-white" style={{ fontFamily: 'SF Pro, sans-serif' }}>
+									<span
+										className="text-xs font-[590] text-white"
+										style={{ fontFamily: "SF Pro, sans-serif" }}>
 										{caseStudy.tags[0]}
 									</span>
 								</div>
@@ -142,16 +159,23 @@ export default function CaseStudySlugClient({
 
 						{/* Author & Date */}
 						<div className="flex flex-col gap-2.5">
-							<h3 className="text-xl md:text-2xl font-[590] text-white" style={{ fontFamily: 'SF Pro, sans-serif' }}>
+							<h3
+								className="text-xl md:text-2xl font-[590] text-white"
+								style={{ fontFamily: "SF Pro, sans-serif" }}>
 								{caseStudy.author_name}
 							</h3>
-							<p className="text-sm md:text-base text-[#707070]" style={{ fontFamily: 'SF Pro, sans-serif' }}>
-								{new Date(caseStudy.created_at).toLocaleDateString('en-US', { 
-									weekday: 'long',
-									day: 'numeric', 
-									month: 'short', 
-									year: 'numeric' 
-								})}
+							<p
+								className="text-sm md:text-base text-[#707070]"
+								style={{ fontFamily: "SF Pro, sans-serif" }}>
+								{new Date(caseStudy.created_at).toLocaleDateString(
+									"en-US",
+									{
+										weekday: "long",
+										day: "numeric",
+										month: "short",
+										year: "numeric",
+									}
+								)}
 							</p>
 						</div>
 					</div>
@@ -162,14 +186,13 @@ export default function CaseStudySlugClient({
 			<section className="relative py-12 md:py-16 lg:py-24 px-6 md:px-12 lg:px-20">
 				<div className="max-w-[1280px] mx-auto flex flex-col items-center gap-16 md:gap-20 lg:gap-[120px]">
 					{/* Content blocks will be rendered here */}
-					<article 
+					<article
 						className="w-full flex flex-col items-center gap-8 md:gap-12 lg:gap-[60px] text-white case-study-content"
-						style={{ fontFamily: 'SF Pro, sans-serif' }}
-					>
-						<div 
-							dangerouslySetInnerHTML={{ 
-								__html: contentWithIds || caseStudy.content 
-							}} 
+						style={{ fontFamily: "SF Pro, sans-serif" }}>
+						<div
+							dangerouslySetInnerHTML={{
+								__html: contentWithIds || caseStudy.content,
+							}}
 							className="w-full"
 						/>
 					</article>
@@ -177,10 +200,9 @@ export default function CaseStudySlugClient({
 			</section>
 
 			{/* More Case Studies Section */}
-			<section 
+			<section
 				className="relative py-12 md:py-16 lg:py-[60px] px-6 md:px-12 lg:px-20 border-t border-white/10"
-				style={{ fontFamily: 'SF Pro, sans-serif' }}
-			>
+				style={{ fontFamily: "SF Pro, sans-serif" }}>
 				<div className="max-w-[1280px] mx-auto flex flex-col gap-8 md:gap-10">
 					{/* Header */}
 					<div className="flex items-center justify-between gap-6 md:gap-12 lg:gap-20">
@@ -202,8 +224,7 @@ export default function CaseStudySlugClient({
 						{moreCaseStudies.slice(0, 3).map((cs) => (
 							<div
 								key={cs.slug}
-								className="flex flex-col gap-4 w-full border border-white/10 rounded-2xl overflow-hidden"
-							>
+								className="flex flex-col gap-4 w-full border border-white/10 rounded-2xl overflow-hidden">
 								{/* Image */}
 								<div className="w-full h-[200px] md:h-[250px] relative">
 									<Image

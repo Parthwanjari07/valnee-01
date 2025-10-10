@@ -304,6 +304,7 @@ export type CaseStudy = {
   reading_time?: string
   is_active: boolean
   updated_at: string
+  page_url:string
 }
 
 // FUNCTION TO GET ALL CASE STUDIES

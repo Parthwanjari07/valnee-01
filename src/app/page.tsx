@@ -10,6 +10,14 @@ import Testimonials from "@/components/Testimonials";
 import FaqSection from "@/components/FAQ";
 import CTASection from "@/components/cta";
 import Image from "next/image";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import CardEffect from "@/components/CardEffect";
+
+import NewFooter from "@/components/NewFooter";
+import ImportanceSection from "@/components/ImportanceSection";
+import PartnerYouNeed from "@/components/PartnerYouNeed";
+
+
 
 export default function HomePage() {
   return (
@@ -27,8 +35,13 @@ export default function HomePage() {
           priority
         />
       </div>
-      
-      <ProcessSlider />
+
+      {/* <ProcessSlider /> */}
+
+      <ImportanceSection/>
+
+      <WhyChooseUs/>
+      <CardEffect/>
       <FlowDiagramSection/>
       <AIToolsSection />
       <GridSection />
@@ -36,7 +49,8 @@ export default function HomePage() {
       <Testimonials />
       <FaqSection/>
       <CTASection />
-      <Footer />
+      {/* <Footer /> */}
+      < NewFooter/>
     </main>
   );
 }

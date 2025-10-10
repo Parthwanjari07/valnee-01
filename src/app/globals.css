@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "lenis/dist/lenis.css";
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -498,3 +500,24 @@ line-height: normal;
     padding: 0 12px;
   }
 }
+
+.stroke-text {
+  -webkit-text-stroke: 4px rgba(182, 180, 194, 0.08);
+}
+
+@font-face {
+  font-family: "lobster";
+  src: url("/fonts/Lobster-Regular.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "lora";
+  src: url("/fonts/Lora[wght].ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
