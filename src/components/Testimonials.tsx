@@ -8,6 +8,19 @@ import "@splidejs/react-splide/css";
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 
+interface SplideInstance {
+  splide: {
+    go: (target: string | number) => void;
+    Components: {
+      Autoplay: {
+        play: () => void;
+        pause: () => void;
+      };
+    };
+    index: number;
+  };
+}
+
 const testimonials = [
   {
     name: "Vinay Israni",
@@ -33,7 +46,7 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const splideRef = useRef<any>(null);
+  const splideRef = useRef<SplideInstance | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
@@ -121,7 +134,7 @@ export default function Testimonials() {
                   768: { perPage: 1 },
                 },
               }}
-              onMove={(splide: any) => setCurrentSlide(splide.index)}
+              onMove={(splide: { index: number }) => setCurrentSlide(splide.index)}
               className="z-20"
             >
               {testimonials.map((t, i) => (

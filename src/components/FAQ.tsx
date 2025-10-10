@@ -4,7 +4,6 @@
 import { useState } from "react";
 import { Info, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 
 interface FaqItem {
   question: string;

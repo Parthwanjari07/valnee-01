@@ -42,27 +42,12 @@ export default function CaseStudySlugClient({
 	caseStudy,
 	moreCaseStudies,
 }: CaseStudySlugClientProps) {
-
-	const [tableOfContents, setTableOfContents] = useState<Array<{ id: string; text: string; level: number }>>([]);
 	const [contentWithIds, setContentWithIds] = useState<string>('');
 
 	// Extract headings from HTML content and add IDs
 	useEffect(() => {
 		const tempDiv = document.createElement('div');
 		tempDiv.innerHTML = caseStudy.content;
-		
-		const headings = tempDiv.querySelectorAll('h1, h2, h3');
-		const tocItems = Array.from(headings).map((heading, index) => {
-			const id = `heading-${index}`;
-			heading.id = id;
-			return {
-				id,
-				text: heading.textContent || '',
-				level: parseInt(heading.tagName.substring(1))
-			};
-		});
-		
-		setTableOfContents(tocItems);
 		setContentWithIds(tempDiv.innerHTML);
 	}, [caseStudy.content])
 
@@ -117,10 +102,12 @@ export default function CaseStudySlugClient({
 					<Link target="_blank" className="cursor-pointer" href={caseStudy.page_url}>
 						<div className="absolute backdrop-blur-lg flex gap-2 items-center border py-2 px-4 rounded-lg bottom-10 right-1 sm:bottom-20 sm:right-10 text-white">
 							<button>Explore</button>
-							<img
+							<Image
 								className="w-6 h-6 py-0.5"
 								src="/icons/new-window.svg"
 								alt="new window"
+								width={12}
+								height={12}
 							/>
 						</div>
 					</Link>
