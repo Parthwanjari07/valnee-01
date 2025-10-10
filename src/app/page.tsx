@@ -13,6 +13,8 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import CardEffect from "@/components/CardEffect";
 
 import NewFooter from "@/components/NewFooter";
+import ImportanceSection from "@/components/ImportanceSection";
+import PartnerYouNeed from "@/components/PartnerYouNeed";
 
 
 
@@ -23,7 +25,7 @@ export default function HomePage() {
 
       {/* <ProcessSlider /> */}
 
-
+      <ImportanceSection/>
 
       <WhyChooseUs/>
       <CardEffect/>
