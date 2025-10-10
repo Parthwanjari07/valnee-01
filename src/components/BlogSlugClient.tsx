@@ -33,11 +33,10 @@ export default function BlogsSlugClient({
 	blog,
 	moreBlogs,
 }: BlogSlugClientProps) {
-
-	const [showLoadMore, setShowLoadMore] = useState<boolean>(true)
-	const handleShowMoreClick = ()=>{
+	const [showLoadMore, setShowLoadMore] = useState<boolean>(true);
+	const handleShowMoreClick = () => {
 		setShowLoadMore(false);
-	}
+	};
 	return (
 		<>
 			{/* Hero Section */}
@@ -58,8 +57,12 @@ export default function BlogsSlugClient({
 			</header>
 
 			{/* Main Content Section */}
-			<section className={`bg-transparent relative text-gray-300  py-16 sm:py-24 ${showLoadMore ? `h-[40em] overflow-hidden`:`h-fit `}`}>
-				<div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-12 `}>
+			<section
+				className={`bg-transparent relative text-gray-300  py-16 sm:py-24 ${
+					showLoadMore ? `h-[40em] overflow-hidden` : `h-fit `
+				}`}>
+				<div
+					className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-12 `}>
 					{/* LEFT - Blog Content */}
 					<div
 						className={`lg:col-span-2 space-y-12 ${
@@ -80,11 +83,11 @@ export default function BlogsSlugClient({
 							</article>
 						))}
 						{showLoadMore && (
-							<div className="text-center w-full  absolute bottom-0 left-1/2 -translate-x-1/2 z-5 pt-12 pb-4"
-							style={{
-								backdropFilter:`blur(1.5px)`
-							}}
-							>
+							<div
+								className="text-center w-full  absolute bottom-0 left-1/2 -translate-x-1/2 z-5 pt-12 pb-4"
+								style={{
+									backdropFilter: `blur(1.5px)`,
+								}}>
 								<button
 									onClick={handleShowMoreClick}
 									className="inline-flex bg-white items-center gap-2 px-6 py-3 border border-gray-600 text-black rounded-lg  transition-colors">
@@ -165,34 +168,38 @@ export default function BlogsSlugClient({
 						</Link>
 					</div>
 					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-						{moreBlogs.map((post) => (
-							<div
-								key={post.slug}
-								className="bg-[#111A31] border border-gray-700 rounded-lg overflow-hidden flex flex-col">
-								<Image
-									src={post.imageStored}
-									alt={post.blogTitle}
-									width={400}
-									height={250}
-									className="w-full object-cover"
-								/>
-								<div className="p-6 flex flex-col flex-grow">
-									<h3 className="text-xl font-semibold text-white mb-2">
-										{post.blogTitle}
-									</h3>
-									<p className="text-gray-400 text-sm mb-4 flex-grow">
-										{post.blogDescription}
-									</p>
-									<Link
-										href={`/blogs/${post.slug}`}
-										className="self-start">
-										<span className="inline-flex items-center gap-2 px-4 py-2 bg-gray-200 text-black rounded-md text-sm font-medium hover:bg-white transition-colors">
-											Read more <ArrowUpRight className="w-4 h-4" />
-										</span>
-									</Link>
+						{moreBlogs.length === 0 ? (
+							<div className="text-center text-xl ">No Other Blogs Yet</div>
+						) : (
+							moreBlogs.map((post) => (
+								<div
+									key={post.slug}
+									className="bg-[#111A31] border border-gray-700 rounded-lg overflow-hidden flex flex-col">
+									<Image
+										src={post.imageStored}
+										alt={post.blogTitle}
+										width={400}
+										height={250}
+										className="w-full object-cover"
+									/>
+									<div className="p-6 flex flex-col flex-grow">
+										<h3 className="text-xl font-semibold text-white mb-2">
+											{post.blogTitle}
+										</h3>
+										<p className="text-gray-400 text-sm mb-4 flex-grow">
+											{post.blogDescription}
+										</p>
+										<Link
+											href={`/blogs/${post.slug}`}
+											className="self-start">
+											<span className="inline-flex items-center gap-2 px-4 py-2 bg-gray-200 text-black rounded-md text-sm font-medium hover:bg-white transition-colors">
+												Read more <ArrowUpRight className="w-4 h-4" />
+											</span>
+										</Link>
+									</div>
 								</div>
-							</div>
-						))}
+							))
+						)}
 					</div>
 				</div>
 			</section>
