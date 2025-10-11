@@ -4,7 +4,6 @@ import Services from "@/components/services";
 import FlowDiagramSection from "@/components/FlowDiagramSection";
 import GridSection from "@/components/GridSection";
 import Hero from "@/components/Hero";
-import Testimonials from "@/components/Testimonials";
 import FaqSection from "@/components/FAQ";
 import CTASection from "@/components/cta";
 import Image from "next/image";
@@ -26,7 +25,7 @@ export default function HomePage() {
       {/* Blue Spiral Divider - slightly overlaps Hero */}
       <div className="relative w-full bg-[#00020d] -mt-35 sm:-mt-55 md:-mt-55 pointer-events-none">
         <Image
-          src="/images/blue spiral.png"
+          src="/images/blueSpiral.svg"
           alt="Blue spiral decoration"
           width={1920}
           height={400}
@@ -46,7 +45,6 @@ export default function HomePage() {
       <GridSection />
       <Services />
       <MeetTheFounder />
-      <Testimonials />
       <TestimonialCarousel/>
       <FaqSection/>
       <CTASection />
