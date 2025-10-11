@@ -13,6 +13,7 @@ import CardEffect from "@/components/CardEffect";
 
 import NewFooter from "@/components/NewFooter";
 import ImportanceSection from "@/components/ImportanceSection";
+import MeetTheFounder from "@/components/MeetTheFounder";
 
 
 
@@ -43,6 +44,7 @@ export default function HomePage() {
       <AIToolsSection />
       <GridSection />
       <Services />
+      <MeetTheFounder />
       <Testimonials />
       <FaqSection/>
       <CTASection />

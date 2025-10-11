@@ -554,3 +554,11 @@ line-height: normal;
   font-display: swap;
 }
 
+@font-face {
+  font-family: "black-signature";
+  src: url("/fonts/Black Signature.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
