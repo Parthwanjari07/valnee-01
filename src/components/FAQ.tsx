@@ -12,24 +12,37 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    question: "Why is Webflow the best nocode tool?",
+    question: "Do you code everything or use no-code/low-code tools?",
     answer:
-      "Webflow stands out as the leading no-code platform by giving users complete creative control over their websites without relying on developers.",
+      "We primarily code everything from scratch for performance and scalability — but use AI-assisted tools and low-code platforms when they accelerate delivery without compromising quality.",
   },
   {
-    question: "Why is Webflow the best nocode tool?",
+    question: "What happens after the MVP is done?",
     answer:
-      "Webflow stands out as the leading no-code platform by giving users complete creative control over their websites without relying on developers.",
+      "After launch, you can either keep us as your dev team to scale your MVP or take full ownership of the clean, documented codebase — built for easy handoff and future growth.",
   },
   {
-    question: "Why is Webflow the best nocode tool?",
+    question: "What services do you offer?",
     answer:
-      "Webflow stands out as the leading no-code platform by giving users complete creative control over their websites without relying on developers.",
+      "We specialize in building MVPs, custom software, and AI-driven digital products — from idea validation to launch — all delivered in just 21 days*.",
   },
   {
-    question: "Why is Webflow the best nocode tool?",
+    question: "What is average cost of an app?",
     answer:
-      "Webflow stands out as the leading no-code platform by giving users complete creative control over their websites without relying on developers.",
+      "The cost of building an app depends on its features, complexity, and scope. On average, most MVPs or standard apps range between ₹xx–₹xx ($xx–$xx).",
+
+  },
+  {
+    question: "I have an app idea where do I start from?",
+    answer:
+      "Begin by outlining how users will interact with your app—just a simple paragraph or 2–3 sentences on the concept.",
+
+  },
+  {
+    question: "What happens if we miss the launch deadline?",
+    answer:
+      "We commit to a launch date in our contract. If we miss it due to our own delays, we offer a refund/money back guarantee.",
+
   },
 ];
 

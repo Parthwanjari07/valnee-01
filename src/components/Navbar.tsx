@@ -15,8 +15,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-transparent">
       {/* Glassmorphism container (desktop only) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-6">
-        <div className="flex justify-between items-center h-14 md:h-16 lg:rounded-[18px] lg:border lg:border-white/10 lg:bg-black/10 lg:backdrop-blur-md">
+      <div className="max-w-7xl mx-auto lg:mt-6">
+        <div className="flex justify-between px-4 sm:px-6 lg:px-8 items-center h-14 md:h-16 lg:rounded-[18px] lg:border lg:border-white/10 lg:bg-black/10 lg:backdrop-blur-md">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3 relative z-10">
           <Image 

@@ -16,29 +16,7 @@ const lora = Lora({
 const FreelancerAgencySection = () => {
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[#000718] text-white px-4 sm:px-6 md:px-10 py-20 overflow-hidden">
-      {/* Top Right Glow Placeholder */}
-      {/* <div className="absolute top-0 right-0 w-[250px] sm:w-[350px] md:w-[400px] opacity-60 pointer-events-none">
-        <Image
-          src="/images/whyusleftbg.png"
-          alt="top-right-glow"
-          width={400}
-          height={400}
-          className="object-contain scale-150 md:scale-200"
-        />
-      </div> */}
-
-      {/* Bottom Left Glow Placeholder */}
-      {/* <div className="absolute bottom-0 left-0 w-[250px] sm:w-[350px] md:w-[400px] opacity-80 pointer-events-none">
-        <Image
-          src="/images/whyusleftbg.png"
-          alt="bottom-left-glow"
-          width={400}
-          height={400}
-          className="object-contain scale-150 md:scale-200"
-        />
-      </div> */}
-
-      {/* Heading */}
+      
       <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold leading-snug mb-12 sm:mb-16 max-w-3xl">
         Your Idea is Too Important for{" "}
         <span className={`${lobster.className} text-[#4CD1F0]`}>
@@ -50,12 +28,11 @@ const FreelancerAgencySection = () => {
         </span>
       </h2>
 
-      {/* Combined Container */}
-      <div className="relative flex flex-col md:flex-row w-full max-w-5xl bg-[#10182A]/50 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden">
-        {/* Left Section - Freelancer Gamble */}
-        <div className="flex-1 border-b md:border-b-0 md:border-r border-white/10">
-          <div className="p-6 sm:p-8 relative flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="absolute top-4 right-0 w-[180px] sm:w-[250px] md:w-[300px] opacity-90 pointer-events-none">
+      <div className="relative flex flex-col md:flex-row w-full max-w-7xl bg-[#10182A]/50 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden">
+
+        <div className="flex-1 border-b md:border-b-0 md:border-r border-white/10 md:pt-15">
+          <div className="p-6 sm:p-8 relative flex flex-col items-center md:items-start text-center md:text-left md:ml-15 ">
+            <div className="absolute -z-1 md:-top-4 right-0 w-[180px] sm:w-[250px] md:w-[300px] opacity-90 pointer-events-none">
               <Image
                 src="/images/cardtop.png"
                 alt="top-right-glow"
@@ -69,15 +46,14 @@ const FreelancerAgencySection = () => {
               The Freelancer Gamble
             </h3>
             <ul
-              className={`${lora.className} space-y-3 text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base`}
+              className={`${lora.className} space-y-5 text-gray-300 sm:mb-8 text-sm sm:text-base`}
             >
               <li>“Poor quality code that needs a rewrite”</li>
               <li>“They disappear after the job is done”</li>
               <li>“Misaligned incentives on milestone payments”</li>
             </ul>
 
-            {/* Dice SVG Placeholder */}
-            <div className="relative w-20 sm:w-28 md:w-32 h-auto md:self-start">
+            <div className="relative w-20 sm:w-28 md:w-32 h-auto md:self-start mt-7 md:mt-7">
               <Image
                 src="/images/dice.svg"
                 alt="dice"
@@ -88,18 +64,15 @@ const FreelancerAgencySection = () => {
             </div>
           </div>
         </div>
-
-        {/* Right Section - Agency Trap */}
         <div className="flex-1">
-          <div className="flex flex-col-reverse md:flex-col p-6 sm:p-8 relative items-center md:items-start text-center md:text-left">
-            {/* Ghost SVG Placeholder */}
-            <div className="relative w-28 sm:w-40 md:w-44 h-auto mb-8 md:mb-10">
+          <div className="flex flex-col-reverse md:flex-col p-6 sm:p-8 relative items-center md:items-start text-center md:text-left md:ml-15">
+            <div className="relative right-0 lg:-right-[50%] w-28 sm:w-40 md:w-44 h-auto mb-8 mt-5 md:mb-10">
               <Image
                 src="/images/skull.svg"
                 alt="ghost"
                 width={180}
                 height={200}
-                className="object-contain mx-auto md:mx-0"
+                className="object-contain scale-125 mx-auto md:mx-0"
               />
             </div>
 
@@ -108,14 +81,14 @@ const FreelancerAgencySection = () => {
                 The Agency Trap
               </h3>
               <ul
-                className={`${lora.className} space-y-3 text-gray-300 text-sm sm:text-base`}
+                className={`${lora.className} space-y-5 text-gray-300 text-sm sm:text-base`}
               >
                 <li>“Inflated billable hours”</li>
                 <li>“Slow progress and poor communication”</li>
                 <li>“Feeling like a hostage”</li>
               </ul>
             </div>
-            <div className="absolute bottom-8 left-30 w-[180px] sm:w-[250px] md:w-[300px] opacity-90 pointer-events-none">
+            <div className="absolute md:-bottom-10 -left-10 md:-left-10 w-[180px] sm:w-[250px] md:w-[300px] opacity-90 pointer-events-none -z-1">
               <Image
                 src="/images/cardbottom.png"
                 alt="top-right-glow"

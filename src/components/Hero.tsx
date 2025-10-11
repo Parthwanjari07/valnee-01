@@ -28,14 +28,27 @@ export default function Hero() {
         />
       </div> */}
 
-      {/* Content */}
+       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-between text-white z-20">
         <div className="relative z-30 flex flex-col items-center justify-center flex-1 w-full text-center px-4 sm:px-6 md:px-8 py-20 sm:py-24 md:py-28 lg:py-36">
           <div className="flex gap-2 sm:gap-3 mb-4 sm:mb-6 flex-wrap items-center justify-center max-w-full">
             {/* Main pill: avatars + text + embedded FAST chip */}
-            <div className="relative inline-flex items-center gap-2 sm:gap-2 rounded-full border border-white bg-white shadow-lg px-2 py-0.5 sm:px-3 sm:py-1">
-              {/* glow */}
+            <div className="relative inline-flex items-center gap-2 sm:gap-2 rounded-full border border-white bg-white shadow-lg px-2 py-0.5 sm:px-3 sm:py-1 overflow-hidden">
+              {/* Static glow */}
               <span className="pointer-events-none absolute -inset-0.5 rounded-full bg-white opacity-20 blur-md" />
+              {/* Pill-wide white shimmer overlay */}
+              <span
+                className="pointer-events-none absolute inset-0 rounded-full z-20"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.2) 60%, transparent 100%)",
+                  animation: "sparkle-sweep-paused 5s linear 0s infinite",
+                  width: "200%",
+                  left: "-50%",
+                  filter: "blur(0.8px)",
+                  mixBlendMode: "normal",
+                }}
+              />
 
               <div className="relative z-10 flex -space-x-1.5 sm:-space-x-2">
                 <Image src="https://framerusercontent.com/images/dRU460eX51GyZswEa8XXGmbpWII.png" alt="Founder avatar" width={20} height={20} className="h-3.5 w-3.5 sm:h-5 sm:w-5 rounded-full ring-1 sm:ring-2 ring-white object-cover" />
@@ -89,7 +102,7 @@ export default function Hero() {
       <svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect y="0.5" width="36" height="36" rx="8" fill="black"/>
   <g transform="translate(18, 18.5) scale(1.7) translate(-18, -18.5)">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.8122 21.0254L19.846 20.7657L20.8153 17.1507L12.9839 21.6722L12.4839 20.8062L20.3153 16.2847L16.7 15.3167L16.9582 14.3501L22.2229 15.7607L20.8122 21.0254Z" fill="white"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M20.8122 21.0254L19.846 20.7657L20.8153 17.1507L12.9839 21.6722L12.4839 20.8062L20.3153 16.2847L16.7 15.3167L16.9582 14.3501L22.2229 15.7607L20.8122 21.0254Z" fill="white"/>
   </g>
 </svg>
 
