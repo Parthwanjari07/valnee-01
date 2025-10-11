@@ -9,7 +9,6 @@ import FaqSection from "@/components/FAQ";
 import CTASection from "@/components/cta";
 import Image from "next/image";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import CardEffect from "@/components/CardEffect";
 
 import NewFooter from "@/components/NewFooter";
 import ImportanceSection from "@/components/ImportanceSection";
@@ -38,7 +37,7 @@ export default function HomePage() {
       <ImportanceSection/>
 
       <WhyChooseUs/>
-      <CardEffect/>
+      {/* <CardEffect/> */}
       <FlowDiagramSection/>
       <AIToolsSection />
       <GridSection />
