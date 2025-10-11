@@ -13,7 +13,6 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import NewFooter from "@/components/NewFooter";
 import ImportanceSection from "@/components/ImportanceSection";
 import MeetTheFounder from "@/components/MeetTheFounder";
-import PartnerYouNeed from "@/components/PartnerYouNeed";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import CardEffect from "@/components/CardEffect";
 
