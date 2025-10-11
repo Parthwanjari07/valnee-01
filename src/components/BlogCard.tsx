@@ -47,10 +47,12 @@ export default function BlogCard({
 					Read More
 				</div>
 				<div>
-					<img
+					<Image
 						className="w-3 h-3"
 						src="./images/arrow-up-right.svg"
 						alt="arrow"
+						width={12}
+						height={12}
 					/>
 				</div>
 			</div>

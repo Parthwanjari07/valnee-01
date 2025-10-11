@@ -139,6 +139,15 @@ h1, h2, h3, h4, h5, h6 {
   animation: fadeInLeft 0.3s ease-out forwards;
 }
 
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .blogs-heading{
   color: #FFF;
 
@@ -491,3 +500,24 @@ line-height: normal;
     padding: 0 12px;
   }
 }
+
+.stroke-text {
+  -webkit-text-stroke: 4px rgba(182, 180, 194, 0.08);
+}
+
+@font-face {
+  font-family: "lobster";
+  src: url("/fonts/Lobster-Regular.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "lora";
+  src: url("/fonts/Lora[wght].ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+

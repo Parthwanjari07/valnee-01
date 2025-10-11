@@ -18,6 +18,7 @@ export default function CaseStudyCard({
 	caseStudyDescription,
 	slug
 }: CaseStudyCardProps) {
+	console.log("Case Study Description:", caseStudyDescription);
 	return (
 		<section
 			className="border bg-transparent shrink-0 flex flex-col justify-between rounded-lg p-5 w-fit sm:w-[25em] h-[25em]"
@@ -52,10 +53,12 @@ export default function CaseStudyCard({
 						Read More
 					</div>
 					<div>
-						<img
+						<Image
 							className="w-3 h-3"
 							src="./images/arrow-up-right.svg"
 							alt="arrow"
+							width={12}
+							height={12}
 						/>
 					</div>
 				</div>
