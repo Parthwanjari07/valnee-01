@@ -12,6 +12,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 
 import NewFooter from "@/components/NewFooter";
 import ImportanceSection from "@/components/ImportanceSection";
+import MeetTheFounder from "@/components/MeetTheFounder";
 import PartnerYouNeed from "@/components/PartnerYouNeed";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 
@@ -44,6 +45,7 @@ export default function HomePage() {
       <AIToolsSection />
       <GridSection />
       <Services />
+      <MeetTheFounder />
       <Testimonials />
       <TestimonialCarousel/>
       <FaqSection/>

@@ -148,6 +148,39 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Move for 75% of time, pause for 25% (e.g., 6s move + 2s pause on an 8s cycle) */
+@keyframes sparkle-sweep-paused {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle-sweep {
+  0% {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
 .blogs-heading{
   color: #FFF;
 
@@ -517,6 +550,14 @@ line-height: normal;
   font-family: "lora";
   src: url("/fonts/Lora[wght].ttf") format("truetype");
   font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "black-signature";
+  src: url("/fonts/Black Signature.otf") format("opentype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
