@@ -44,9 +44,8 @@ export default function StackScroll() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const cards = cardsRef.current;
-      const GAP = 10; // top leading between stacked cards
+      const GAP = 10;
 
-      // Initial state
       gsap.set(cards, { yPercent: 150, opacity: 0.6 });
       gsap.set(placeholderRef.current, { opacity: 1 });
 
@@ -54,14 +53,13 @@ export default function StackScroll() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=6000",
+          end: "+=4000",
           scrub: true,
           pin: true,
           pinSpacing:true
         },
       });
 
-      // Stack cards with small top offset
       cards.forEach((card, i) => {
         tl.to(
           card,
@@ -89,34 +87,29 @@ export default function StackScroll() {
     ref={containerRef}
     className="min-h-screen flex flex-col justify-center items-center"
   >   
-      {/* Heading */}
-      <div ref={headingRef} className="absolute top-28 text-center z-[999]">
-        <h2 className="text-3xl md:text-4xl font-semibold">
+      <div ref={headingRef} className="absolute top-24 text-center z-[999]">
+        <h2 className="text-3xl px-5 md:text-4xl font-semibold">
           Streamlining Every Step of Your{" "}
           <span className="italic text-blue-400">Founder Journey</span>
         </h2>
       </div>
 
-      {/* Placeholder card (base layer) */}
       <div
         ref={placeholderRef}
-        className="absolute top-50 md:top-58 bg-gradient-to-b from-[#006AFF]  to-[#000718] w-full max-w-5xl h-[500px] rounded-3xl"
+        className="absolute top-54 md:top-58 bg-gradient-to-b from-[#006AFF]  to-[#000718] w-full max-w-5xl h-[500px] rounded-3xl"
       ></div>
 
-      {/* Cards stacking */}
-      <div className="relative mt-28 w-full">
+      <div className="relative mt-20 md:mt-24 2xl:mt-28 flex justify-center w-full">
         {steps.map((step, index) => (
           <div
             key={index}
             ref={(el) => { cardsRef.current[index] = el!; }}
-            className="absolute -top-55 md:-top-72 -left-7 md:left-[27rem] ml-7 max-w-[62rem] rounded-3xl overflow-hidden shadow-xl border border-blue-800/40 py-10 pb-15 md:p-10 px-5 md:px-20"
+            className="absolute -top-60 2xl:-top-72 md:max-w-[62rem] rounded-3xl overflow-hidden shadow-xl border border-blue-800/40 py-10 pb-15 md:p-10 px-5 md:px-20"
             
           >
-            {/* Solid overlay (no transparency now) */}
             <div className="absolute inset-0 bg-[#000d1f] bg-opacity-95 rounded-3xl"></div>
             <div className="absolute inset-0 rounded-3xl opacity-30 pointer-events-none bg-[url('/images/cardframe.png')] bg-cover bg-center" />
 
-            {/* Content */}
             <div className="relative flex justify-center flex-col items-center align-middle text-center space-y-4 md:space-y-8 md:mb-20" >
               <div className="rounded-full border border-white/20 px-4 py-1 bg-[#030E2E] my-6 md:my-10 md:mt-20 text-sm sm:text-base">
                 {step.title}
