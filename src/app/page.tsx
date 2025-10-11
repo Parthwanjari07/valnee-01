@@ -15,6 +15,7 @@ import CardEffect from "@/components/CardEffect";
 import NewFooter from "@/components/NewFooter";
 import ImportanceSection from "@/components/ImportanceSection";
 import PartnerYouNeed from "@/components/PartnerYouNeed";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 
 
@@ -34,6 +35,7 @@ export default function HomePage() {
       <GridSection />
       <Services />
       <Testimonials />
+      <TestimonialCarousel/>
       <FaqSection/>
       <CTASection />
       {/* <Footer /> */}
