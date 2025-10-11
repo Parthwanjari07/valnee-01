@@ -15,6 +15,7 @@ import ImportanceSection from "@/components/ImportanceSection";
 import MeetTheFounder from "@/components/MeetTheFounder";
 import PartnerYouNeed from "@/components/PartnerYouNeed";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import CardEffect from "@/components/CardEffect";
 
 
 
@@ -40,7 +41,7 @@ export default function HomePage() {
       <ImportanceSection/>
 
       <WhyChooseUs/>
-      {/* <CardEffect/> */}
+      <CardEffect/>
       <FlowDiagramSection/>
       <AIToolsSection />
       <GridSection />
