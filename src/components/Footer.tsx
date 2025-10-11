@@ -52,42 +52,8 @@ export default function Footer() {
       {/* Background video (same as hero) */}
       
 
-      {/* Blend Overlay */}
-      <div className="absolute inset-0 h-full w-full pointer-events-none">
-        <Image
-          src="/images/heroBlend.png"
-          alt="blend overlay"
-          fill
-          className="object-cover mix-blend-soft-light opacity-60"
-          priority
-        />
-      </div>
-
-      {/* Sparkles */}
-      <div className="absolute w-full inset-0 h-1/3 z-0 pointer-events-none">
-        <Image
-          src="/images/sparkles.png"
-          alt="sparkles"
-          fill
-          className="object-cover object-top"
-          priority
-        />
-      </div>
-
       {/* Dark gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#00020D]/95 via-[#00020D]/98 to-[#00020D] z-0"></div>
-
-      {/* Luminous waves at the bottom */}
-      <div className="absolute inset-x-0 bottom-0 z-5 pointer-events-none">
-        <Image
-          src="/images/testimonialsBg.svg"
-          alt="footer waves"
-          width={1920}
-          height={420}
-          className="w-full h-auto opacity-90"
-          priority
-        />
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10 pb-8">
         {/* Main footer content */}

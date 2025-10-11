@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { PiTriangleFill } from "react-icons/pi";
 
 // Interface for Social Card props for type safety
 interface SocialCardProps {

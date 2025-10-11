@@ -1,10 +1,6 @@
 export default function CTASection() {
   return (
     <section className="relative overflow-hidden bg-[#00020D] text-white px-6 py-20">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-24 -right-32 h-72 w-72 rounded-full bg-blue-500/30 blur-[160px]" />
-        <div className="absolute -bottom-28 -left-28 h-80 w-80 rounded-full bg-indigo-500/25 blur-[170px]" />
-      </div>
       <div className="relative max-w-5xl mx-auto flex flex-col items-center text-center gap-6">
         <span className="uppercase tracking-[0.4em] text-sm text-rose-200">
           Ready to Build Something Exceptional?
