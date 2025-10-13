@@ -26,8 +26,19 @@ const Navbar = () => {
             height={40}
             className="sm:w-[50px] sm:h-[50px]"
           />
-          <span className="text-white font-semibold text-base sm:text-lg hidden sm:block">
-            Valnee Solutions LLP
+          <span
+            className="font-semibold text-base sm:text-lg hidden sm:block"
+            style={{
+              fontFamily: "var(--font-sf-pro)",
+              letterSpacing: '0.04em',
+              background: 'radial-gradient(251.03% 141.25% at 107.41% 17.5%, #102B65 0%, #005AB8 42.76%, #001028 100%), radial-gradient(169.49% 111.16% at 87% -12.77%, #001028 0%, #005AB8 57.24%, #102B65 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              color: 'transparent'
+            }}
+          >
+            Valnee Solutions
           </span>
         </Link>
 
@@ -56,7 +67,7 @@ const Navbar = () => {
         {/* CTA Button */}
         <button 
           onClick={handleBookCall} 
-          className="hidden lg:flex items-center ml-4 bg-white/90 hover:bg-white text-black rounded-lg px-4 xl:px-6 py-2 font-semibold text-sm xl:text-base transition-colors"
+          className="hidden lg:flex items-center ml-4 bg-white/90 hover:bg-black hover:text-white text-black rounded-lg px-4 xl:px-6 py-2 font-semibold text-sm xl:text-base transition-colors"
         >
           Book a call
         </button>
@@ -125,7 +136,7 @@ const Navbar = () => {
                   setIsOpen(false);
                   handleBookCall();
                 }} 
-                className="w-full bg-white/90 hover:bg-white text-black rounded-lg px-6 py-3 font-semibold transition-colors"
+                className="w-full bg-white/90 hover:bg-black hover:text-white text-black rounded-lg px-6 py-3 font-semibold transition-colors"
               >
                 Book a call
               </button>
