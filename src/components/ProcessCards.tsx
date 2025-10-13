@@ -56,7 +56,7 @@ export default function StackScroll() {
           end: "+=4000",
           scrub: true,
           pin: true,
-          pinSpacing:true
+          pinSpacing: true,
         },
       });
 
@@ -75,55 +75,54 @@ export default function StackScroll() {
           i * 0.8
         );
       });
-
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-   <section className="relative w-full bg-[#000718] text-white overflow-hidden pb-40">
-  <div
-    ref={containerRef}
-    className="min-h-screen flex flex-col justify-center items-center"
-  >   
-      <div ref={headingRef} className="absolute top-24 text-center z-[999]">
-        <h2 className="text-3xl px-5 md:text-4xl font-semibold">
-          Streamlining Every Step of Your{" "}
-          <span className="italic text-blue-400">Founder Journey</span>
-        </h2>
-      </div>
-
+    <section className="relative w-full bg-[#000718] text-white overflow-hidden pb-40">
       <div
-        ref={placeholderRef}
-        className="absolute top-54 md:top-58 bg-gradient-to-b from-[#006AFF]  to-[#000718] w-full max-w-5xl h-[500px] rounded-3xl"
-      ></div>
-
-      <div className="relative mt-20 md:mt-24 2xl:mt-28 flex justify-center w-full">
-        {steps.map((step, index) => (
+        ref={containerRef}
+        className="min-h-screen flex flex-col justify-center items-center"
+      >
+        <div ref={headingRef} className="absolute top-24 text-center z-[999]">
+          <h2 className="text-3xl px-5 md:text-4xl font-semibold">
+            Streamlining Every Step of Your{" "}
+            <span className="italic text-blue-400">Founder Journey</span>
+          </h2>
+        </div>
+        <div className="relative mt-20 md:mt-24 flex justify-center w-full">
           <div
-            key={index}
-            ref={(el) => { cardsRef.current[index] = el!; }}
-            className="absolute -top-60 2xl:-top-72 md:max-w-[62rem] rounded-3xl overflow-hidden shadow-xl border border-blue-800/40 py-10 pb-15 md:p-10 px-5 md:px-20"
-            
+            ref={placeholderRef}
+            className="relative bg-gradient-to-b from-[#006AFF] to-[#000718] w-full max-w-5xl h-[500px] rounded-3xl flex justify-center items-center mb-5"
           >
-            <div className="absolute inset-0 bg-[#000d1f] bg-opacity-95 rounded-3xl"></div>
-            <div className="absolute inset-0 rounded-3xl opacity-30 pointer-events-none bg-[url('/images/cardframe.png')] bg-cover bg-center" />
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                ref={(el) => {
+                  cardsRef.current[index] = el!;
+                }}
+                className="absolute max-w-5xl inset-3 flex flex-col justify-center items-center rounded-3xl overflow-hidden shadow-xl border border-blue-800/40 py-10 md:p-10 px-5 md:px-20"
+              >
+                <div className="absolute inset-0 bg-[#000d1f] bg-opacity-95 rounded-3xl"></div>
+                <div className="absolute inset-0 rounded-3xl opacity-30 pointer-events-none bg-[url('/images/cardframe.png')] bg-cover bg-center" />
 
-            <div className="relative flex justify-center flex-col items-center align-middle text-center space-y-4 md:space-y-8 md:mb-20" >
-              <div className="rounded-full border border-white/20 px-4 py-1 bg-[#030E2E] my-6 md:my-10 md:mt-20 text-sm sm:text-base">
-                {step.title}
+                <div className="relative flex flex-col items-center text-center space-y-4 md:space-y-8">
+                  <div className="rounded-full border border-white/20 px-4 py-1 bg-[#030E2E] my-6 md:my-10 text-sm sm:text-base">
+                    {step.title}
+                  </div>
+                  <div className="text-3xl md:text-5xl font-bold text-blue-400">
+                    {step.heading}
+                  </div>
+                  <div className="mt-4 md:mt-6 text-base md:text-lg leading-relaxed text-gray-200">
+                    {step.text}
+                  </div>
+                </div>
               </div>
-              <div className="text-3xl md:text-5xl font-bold text-blue-400">
-                {step.heading}
-              </div>
-              <div className="mt-4 md:mt-6 text-base md:text-lg leading-relaxed text-gray-200">
-                {step.text}
-              </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import Services from "@/components/services";
 import FlowDiagramSection from "@/components/FlowDiagramSection";
 import GridSection from "@/components/GridSection";
 import Hero from "@/components/Hero";
+import Testimonials from "@/components/Testimonials";
 import FaqSection from "@/components/FAQ";
 import CTASection from "@/components/cta";
 import Image from "next/image";
@@ -15,7 +16,8 @@ import MeetTheFounder from "@/components/MeetTheFounder";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import CardEffect from "@/components/CardEffect";
 import LaunchOnTime from "@/components/LaunchOnTime";
-
+import ValneesCorePillars from "@/components/ValneeCorePillars";
+import BuildNextBigThing from "@/components/NextBigThing";
 
 
 export default function HomePage() {
@@ -44,6 +46,8 @@ export default function HomePage() {
       <FlowDiagramSection/>
       <AIToolsSection />
       <GridSection />
+      <ValneesCorePillars/>
+      <BuildNextBigThing/>
       <Services />
       <MeetTheFounder />
       <TestimonialCarousel/>
