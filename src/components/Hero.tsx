@@ -81,13 +81,30 @@ export default function Hero() {
             </div>
             
             <h1 className="relative z-10 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight text-white">
-              <span className="block sm:whitespace-nowrap">Stop Hiring Freelancers Who <span className="text-white/80">Disappear.</span></span>
-              <span className="block mt-2 sm:whitespace-nowrap">Start <span className="text-[#6bc1ff]">Building</span> With a Partner Who <span className="font-[family-name:var(--font-lobster)]">Delivers.</span></span>
+              <span className="block sm:whitespace-nowrap">Stop Hiring <span className="font-[family-name:var(--font-lobster)]">Freelancers</span> Who <span className="text-white/80">Disappear. 😑</span></span>
+              <span className="block mt-2 sm:whitespace-nowrap">
+                <span className="inline-flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-2 gap-y-1 sm:gap-3">
+                  <span 
+                    className="inline-flex items-center justify-center px-4 sm:px-5 py-1 sm:py-1 bg-white rounded-3xl whitespace-nowrap"
+                    style={{ 
+                      transform: 'rotate(-2deg)',
+                      fontFamily: 'var(--font-cal-sans)',
+                      color: '#3FA9E0',
+                      fontSize: 'clamp(1.5rem, 5vw, 3.25rem)',
+                      fontWeight: 600,
+                      lineHeight: '150%'
+                    }}
+                  >
+                    Start Building
+                  </span>
+                  <span className="sm:whitespace-nowrap">With a Partner Who <span className="font-[family-name:var(--font-lobster)]">Delivers.</span></span>
+                </span>
+              </span>
               <span className="pointer-events-none absolute inset-x-0 -bottom-2 mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-60" />
             </h1>
           </div>
 
-          <p className="mt-6 max-w-3xl text-gray-300 text-sm sm:text-base md:text-lg px-4">
+          <p className="mt-6 max-w-4xl text-gray-300 text-sm sm:text-base md:text-lg px-4">
             We translate your vision into a scalable, launch-ready MVP, so you can focus on building your <span className="font-semibold text-white">business.</span>
           </p>
           <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none px-4">
