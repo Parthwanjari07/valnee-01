@@ -26,7 +26,7 @@ const content: Content[] = [
 	},
 ];
 
-const LaunchOnTune = () => {
+const LaunchOnTime = () => {
 	return (
 		<>
 			<div className="relative my-[10em] z-[1] rounded-2xl">
@@ -60,7 +60,7 @@ const LaunchOnTune = () => {
 					<span
 						style={{ fontFamily: "Lobster" }}
 						className="text-cyan-400">
-						Tune
+						Time
 					</span>
 					&#46; That&apos;s Our Promise 🤝
 				</div>
@@ -107,4 +107,4 @@ const LaunchOnTune = () => {
 	);
 };
 
-export default LaunchOnTune;
+export default LaunchOnTime;
