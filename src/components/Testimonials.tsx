@@ -5,8 +5,21 @@
 import Image from "next/image";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
+
+interface SplideInstance {
+  splide: {
+    go: (target: string | number) => void;
+    Components: {
+      Autoplay: {
+        play: () => void;
+        pause: () => void;
+      };
+    };
+    index: number;
+  };
+}
 
 const testimonials = [
   {
@@ -33,23 +46,55 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const splideRef = useRef<{ go: (direction: string) => void } | null>(null);
+  const splideRef = useRef<SplideInstance | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    // Ensure autoplay starts when component mounts
+    if (splideRef.current && splideRef.current.splide) {
+      const autoplay = splideRef.current.splide.Components.Autoplay;
+      if (autoplay) {
+        autoplay.play();
+      }
+    }
+  }, []);
 
   const goNext = () => {
-    if (splideRef.current) {
-      splideRef.current.go('+1');
+    if (splideRef.current && splideRef.current.splide) {
+      splideRef.current.splide.go('+1');
     }
   };
 
   const goPrev = () => {
-    if (splideRef.current) {
-      splideRef.current.go('-1');
+    if (splideRef.current && splideRef.current.splide) {
+      splideRef.current.splide.go('-1');
+    }
+  };
+
+  const toggleAutoplay = () => {
+    if (splideRef.current && splideRef.current.splide) {
+      const autoplay = splideRef.current.splide.Components.Autoplay;
+      if (autoplay) {
+        if (isPlaying) {
+          autoplay.pause();
+        } else {
+          autoplay.play();
+        }
+        setIsPlaying(!isPlaying);
+      }
+    }
+  };
+
+  const goToSlide = (index: number) => {
+    if (splideRef.current && splideRef.current.splide) {
+      splideRef.current.splide.go(index);
     }
   };
 
   return (
     <>
-      <section className="relative w-full bg-gradient-to-b to-[#00091A] from-[#00020D]">
+      <section className="relative w-full bg-[#00020d]">
         <div className="max-w-7xl mx-auto px-4 pt-20 z-20">
           <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-[var(--font-sf-pro)] bg-gradient-to-b from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
             Valnee Builds Future-Ready Tech That Solves Real<br />
@@ -58,7 +103,7 @@ export default function Testimonials() {
         </div>
       </section>
 
-      <section className="relative w-full py-20 bg-[#00091A]">
+      <section className="relative w-full py-20 bg-[#00020d]">
         <div className="max-w-7xl mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-16">
@@ -78,11 +123,18 @@ export default function Testimonials() {
                 gap: "2rem",
                 arrows: false,
                 pagination: false,
+                autoplay: true,
+                interval: 3000,
+                pauseOnHover: true,
+                pauseOnFocus: true,
+                speed: 800,
+                easing: "cubic-bezier(0.25, 1, 0.5, 1)",
                 breakpoints: {
                   1024: { perPage: 2 },
                   768: { perPage: 1 },
                 },
               }}
+              onMove={(splide: { index: number }) => setCurrentSlide(splide.index)}
               className="z-20"
             >
               {testimonials.map((t, i) => (
@@ -131,22 +183,50 @@ export default function Testimonials() {
             </Splide>
           </div>
 
-          {/* Custom navigation arrows */}
-          <div className="flex gap-4 justify-center mt-12">
-            <button 
-              onClick={goPrev}
-              className="w-12 h-12 rounded-lg flex items-center justify-center text-white hover:bg-blue-900/30 transition-all bg-[#0A1628]/60 border border-blue-900/30 backdrop-blur-sm"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={goNext}
-              className="w-12 h-12 rounded-lg flex items-center justify-center text-white hover:bg-blue-900/30 transition-all bg-[#0A1628]/60 border border-blue-900/30 backdrop-blur-sm"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight size={24} />
-            </button>
+          {/* Custom navigation controls */}
+          <div className="flex flex-col items-center gap-6 mt-12">
+            {/* Progress indicators */}
+            <div className="flex gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'w-8 bg-blue-500' 
+                      : 'w-2 bg-gray-600 hover:bg-gray-500'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Navigation buttons */}
+            <div className="flex gap-4 justify-center">
+              <button 
+                onClick={goPrev}
+                className="w-12 h-12 rounded-lg flex items-center justify-center text-white hover:bg-blue-500/20 hover:border-blue-500/50 transition-all bg-[#0A1628]/60 border border-blue-900/30 backdrop-blur-sm"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              
+              <button 
+                onClick={toggleAutoplay}
+                className="w-12 h-12 rounded-lg flex items-center justify-center text-white hover:bg-blue-500/20 hover:border-blue-500/50 transition-all bg-[#0A1628]/60 border border-blue-900/30 backdrop-blur-sm"
+                aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
+              >
+                {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+              </button>
+              
+              <button 
+                onClick={goNext}
+                className="w-12 h-12 rounded-lg flex items-center justify-center text-white hover:bg-blue-500/20 hover:border-blue-500/50 transition-all bg-[#0A1628]/60 border border-blue-900/30 backdrop-blur-sm"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
           </div>
         </div>
       </section>

@@ -4,7 +4,6 @@
 import { useState } from "react";
 import { Info, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 
 interface FaqItem {
   question: string;
@@ -13,24 +12,37 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    question: "Why is Webflow the best nocode tool?",
+    question: "Do you code everything or use no-code/low-code tools?",
     answer:
-      "Webflow stands out as the leading no-code platform by giving users complete creative control over their websites without relying on developers.",
+      "We primarily code everything from scratch for performance and scalability — but use AI-assisted tools and low-code platforms when they accelerate delivery without compromising quality.",
   },
   {
-    question: "Why is Webflow the best nocode tool?",
+    question: "What happens after the MVP is done?",
     answer:
-      "Webflow stands out as the leading no-code platform by giving users complete creative control over their websites without relying on developers.",
+      "After launch, you can either keep us as your dev team to scale your MVP or take full ownership of the clean, documented codebase — built for easy handoff and future growth.",
   },
   {
-    question: "Why is Webflow the best nocode tool?",
+    question: "What services do you offer?",
     answer:
-      "Webflow stands out as the leading no-code platform by giving users complete creative control over their websites without relying on developers.",
+      "We specialize in building MVPs, custom software, and AI-driven digital products — from idea validation to launch — all delivered in just 21 days*.",
   },
   {
-    question: "Why is Webflow the best nocode tool?",
+    question: "What is average cost of an app?",
     answer:
-      "Webflow stands out as the leading no-code platform by giving users complete creative control over their websites without relying on developers.",
+      "The cost of building an app depends on its features, complexity, and scope. On average, most MVPs or standard apps range between ₹xx–₹xx ($xx–$xx).",
+
+  },
+  {
+    question: "I have an app idea where do I start from?",
+    answer:
+      "Begin by outlining how users will interact with your app—just a simple paragraph or 2–3 sentences on the concept.",
+
+  },
+  {
+    question: "What happens if we miss the launch deadline?",
+    answer:
+      "We commit to a launch date in our contract. If we miss it due to our own delays, we offer a refund/money back guarantee.",
+
   },
 ];
 
@@ -42,40 +54,7 @@ export default function FaqSection() {
   };
 
   return (
-    // STEP 1: Add `relative` and `overflow-hidden` to the main container
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-[url('/images/contact_bg.png')] bg-cover bg-center bg-no-repeat px-6 py-16">
-      
-      <Image
-        height={300}
-        width={200}
-        src="/images/blueholotl.png"
-        alt="Background ring decoration"
-        className="absolute top-[-150px] left-[-100px] transform scale-x-[-1] w-[500px] h-auto opacity-80 pointer-events-none z-0"
-      />
-      <Image
-      height={300}
-        width={200}
-        src="/images/holosupport.png" 
-        alt="Background ring decoration"
-        className="absolute top-[-150px] left-[-0px] w-[500px] h-auto transform scale-x-[-1] opacity-60 pointer-events-none z-1"
-      />
-      {/* Ring 2: Bottom Right */}
-      <Image
-      height={300}
-        width={200}
-        src="/images/blueholobr.png" 
-        alt="Background ring decoration"
-        className="absolute bottom-[-200px] right-[-150px] w-[600px] h-auto opacity-80 pointer-events-none z-0"
-      />
-      <Image
-      height={300}
-        width={200}
-        src="/images/holosupport.png" 
-        alt="Background ring decoration"
-        className="absolute bottom-[-200px] right-[-150px] w-[600px] h-auto opacity-40 pointer-events-none z-0"
-      />
-
-      {/* STEP 3: Add `relative` and `z-10` to your content wrapper to place it above the rings */}
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-[#00020d] px-6 py-16">
       <div className="relative z-10 max-w-7xl w-full grid md:grid-cols-3 gap-12 text-white">
         {/* Left Info */}
         <div className="md:col-span-1 flex flex-col justify-start">

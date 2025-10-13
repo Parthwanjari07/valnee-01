@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { PiTriangleFill } from "react-icons/pi";
 
 // Interface for Social Card props for type safety
 interface SocialCardProps {
@@ -21,7 +20,7 @@ const socialCards: SocialCardProps[] = [
     title: "Github",
     description:
       "To report bugs, request features and contribute to the project.",
-    href: "#",
+    href: "https://github.com/valnee-Solutions",
     iconClassName: "text-white/60 group-hover:text-white",
   },
   {
@@ -29,14 +28,14 @@ const socialCards: SocialCardProps[] = [
     title: "Linked In",
     description:
       "To get involved in the community, ask questions and share tips.",
-    href: "#",
+    href: "https://www.linkedin.com/company/valnee-solutions",
     iconClassName: "text-white/60 group-hover:text-white",
   },
   {
     icon: FaXTwitter,
     title: "X",
     description: "For announcements, tips and general information.",
-    href: "#",
+    href: "https://x.com/Valneesolutions",
     iconClassName: "text-white/40 group-hover:text-white",
   },
 ];

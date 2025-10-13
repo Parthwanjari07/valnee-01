@@ -2,14 +2,11 @@
 "use client";
 
 import Image from "next/image";
-import { FlipWords } from "./ui/flip-words";
-import { GradientCTAButton } from "./ui/gradient-cta-button";
 
 export default function Hero() {
-  const words = ["Faster", "Launch-ready", "Investor-ready", "Scalable","Secure"];
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#00020D]">
       {/* Video on bottom half */}
       {/* <video
         className="absolute inset-0 bottom-0 w-full h-screen lg:h-auto object-cover"
@@ -31,109 +28,136 @@ export default function Hero() {
         />
       </div> */}
 
-      {/* Content */}
+       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-between text-white z-20">
         <div className="relative z-30 flex flex-col items-center justify-center flex-1 w-full text-center px-4 sm:px-6 md:px-8 py-20 sm:py-24 md:py-28 lg:py-36">
-          <div className="flex gap-1 mb-4 sm:mb-6 flex-wrap items-center text-center justify-center max-w-full">
-            {/* <span className="bg-white/10 text-white px-3 py-1 rounded-full inline-flex text-sm border border-white/20">
-              <Stars className="mr-1 w-5 h-5" />
-              AI-Powered
-            </span>
-            <span className="bg-white/10 text-white px-3 py-1 rounded-full inline-flex text-sm border border-white/20">
-              <Lightbulb className="mr-1 w-5 h-5" />
-              Smart solution
-            </span>
-            <span className="bg-white/10 text-white px-3 py-1 rounded-full inline-flex text-sm border border-white/20">
-              <WandSparkles className="mr-1 w-5 h-5" />
-              Customised
-            </span> */}
+          <div className="flex gap-2 sm:gap-3 mb-4 sm:mb-6 flex-wrap items-center justify-center max-w-full">
+            {/* Main pill: avatars + text + embedded FAST chip */}
+            <div className="relative inline-flex items-center gap-2 sm:gap-2 rounded-full border border-white bg-white shadow-lg px-2 py-0.5 sm:px-3 sm:py-1 overflow-hidden">
+              {/* Static glow */}
+              <span className="pointer-events-none absolute -inset-0.5 rounded-full bg-white opacity-20 blur-md" />
+              {/* Pill-wide white shimmer overlay */}
+              <span
+                className="pointer-events-none absolute inset-0 rounded-full z-20"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.2) 60%, transparent 100%)",
+                  animation: "sparkle-sweep-paused 5s linear 0s infinite",
+                  width: "200%",
+                  left: "-50%",
+                  filter: "blur(0.8px)",
+                  mixBlendMode: "normal",
+                }}
+              />
+
+              <div className="relative z-10 flex -space-x-1.5 sm:-space-x-2">
+                <Image src="https://framerusercontent.com/images/dRU460eX51GyZswEa8XXGmbpWII.png" alt="Founder avatar" width={20} height={20} className="h-3.5 w-3.5 sm:h-5 sm:w-5 rounded-full ring-1 sm:ring-2 ring-white object-cover" />
+                <Image src="https://framerusercontent.com/images/mvtXROTJXMdy5P4OQiYu7M2M234.png" alt="Founder avatar" width={20} height={20} className="h-3.5 w-3.5 sm:h-5 sm:w-5 rounded-full ring-1 sm:ring-2 ring-white object-cover" />
+                <Image src="https://framerusercontent.com/images/mDJYqZ2MM6QWu3XXMAIC4lRzFtw.png" alt="Founder avatar" width={20} height={20} className="h-3.5 w-3.5 sm:h-5 sm:w-5 rounded-full ring-1 sm:ring-2 ring-white object-cover" />
+              </div>
+              <span className="relative z-10 text-[10px] sm:text-[12px] leading-[1.3] font-light text-[#000000]">
+                Trusted by 20+ visionary founders.
+              </span>
+
+              {/* Embedded FAST chip with higher contrast */}
+              <span className="relative z-10 inline-flex items-center rounded-full bg-white px-1.5 sm:px-2.5 py-[1px] sm:py-[2px] shadow ring-1 ring-black/10">
+                <span className="text-[10px] sm:text-[12px]">⚡️</span>
+                <span className="text-[10px] sm:text-[12px] italic text-[#031E2E]">FAST</span>
+              </span>
+            </div>
           </div>
 
-          <div className="relative w-full max-w-7xl mx-auto flex justify-center">
-            <h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight text-transparent bg-clip-text bg-[linear-gradient(120deg,#f8fafc_0%,#cbd5f5_12%,#f1f5ff_25%,#6bc1ff_38%,#eef2ff_52%,#c7d2fe_66%,#f9fafb_82%,#94a3b8_100%)] drop-shadow-[0_12px_40px_rgba(59,130,246,0.25)]">
-              <span className="mt-6 flex flex-wrap items-baseline justify-start gap-2 sm:gap-3">
-                <span className="text-transparent bg-clip-text bg-[linear-gradient(120deg,#f8fafc_0%,#94a3b8_30%,#f8fafc_55%,#dbeafe_75%,#94a3b8_100%)]">
-                  Build
-                </span>
-                <span className="inline-flex min-w-[150px] sm:min-w-[200px] md:min-w-[250px] justify-center">
-                  <FlipWords
-                    words={words}
-                    className="w-full text-center font-semibold"
-                    textClassName="text-transparent bg-clip-text bg-[linear-gradient(120deg,#f8fafc_0%,#cbd5f5_12%,#f1f5ff_25%,#6bc1ff_38%,#eef2ff_52%,#c7d2fe_66%,#f9fafb_82%,#94a3b8_100%)] drop-shadow-[0_12px_40px_rgba(59,130,246,0.25)]"
-                  />
-                </span>
-              </span>
-              <span className="flex flex-col items-start justify-start mt-2">
-                <span className="flex flex-wrap items-baseline justify-start gap-2 sm:gap-3 text-transparent bg-clip-text bg-[linear-gradient(105deg,#f8fafc_0%,#dbeafe_20%,#94a3b8_45%,#f1f5ff_65%,#94a3b8_88%,#f8fafc_100%)]">
-                  MVP&apos;s with
-                  <span className="relative inline-flex flex-col items-start text-transparent bg-clip-text bg-[linear-gradient(105deg,#f8fafc_0%,#dbeafe_20%,#94a3b8_45%,#f1f5ff_65%,#94a3b8_88%,#f8fafc_100%)]">
-                    Valnee Solutions
-                    <svg
-                      className="pointer-events-none -mt-3 sm:-mt-4 md:-mt-5 lg:-mt-6 xl:-mt-8 mb-4 sm:mb-6 md:mb-8 w-[130%] sm:w-[150%] md:w-[180%] lg:w-[220%] max-w-[20rem] sm:max-w-[24rem] md:max-w-[28rem] lg:max-w-[32rem]"
-                      viewBox="0 0 280 48"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      preserveAspectRatio="xMidYMid meet"
-                    >
-                      <defs>
-                        <linearGradient
-                          id="valneeUnderlineGradient"
-                          x1="0"
-                          y1="24"
-                          x2="280"
-                          y2="24"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop offset="0%" stopColor="#38bdf8" />
-                          <stop offset="50%" stopColor="#3b82f6" />
-                          <stop offset="100%" stopColor="#6366f1" />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d="M18 26 C 120 12 160 12 262 26"
-                        stroke="url(#valneeUnderlineGradient)"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                      />
-                    </svg>
+          <div className="relative w-full max-w-5xl mx-auto flex justify-center">
+            {/* Glowing effect SVG behind text */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+              <Image
+                src="/glowing effect.svg"
+                alt="Glowing effect"
+                width={800}
+                height={400}
+                className="w-full max-w-4xl h-auto opacity-100 brightness-150 contrast-125"
+                priority
+              />
+            </div>
+            
+            <h1 className="relative z-10 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight text-white">
+              <span className="block sm:whitespace-nowrap">Stop Hiring <span className="font-[family-name:var(--font-lobster)]">Freelancers</span> Who <span className="text-white/80">Disappear. 😑</span></span>
+              <span className="block mt-2 sm:whitespace-nowrap">
+                <span className="inline-flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-2 gap-y-1 sm:gap-3">
+                  <span 
+                    className="inline-flex items-center justify-center px-4 sm:px-5 py-1 sm:py-1 bg-white rounded-3xl whitespace-nowrap"
+                    style={{ 
+                      transform: 'rotate(-2deg)',
+                      fontFamily: 'var(--font-cal-sans)',
+                      color: '#3FA9E0',
+                      fontSize: 'clamp(1.5rem, 5vw, 3.25rem)',
+                      fontWeight: 600,
+                      lineHeight: '150%'
+                    }}
+                  >
+                    Start Building
                   </span>
+                  <span className="sm:whitespace-nowrap">With a Partner Who <span className="font-[family-name:var(--font-lobster)]">Delivers.</span></span>
                 </span>
               </span>
               <span className="pointer-events-none absolute inset-x-0 -bottom-2 mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-60" />
             </h1>
           </div>
 
-          <p className="mt-4 sm:mt-6 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl text-gray-300 text-sm sm:text-base md:text-lg px-4">
-            Technical team for Non-tech Founders, Entrepreneurs and Businesses
+          <p className="mt-6 max-w-4xl text-gray-300 text-sm sm:text-base md:text-lg px-4">
+            We translate your vision into a scalable, launch-ready MVP, so you can focus on building your <span className="font-semibold text-white">business.</span>
           </p>
           <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none px-4">
-            <GradientCTAButton
+            {/* Black primary button */}
+            <a
               href="/contact"
-              primaryLabel="Talk to Founder"
-              secondaryLabel="Let&apos;s build magic"
-              className="rounded-2xl w-full sm:w-auto"
-              size="md"
-              fullWidth
-            />
-            <button className="relative inline-flex h-12 sm:h-17 w-full sm:w-auto overflow-hidden rounded-xl p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="px-8 sm:px-17 inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-slate-950 py-1 text-sm sm:text-base font-medium text-white backdrop-blur-3xl">
-                Book a Call
-              </span>
-            </button>
+              className="w-full sm:w-[218px] inline-flex items-center justify-center gap-2 h-12 sm:h-[56px] px-5 sm:px-6 sm:whitespace-nowrap rounded-xl bg-black text-white font-medium shadow-sm border border-white/10 hover:bg-black/90 focus:outline-none focus:ring-2 focus:ring-white/20"
+              aria-label="Talk to Founder"
+            >
+             
+              Talk to Founder
+      <svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect y="0.5" width="36" height="36" rx="8" fill="black"/>
+  <g transform="translate(18, 18.5) scale(1.7) translate(-18, -18.5)">
+    <path fillRule="evenodd" clipRule="evenodd" d="M20.8122 21.0254L19.846 20.7657L20.8153 17.1507L12.9839 21.6722L12.4839 20.8062L20.3153 16.2847L16.7 15.3167L16.9582 14.3501L22.2229 15.7607L20.8122 21.0254Z" fill="white"/>
+  </g>
+</svg>
+
+
+
+
+            </a>
+
+            {/* White secondary button with icon */}
+            <a
+              href="https://mfaebogwihppaoyyclzs.supabase.co/storage/v1/object/public/brochure/Brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-[218px] inline-flex items-center justify-center gap-2 h-12 sm:h-[56px] px-5 sm:px-6 sm:whitespace-nowrap rounded-xl bg-white text-black font-medium shadow-sm border border-black/10 hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/30"
+              aria-label="Download Brochure"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+                aria-hidden="true"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" x2="12" y1="15" y2="3" />
+              </svg>
+              Download Brochure
+            </a>
           </div>
         </div>
 
-        {/* Bottom text */}
-        <div className="w-full flex items-end justify-between px-4 sm:px-6 md:px-8 pb-4 z-40">
-          <div className="text-gray-400 text-xs sm:text-sm">
-            One-Stop Digital Innovation Partner
-          </div>
-          <div className="text-gray-400 text-xs sm:text-sm">
-            Valnee Solutions
-          </div>
-        </div>
+        
+        
       </div>
     </section>
   );
