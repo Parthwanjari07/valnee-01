@@ -5,7 +5,6 @@ import FlowDiagramSection from "@/components/FlowDiagramSection";
 import Footer from "@/components/Footer";
 import GridSection from "@/components/GridSection";
 import Hero from "@/components/Hero";
-import ProcessSlider from "@/components/ProcessSlider";
 import Testimonials from "@/components/Testimonials";
 import FaqSection from "@/components/FAQ";
 import CTASection from "@/components/cta";
@@ -14,9 +13,9 @@ import CardEffect from "@/components/CardEffect";
 
 import NewFooter from "@/components/NewFooter";
 import ImportanceSection from "@/components/ImportanceSection";
-import PartnerYouNeed from "@/components/PartnerYouNeed";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
-
+import ValneesCorePillars from "@/components/ValneeCorePillars";
+import BuildNextBigThing from "@/components/NextBigThing";
 
 
 export default function HomePage() {
@@ -33,6 +32,8 @@ export default function HomePage() {
       <FlowDiagramSection/>
       <AIToolsSection />
       <GridSection />
+      <ValneesCorePillars/>
+      <BuildNextBigThing/>
       <Services />
       <Testimonials />
       <TestimonialCarousel/>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import PartnerYouNeed from "./PartnerYouNeed";
+import { GradientCTAButton } from "./ui/gradient-cta-button";
 
 export default function WhyChooseUs() {
   return (
@@ -43,12 +44,13 @@ export default function WhyChooseUs() {
             Ipsum.
           </p>
 
-          <button className="mt-4 inline-flex items-center gap-3 bg-white text-black font-medium px-3 py-3 rounded-md shadow-lg hover:shadow-cyan-400/20 transition duration-300 text-base sm:text-lg">
-            Start Your Build Today
-            <span className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-black text-white rounded-lg sm:rounded-xl">
-              <span className="-rotate-45 text-lg sm:text-xl">→</span>
-            </span>
-          </button>
+          <GradientCTAButton
+            href="/contact"
+            primaryLabel="Start Your Build Today"
+            secondaryLabel="Let's connect"
+            className="rounded-2xl w-full sm:w-auto"
+            size="md"
+          />
         </div>
 
         {/* RIGHT VISUAL SECTION */}

@@ -71,7 +71,7 @@ export function GradientCTAButton({
             {primaryLabel}
           </span>
           {secondaryLabel ? (
-            <span className="absolute left-0 top-full text-xs font-medium text-slate-500 transition-transform duration-300 group-hover:-translate-y-full group-hover:delay-100">
+            <span className="absolute left-0 top-full text-sm font-semibold text-black transition-transform duration-300 group-hover:-translate-y-full group-hover:delay-100">
               {secondaryLabel}
             </span>
           ) : null}
