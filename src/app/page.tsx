@@ -14,6 +14,7 @@ import ImportanceSection from "@/components/ImportanceSection";
 import MeetTheFounder from "@/components/MeetTheFounder";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import CardEffect from "@/components/CardEffect";
+import LaunchOnTune from "@/components/LaunchOnTune";
 
 
 
@@ -46,6 +47,7 @@ export default function HomePage() {
       <Services />
       <MeetTheFounder />
       <TestimonialCarousel/>
+      <LaunchOnTune />
       <FaqSection/>
       <CTASection />
       {/* <Footer /> */}
