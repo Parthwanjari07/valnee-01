@@ -6,7 +6,7 @@ import { GradientCTAButton } from "./ui/gradient-cta-button";
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative w-full bg-gradient-to-br from-[#000718] via-[#010d25] to-[#02103a] text-white px-6 sm:px-8 md:px-12 lg:px-20 py-24 overflow-hidden">
+    <section className="relative w-full bg-[#000718] text-white px-6 sm:px-8 md:px-12 lg:px-20 py-24 overflow-hidden">
       <PartnerYouNeed />
 
       <div className="relative max-w-full grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 mx-5 items-center my-30">
