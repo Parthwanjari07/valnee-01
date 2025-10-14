@@ -3,8 +3,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 type Blog = {
 	imageStored: string;
@@ -33,12 +34,28 @@ export default function BlogsSlugClient({
 	blog,
 	moreBlogs,
 }: BlogSlugClientProps) {
+	const router = useRouter();
 	const [showLoadMore, setShowLoadMore] = useState<boolean>(true);
+	
 	const handleShowMoreClick = () => {
 		setShowLoadMore(false);
 	};
+
+	const handleBackToHome = () => {
+		router.push('/');
+	};
+
 	return (
 		<>
+			{/* Back to Home Button */}
+			<button
+				onClick={handleBackToHome}
+				className="fixed top-8 left-6 z-50 flex items-center gap-2 px-4 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 group"
+			>
+				<ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
+				<span className="text-sm font-medium">Home</span>
+			</button>
+
 			{/* Hero Section */}
 			<header className="relative h-[60vh] w-full text-white">
 				<Image
@@ -58,22 +75,22 @@ export default function BlogsSlugClient({
 
 			{/* Main Content Section */}
 			<section
-				className={`bg-transparent relative text-gray-300  py-16 sm:py-24 ${
+				className={`bg-transparent relative py-16 sm:py-24 ${
 					showLoadMore ? `h-[40em] overflow-hidden` : `h-fit `
 				}`}>
 				<div
 					className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-12 `}>
 					{/* LEFT - Blog Content */}
 					<div
-						className={`lg:col-span-2 space-y-12 ${
+						className={`lg:col-span-2 space-y-16 blog-content ${
 							showLoadMore ? `overflow-hidden` : `h-full`
 						}`}>
 						{blog.blogSlugHeadings.map((heading, index) => (
 							<article className="" key={index} id={`section-${index}`}>
-								<h2 className="text-lg sm:text-2xl font-bold text-[#FFFFFF] mb-4">
+								<h2 className="mb-6">
 									{heading}
 								</h2>
-								<div className="prose relative text-sm sm:text-lg prose-invert prose-lg max-w-none text-[#98989A]">
+								<div className="space-y-6">
 									{blog.blogSlugContent[index]
 										.split("\n\n")
 										.map((paragraph, pIndex) => (
@@ -90,7 +107,7 @@ export default function BlogsSlugClient({
 								}}>
 								<button
 									onClick={handleShowMoreClick}
-									className="inline-flex bg-white items-center gap-2 px-6 py-3 border border-gray-600 text-black rounded-lg  transition-colors">
+									className="inline-flex bg-white items-center gap-2 px-6 py-3 border border-gray-600 text-black rounded-lg hover:bg-gray-100 transition-colors">
 									Read more <ArrowDown color="black" className="w-5 h-5" />
 								</button>
 							</div>

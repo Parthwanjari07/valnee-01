@@ -534,6 +534,182 @@ line-height: normal;
   }
 }
 
+/* Blog Content Typography - Matches Case Study Styling */
+.blog-content {
+  font-family: 'SF Pro', sans-serif;
+  max-width: 1280px;
+  width: 100%;
+}
+
+.blog-content h1 {
+  font-size: 52px;
+  font-weight: 590;
+  line-height: 62px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.blog-content h2 {
+  font-size: 52px;
+  font-weight: 590;
+  line-height: 62px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.blog-content h3 {
+  font-size: 24px;
+  font-weight: 590;
+  line-height: 29px;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.blog-content p {
+  font-size: 20px;
+  font-weight: 510;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.blog-content ul,
+.blog-content ol {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 40px;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.blog-content ul {
+  list-style: none;
+}
+
+.blog-content ol {
+  list-style: decimal;
+}
+
+.blog-content li {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.blog-content ul li {
+  position: relative;
+  padding-left: 0;
+}
+
+.blog-content ul li::before {
+  content: '→';
+  position: absolute;
+  left: -30px;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.blog-content strong,
+.blog-content b {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.blog-content em {
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+  font-style: normal;
+}
+
+.blog-content a {
+  color: #60A5FA;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.blog-content a:hover {
+  color: #93C5FD;
+}
+
+.blog-content code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  color: #FFFFFF;
+}
+
+.blog-content pre {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.blog-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #E5E7EB;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #60A5FA;
+  padding-left: 60px;
+  margin-left: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.blog-content blockquote p {
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .blog-content h1,
+  .blog-content h2 {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 24px;
+  }
+  
+  .blog-content h3 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+
+  .blog-content p,
+  .blog-content li,
+  .blog-content em,
+  .blog-content blockquote p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 .stroke-text {
   -webkit-text-stroke: 4px rgba(182, 180, 194, 0.08);
 }
