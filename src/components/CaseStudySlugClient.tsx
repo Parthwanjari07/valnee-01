@@ -3,8 +3,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 type CaseStudy = {
 	id: string;
@@ -42,6 +43,7 @@ export default function CaseStudySlugClient({
 	caseStudy,
 	moreCaseStudies,
 }: CaseStudySlugClientProps) {
+	const router = useRouter();
 	const [contentWithIds, setContentWithIds] = useState<string>('');
 
 	// Extract headings from HTML content and add IDs
@@ -51,8 +53,21 @@ export default function CaseStudySlugClient({
 		setContentWithIds(tempDiv.innerHTML);
 	}, [caseStudy.content])
 
+	const handleBackToHome = () => {
+		router.push('/');
+	};
+
 	return (
 		<div className="relative min-h-screen bg-[#000718] overflow-hidden">
+			{/* Back to Home Button */}
+			<button
+				onClick={handleBackToHome}
+				className="fixed top-8 left-6 z-50 flex items-center gap-2 px-4 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 group"
+			>
+				<ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
+				<span className="text-sm font-medium">Home</span>
+			</button>
+
 			{/* Background Gradients */}
 			<div className="absolute inset-0 pointer-events-none">
 				{/* Top gradient */}
