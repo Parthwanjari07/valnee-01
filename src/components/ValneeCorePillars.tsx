@@ -115,7 +115,7 @@ export default function ValneesCorePillars() {
 							<p className="text-gray-300 md:text-lg font-[lora] leading-relaxed">
 								What you see is what you get. You receive real-time updates
 								and direct access to progress, ensuring you are never kept
-								"hostage" by the development process
+								&quot;hostage&quot; by the development process
 							</p>
 						</div>
 					</div>
