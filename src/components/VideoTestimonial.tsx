@@ -101,12 +101,17 @@ export default function VideoTestimonial() {
                 </blockquote>
 
                 <div className="my-6 md:my-8 w-32 md:w-40">
-                  <img
-                    src="/images/starrating.png"
-                    alt="rating stars"
-                    className="w-full h-auto"
-                  />
-                </div>
+  <div className="relative w-full aspect-[5/1]"> {/* maintain aspect ratio */}
+    <Image
+      src="/images/starrating.png"
+      alt="rating stars"
+      fill
+      className="object-contain"
+      sizes="(max-width: 768px) 8rem, 10rem"
+      priority
+    />
+  </div>
+</div>
 
                 <div className="flex items-center gap-4">
                   <Image
