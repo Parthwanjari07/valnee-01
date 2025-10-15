@@ -7,6 +7,25 @@ import React from "react";
 export default function ValneesCorePillars() {
   return (
     <section className="relative w-full  bg-[#000718] text-white px-4 sm:px-8 md:px-12 lg:px-20 py-24 overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center min-h-[30vh] md:min-h-[40vh] w-full overflow-hidden px-4 sm:px-6 mb-10">
+
+      <h1
+        className="absolute tracking-wider text-[25vw] sm:text-[24vw] md:text-[20vw] md:font-extrabold text-transparent stroke-text select-none leading-none "
+        aria-hidden="true"
+      >
+        Valnee
+      </h1>
+
+      <div className="relative sm:-top-20 md:-top-5 -top-10 z-10 text-center px-4">
+        <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug tracking-wider">
+          Valnee&apos;s{" "}
+          <span className="font-[lobster] text-[#79FFFF] font-normal">
+            Core Pillars
+          </span>{" "}
+        </h2>
+      </div>
+
+    </section>
       <div className="max-w-7xl mx-auto">
         <div className="absolute -right-[40%] -top-[40%] w-full h-full opacity-100">
           <Image
@@ -48,14 +67,19 @@ export default function ValneesCorePillars() {
             className="object-contain scale-150 sm:scale-110"
           />
         </div>
-        <h2 className="text-center text-3xl md:text-5xl font-semibold mb-16">
-          Valnee’s Core Pillars
-        </h2>
+        <div className="absolute -left-[40%] top-[40%] w-full h-full opacity-100">
+          <Image
+            src="/images/whyusleftbg.png"
+            alt="Decorative overlay"
+            fill
+            className="object-contain scale-150 sm:scale-110"
+          />
+        </div>
 
         <div className="flex flex-col gap-16">
           <div
             key={1}
-            className={`relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 rounded-2xl backdrop-blur-md border border-white/10 p-6 md:p-10 transition-transform duration-300 hover:scale-[1.01] ${"md:flex-row-reverse"}`}
+            className={`relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 rounded-2xl backdrop-blur-md border border-white/10 p-6 md:p-10 transition-transform duration-300 hover:scale-[1.01] ${""}`}
           >
             <div className="absolute inset-0 bg-[#000718]/30 rounded-2xl -z-10"></div>
 
@@ -64,7 +88,7 @@ export default function ValneesCorePillars() {
                 src="/images/pillar1.png"
                 alt="pillar1"
                 fill
-                className="object-cover rounded-xl"
+                className="object-contain rounded-xl"
               />
             </div>
 
@@ -85,16 +109,16 @@ export default function ValneesCorePillars() {
           </div>
           <div
             key={2}
-            className={`relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 rounded-2xl backdrop-blur-md border border-white/10 p-6 md:p-10 transition-transform duration-300 hover:scale-[1.01] ${""}`}
+            className={`relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 rounded-2xl backdrop-blur-md border border-white/10 p-6 md:p-10 transition-transform duration-300 hover:scale-[1.01] ${"md:flex-row-reverse"}`}
           >
             <div className="absolute inset-0 bg-[#000718]/30 rounded-2xl -z-10"></div>
 
             <div className="relative w-full md:w-1/2 h-56 md:h-72 lg:h-100 rounded-xl overflow-hidden">
               <Image
-                src="/images/pillar2.svg"
+                src="/images/pillar2.png"
                 alt="pillar2"
                 fill
-                className="object-cover rounded-xl"
+                className="object-contain rounded-xl"
               />
             </div>
 
@@ -120,16 +144,16 @@ export default function ValneesCorePillars() {
           </div>
           <div
             key={3}
-            className={`relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 rounded-2xl backdrop-blur-md border border-white/10 p-6 md:p-10 transition-transform duration-300 hover:scale-[1.01] ${"md:flex-row-reverse"}`}
+            className={`relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 rounded-2xl backdrop-blur-md border border-white/10 p-6 md:p-10 transition-transform duration-300 hover:scale-[1.01] ${""}`}
           >
             <div className="absolute inset-0 bg-[#000718]/30 rounded-2xl -z-10"></div>
 
             <div className="relative w-full md:w-1/2 h-56 md:h-72 lg:h-100 rounded-xl overflow-hidden">
               <Image
-                src="/images/pillar3.svg"
+                src="/images/pillar3.png"
                 alt="pillar3"
                 fill
-                className="object-cover rounded-xl"
+                className="object-contain rounded-xl"
               />
             </div>
 
@@ -150,16 +174,16 @@ export default function ValneesCorePillars() {
           </div>
           <div
             key={4}
-            className={`relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 rounded-2xl backdrop-blur-md border border-white/10 p-6 md:p-10 transition-transform duration-300 hover:scale-[1.01] ${""}`}
+            className={`relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 rounded-2xl backdrop-blur-md border border-white/10 p-6 md:p-10 transition-transform duration-300 hover:scale-[1.01] ${"md:flex-row-reverse"}`}
           >
             <div className="absolute inset-0 bg-[#000718]/30 rounded-2xl -z-10"></div>
 
             <div className="relative w-full md:w-1/2 h-56 md:h-72 lg:h-100 rounded-xl overflow-hidden">
               <Image
-                src="/images/pillar4.svg"
+                src="/images/pillar4.png"
                 alt="pillar4"
                 fill
-                className="object-cover rounded-xl"
+                className="object-contain rounded-xl"
               />
             </div>
             <div className="flex flex-col w-full md:w-1/2 space-y-8">
