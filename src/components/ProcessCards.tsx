@@ -86,7 +86,7 @@ export default function StackScroll() {
         ref={containerRef}
         className="min-h-screen flex flex-col justify-center items-center"
       >
-        <div ref={headingRef} className="absolute top-24 text-center z-[999]">
+        <div ref={headingRef} className="absolute top-24 2xl:top-32 text-center z-[999]">
           <h2 className="text-3xl px-5 md:text-4xl font-semibold">
             Streamlining Every Step of Your{" "}
             <span className="italic text-blue-400">Founder Journey</span>
