@@ -48,7 +48,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link href="/services" className="flex items-center h-full px-3 xl:px-4 text-white font-medium text-sm xl:text-base hover:text-cyan-400 transition-colors">
-            Services
+            Process
           </Link>
           <Link href="/about" className="flex items-center h-full px-3 xl:px-4 text-white font-medium text-sm xl:text-base hover:text-cyan-400 transition-colors">
             About us
