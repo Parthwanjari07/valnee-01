@@ -29,13 +29,7 @@ const content: Content[] = [
 const LaunchOnTime = () => {
 	return (
 		<>
-			<div className="relative my-[10em] z-[1] rounded-2xl">
-				{/* <img
-					// style={{scale:"1.1"}}
-					className="bg-cover w-[100%] rounded-2xl h-[50em] absolute z-[-1]"
-					src="./images/tile1-bg.png"
-					alt="bg-img"
-				/> */}
+			<div className="relative my-[10em] z-[-1] rounded-2xl">
 				<div style={{ top: "-30em" }} className="absolute">
 					<Image
 						width={800}
@@ -54,8 +48,8 @@ const LaunchOnTime = () => {
 				</div>
 			</div>
 
-			<section className="text-white p-4 py-20">
-				<div className="text-center text-gray-300 font-semibold text-2xl sm:text-3xl lg:text-4xl">
+			<section className="text-white mb-[20em] mx-8 min-h-fit launch-time-outer-box py-20">
+				<div className="text-center z-[2] text-white font-semibold opacity-100 text-2xl sm:text-3xl lg:text-4xl">
 					Launch on{" "}
 					<span
 						style={{ fontFamily: "Lobster" }}
@@ -64,13 +58,13 @@ const LaunchOnTime = () => {
 					</span>
 					&#46; That&apos;s Our Promise 🤝
 				</div>
-				<div className="mt-[4em] sm:px-[7em]">
+				<div className="mt-[4em] px-[1em] sm:px-[4em]">
 					{content.map((val, index) => (
 						<>
 							<div style={{ fontFamily: "Lora" }} className="relative">
 								{/* Left Side */}
 								{val.id % 2 !== 0 ? (
-									<div className="flex items-center">
+									<div className="flex mt-[4em] sm:mt-0 items-center">
 										<img className="w-25 h-25 z-1" src={val.icon} alt="" />
 										<div
 											style={{
@@ -84,7 +78,7 @@ const LaunchOnTime = () => {
 										</div>
 									</div>
 								) : (
-									<div className="flex flex-row-reverse items-center">
+									<div className="flex flex-row-reverse  mt-[4em] sm:mt-0 items-center">
 										<img className="w-25 h-25 z-1" src={val.icon} alt="" />
 										<div
 											style={{

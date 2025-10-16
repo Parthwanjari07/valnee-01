@@ -75,176 +75,175 @@ const SocialCard: React.FC<SocialCardProps> = ({
 
 const Footer = () => {
   return (
-    <footer className="bg-[#000513] text-white">
-      <div className="">
-        {/* Section 1: Social Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 container mx-auto px-6 lg:px-8 pt-24">
-          {socialCards.map((card) => (
-            <SocialCard key={card.title} {...card} />
-          ))}
-        </div>
+		<footer className="relative bg-[#000513] text-white">
+			<div className="">
+				{/* Section 1: Social Cards */}
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 container mx-auto px-6 lg:px-8 pt-24">
+					{socialCards.map((card) => (
+						<SocialCard key={card.title} {...card} />
+					))}
+				</div>
 
-        <div className="mx-auto text-white px-6 lg:px-48 lg:pl-56 pt-24">
-          {/* Section 2: Footer Links */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 mb-60">
-            {/* Column 1: Brand Info */}
-            <div className="md:col-span-2 lg:col-span-1">
-              <div className="flex items-center mb-4">
-                <Link href="/" className="flex items-center">
-                  <Image
-                    src="/valneeLogo.svg"
-                    alt="Valnee"
-                    width={50}
-                    height={50}
-                  />
-                  <span className="ml-2 text-xl font-bold">
-                    Valnee solutions
-                  </span>
-                </Link>
-              </div>
-              <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
-                Valnee Solutions turns bold ideas into powerful digital
-                products, blending AI, design, and scalable tech to bring your
-                vision to life.
-              </p>
-            </div>
+				<div className="mx-auto relative text-white px-6 lg:px-48 lg:pl-56 pt-24">
+					{/* Section 2: Footer Links */}
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 mb-60">
+						{/* Column 1: Brand Info */}
+						<div className="md:col-span-2 lg:col-span-1">
+							<div className="flex items-center mb-4">
+								<Link href="/" className="flex items-center">
+									<Image
+										src="/valneeLogo.svg"
+										alt="Valnee"
+										width={50}
+										height={50}
+									/>
+									<span className="ml-2 text-xl font-bold">
+										Valnee solutions
+									</span>
+								</Link>
+							</div>
+							<p className="text-gray-400 text-sm max-w-xs leading-relaxed">
+								Valnee Solutions turns bold ideas into powerful digital
+								products, blending AI, design, and scalable tech to bring
+								your vision to life.
+							</p>
+						</div>
 
-            {/* Column 2: Quick Links */}
-            <div>
-              <h4 className="font-semibold text-white text-lg mb-5">Quick Links</h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    How it works
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Who we serve
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    FAQs
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
+						{/* Column 2: Quick Links */}
+						<div>
+							<h4 className="font-semibold text-white text-lg mb-5">
+								Quick Links
+							</h4>
+							<ul className="space-y-3">
+								<li>
+									<Link
+										href="#"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										How it works
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="#"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Who we serve
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="#"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										FAQs
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/contact"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Contact Us
+									</Link>
+								</li>
+							</ul>
+						</div>
 
-            {/* Column 3: Legal */}
-            <div>
-              <h4 className="font-semibold text-white text-lg mb-5">Legal</h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="/terms-of-service"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Terms of Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/cookies-policy"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Cookies Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/affiliate-policy"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Affiliate Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/privacy-policy"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
+						{/* Column 3: Legal */}
+						<div>
+							<h4 className="font-semibold text-white text-lg mb-5">
+								Legal
+							</h4>
+							<ul className="space-y-3">
+								<li>
+									<Link
+										href="/terms-of-service"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Terms of Services
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/cookies-policy"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Cookies Policy
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/affiliate-policy"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Affiliate Policy
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/privacy-policy"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Privacy Policy
+									</Link>
+								</li>
+							</ul>
+						</div>
 
-            {/* Column 4: Social Media */}
-            <div>
-              <h4 className="font-semibold text-white text-lg mb-5">Social Media</h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    LinkedIn
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Facebook
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    Instagram
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+						{/* Column 4: Social Media */}
+						<div>
+							<h4 className="font-semibold text-white text-lg mb-5">
+								Social Media
+							</h4>
+							<ul className="space-y-3">
+								<li>
+									<Link
+										href="#"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										LinkedIn
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="#"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Facebook
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="#"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Instagram
+									</Link>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-
-
-          {/* Bottom Bar: Copyright & Links */}
-          <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left py-6 border-t border-white/10">
-            <p className="text-xs text-gray-500 mb-4 sm:mb-0">
-              Copyright @ Valnee. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <Link
-                href="/privacy-policy"
-                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms-of-service"
-                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
-              >
-                Terms of Services
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+					{/* Bottom Bar: Copyright & Links */}
+					<div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left py-6 border-t border-white/10">
+						<p className="text-xs text-gray-500 mb-4 sm:mb-0">
+							Copyright @ Valnee. All rights reserved.
+						</p>
+						<div className="flex space-x-6">
+							<Link
+								href="/privacy-policy"
+								className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+								Privacy Policy
+							</Link>
+							<Link
+								href="/terms-of-service"
+								className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+								Terms of Services
+							</Link>
+						</div>
+					</div>
+				</div>
+				<div
+					className="absolute bottom-0 w-[100vw] h-[20em] z-[0] pointer-events-none"
+					style={{
+						background:
+							"radial-gradient(circle at center, #4C6FDC 0%, #030E2E 71.64%)",
+						opacity: "0.6",
+						filter: "blur(130px)",
+					}}/>
+			</div>
+		</footer>
+	);
 };
 
 export default Footer;
