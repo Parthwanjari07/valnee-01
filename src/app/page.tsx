@@ -34,12 +34,11 @@ export default function HomePage() {
       <WhyChooseUs/>
       <CardEffect/>
       <ValneesCorePillars/>
-      <BuildNextBigThing/>
+      {/* <BuildNextBigThing/> */}
       <MeetTheFounder />
       <TestimonialCarousel/>
-      <LaunchOnTime />
       <FaqSection/>
-      <CTASection />
+      <LaunchOnTime />
       < NewFooter/>
     </main>
   );

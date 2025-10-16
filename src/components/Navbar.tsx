@@ -48,7 +48,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link href="/services" className="flex items-center h-full px-3 xl:px-4 text-white font-medium text-sm xl:text-base hover:text-cyan-400 transition-colors">
-            Services
+            Process
           </Link>
           <Link href="/about" className="flex items-center h-full px-3 xl:px-4 text-white font-medium text-sm xl:text-base hover:text-cyan-400 transition-colors">
             About us
@@ -67,8 +67,8 @@ const Navbar = () => {
         {/* CTA Button */}
         <button 
           onClick={handleBookCall} 
-          className="hidden lg:flex items-center ml-4 bg-white/90 hover:bg-black hover:text-white text-black rounded-lg px-4 xl:px-6 py-2 font-semibold text-sm xl:text-base transition-colors"
-        >
+         className="hidden lg:flex items-center ml-4 bg-black text-white border border-white rounded-xl px-[30px] py-[10px] font-semibold text-sm xl:text-base w-[140px] h-[48px] justify-center transform transition-transform duration-200 hover:scale-110 cursor-pointer"
+ >
           Book a call
         </button>
 
@@ -136,7 +136,7 @@ const Navbar = () => {
                   setIsOpen(false);
                   handleBookCall();
                 }} 
-                className="w-full bg-white/90 hover:bg-black hover:text-white text-black rounded-lg px-6 py-3 font-semibold transition-colors"
+                className="w-full bg-black text-white border border-white rounded-xl px-[30px] py-[10px] font-semibold transition-colors hover:bg-white hover:text-black h-[56px] justify-center"
               >
                 Book a call
               </button>
