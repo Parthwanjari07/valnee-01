@@ -29,14 +29,14 @@ const MeetTheFounder = () => {
 
   return (
 		<>
-			<div className="relative my-[10em] z-[0] rounded-2xl">
+			<div className="relative rounded-2xl">
 				{/* <img
 					// style={{scale:"1.1"}}
 					className="bg-cover w-[100%] rounded-2xl h-[50em] absolute z-[-1]"
 					src="./images/tile1-bg.png"
 					alt="bg-img"
 				/> */}
-				<div style={{ top: "-30em" }} className="absolute">
+				<div style={{ top: "-10em" }} className="absolute z-[1]">
 					<Image
 						width={800}
 						height={800}
@@ -44,7 +44,7 @@ const MeetTheFounder = () => {
 						alt="bg-circles-blue"
 					/>
 				</div>
-				<div style={{ top: "-15em", right: "0" }} className="absolute">
+				<div style={{ top: "-15em", right: "0" }} className="absolute z-[1]">
 					<Image
 						width={800}
 						height={800}
@@ -60,9 +60,9 @@ const MeetTheFounder = () => {
 				// 	WebkitMaskImage:
 				// 		"linear-gradient(to bottom, transparent 0%, black 25%)", // For older browser compatibility
 				// }}
-				className="relative w-full flex justify-center items-start py-30 sm:py-60 overflow-hidden">
+				className="relative w-full bg-[#000718]  flex justify-center items-start py-30 sm:py-30 overflow-hidden">
 				{/* Container */}
-				<div className="relative w-full max-w-[1446px] flex flex-col md:flex-row justify-center items-center md:items-start px-4 md:px-8 lg:px-20 gap-8 md:gap-12 lg:gap-[83px] isolate">
+				<div className="relative w-full max-w-[1446px] z-[2] flex flex-col md:flex-row justify-center items-center md:items-start px-4 md:px-8 lg:px-20 gap-8 md:gap-12 lg:gap-[83px] isolate">
 					{/* Left Glow Effect - Hidden on mobile */}
 					{/* <div className="hidden md:block absolute w-[983.31px] h-[1051.62px] left-0 -translate-x-1/2 top-[-300px] pointer-events-none z-0">
 						<div

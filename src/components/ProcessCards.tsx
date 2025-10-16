@@ -64,9 +64,9 @@ export default function StackScroll() {
 	useEffect(() => {
 		const ctx = gsap.context(() => {
 			const cards = cardsRef.current;
-			const GAP = 10;
+			const GAP = 25;
 
-			gsap.set(cards, { yPercent: 150, opacity: 0.6 });
+			gsap.set(cards, { yPercent: 150, opacity: 1 });
 			gsap.set(placeholderRef.current, { opacity: 1 });
 
 			const tl = gsap.timeline({
@@ -102,7 +102,7 @@ export default function StackScroll() {
 
 	return (
 		<section 
-    	 className="relative w-full bg-[#000718] text-white overflow-hidden pb-40">
+    	 className="relative w-full bg-[#000718] text-white overflow-hidden pb-20">
 			<div
 				ref={containerRef}
 				className="min-h-screen flex flex-col justify-center items-center">
@@ -111,7 +111,7 @@ export default function StackScroll() {
 					className="absolute top-24 text-center z-[999]">
 					<h2 className="text-3xl px-5 md:text-4xl font-semibold">
 						Streamlining Every Step of Your{" "}
-						<span className="italic text-blue-400">Founder Journey</span>
+						<span className=" text-cyan-200 font-[lobster]">Founder Journey</span>
 					</h2>
 				</div>
 				<div className="relative mt-20 md:mt-24 flex justify-center w-full">
@@ -124,7 +124,7 @@ export default function StackScroll() {
 								ref={(el) => {
 									cardsRef.current[index] = el!;
 								}}
-								className="absolute max-w-5xl inset-3 flex flex-col justify-center items-center rounded-3xl overflow-hidden shadow-xl border border-blue-800/40 py-10 md:p-10 px-5 md:px-20">
+								className="absolute max-w-5xl inset-3 flex flex-col justify-center items-center rounded-3xl overflow-hidden shadow-xl border border-[#3a3838] py-10 md:p-10 px-5 md:px-20">
 								<div
 									style={{
 										background:
@@ -142,7 +142,7 @@ export default function StackScroll() {
 
 								<div className="relative flex flex-col items-center text-center space-y-4 md:space-y-8">
 									<div
-										style={{ top: "-10em", border: "1px solid #006AFF" }}
+										style={{ top: "-12.5em", border: "1px solid #006AFF" }}
 										className="rounded-full absolute border border-white/20 px-4 py-1 bg-[#030E2E] my-6 md:my-10 text-sm sm:text-base">
 										{step.title}
 									</div>
@@ -154,18 +154,6 @@ export default function StackScroll() {
 									<div className="mt-4 md:mt-6 text-base md:text-lg leading-relaxed text-white">
 										{step.text}
 									</div>
-									{/* <div className="relative bottom-[-8em] left-[-1em] sm:bottom-[-9em] sm:left-[-12em]">
-                      <div
-                        style={{
-                          backgroundImage: `url(${step.bgWaterMarkImgLeft})`,
-                          backgroundSize: "cover",
-                          zIndex:"0",
-                          bottom:"",
-                          left:"",
-                          opacity:"30%"
-                        }}
-                        className="relative w-[4em] h-[4em] sm:w-[8em] sm:h-[8em]"></div>
-                    </div> */}
 								</div>
 								<div className="absolute left-0 bottom-0">
 									<div

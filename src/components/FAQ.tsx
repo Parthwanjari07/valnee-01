@@ -54,7 +54,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-[#00020d] px-6 py-16">
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-[#000718] px-6 py-16">
       <div className="relative z-10 max-w-7xl w-full grid md:grid-cols-3 gap-12 text-white">
         {/* Left Info */}
         <div className="md:col-span-1 flex flex-col justify-start">

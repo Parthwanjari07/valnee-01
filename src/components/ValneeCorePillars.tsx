@@ -6,9 +6,9 @@ import React from "react";
 
 export default function ValneesCorePillars() {
   return (
-		<section className="relative w-full  bg-[#000718] text-white px-4 sm:px-8 md:px-12 lg:px-20 py-24 overflow-hidden">
+		<section className="relative w-full  bg-[#000718] text-white px-4 sm:px-8 md:px-12 lg:px-20 py-24 sm:pb-60 sm:pt-10 overflow-hidden">
 			<div className="max-w-7xl mx-auto">
-				<div className="absolute -right-[40%] -top-[40%] w-full h-full opacity-100">
+				<div className="absolute -right-[40%] -top-[30%] w-full h-full opacity-100">
 					<Image
 						src="/images/whyusleftbg.png"
 						alt="Decorative overlay"
@@ -48,9 +48,29 @@ export default function ValneesCorePillars() {
 						className="object-contain scale-150 sm:scale-110"
 					/>
 				</div>
-				<h2 className="text-center text-3xl md:text-5xl font-semibold mb-16">
-					Valnee’s Core Pillars
-				</h2>
+				{/* <h2 className="text-center text-3xl md:text-5xl font-[SF Pro] font-semibold mb-16">
+					Valnee&rsquo;s{" "}
+					<span className="text-[#79FFFF] font-[Lobster Regular]">
+						Core Pillars
+					</span>
+				</h2> */}
+
+				<section className="relative flex flex-col items-center justify-center min-h-[30vh] md:min-h-[40vh] w-full overflow-hidden px-4 ">
+					<h1
+						className="absolute tracking-wider text-[25vw] sm:text-[24vw] md:text-[20vw] font-extrabold text-transparent stroke-text select-none leading-none "
+						aria-hidden="true">
+						Valnee
+					</h1>
+
+					<div className="relative sm:top-5 top-3 z-10 text-center px-4">
+						<h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug">
+							Valnee&#39;s{" "}
+							<span className="font-[lobster] text-[#79FFFF] font-normal">
+								Core Pillars
+							</span>{" "}
+						</h2>
+					</div>
+				</section>
 
 				<div className="flex flex-col gap-16">
 					<div
@@ -71,7 +91,7 @@ export default function ValneesCorePillars() {
 							<h3 className="text-xl md:text-2xl font-semibold text-white">
 								1. Technical Translation
 							</h3>
-							<p className="text-base md:text-xl  font-[Lora] text-[#79FFFF]">
+							<p className="text-base md:text-xl  font-[lora] text-[#79FFFF]">
 								We own the complexity, you own the vision.
 							</p>
 							<p className="text-gray-300 md:text-lg font-[Lora] leading-relaxed">
@@ -126,7 +146,7 @@ export default function ValneesCorePillars() {
 
 						<div className="relative w-full md:w-1/2 h-56 md:h-72 lg:h-100 rounded-xl overflow-hidden">
 							<Image
-								src="/landingPg/pillar3.svg"
+								src="/landingPg/pillar3.png"
 								alt="pillar3"
 								fill
 								className="object-contain rounded-xl"

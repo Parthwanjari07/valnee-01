@@ -75,10 +75,15 @@ const SocialCard: React.FC<SocialCardProps> = ({
 
 const Footer = () => {
   return (
-		<footer className="relative bg-[#000513] text-white">
-			<div className="">
+		<footer className="relative  bg-[#000718] text-white">
+			<div
+				style={{
+					borderTop: "2px solid #FFFFFF1A",
+					borderRadius: "2em",
+				}}
+				className="bg-transparent">
 				{/* Section 1: Social Cards */}
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 container mx-auto px-6 lg:px-8 pt-24">
+				<div className="grid grid-cols-1 md:grid-cols-3 bg-transparent gap-8 container mx-auto px-6 lg:px-8 pt-24">
 					{socialCards.map((card) => (
 						<SocialCard key={card.title} {...card} />
 					))}
@@ -86,7 +91,7 @@ const Footer = () => {
 
 				<div className="mx-auto relative text-white px-6 lg:px-48 lg:pl-56 pt-24">
 					{/* Section 2: Footer Links */}
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 mb-60">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 mb-40">
 						{/* Column 1: Brand Info */}
 						<div className="md:col-span-2 lg:col-span-1">
 							<div className="flex items-center mb-4">
@@ -240,7 +245,8 @@ const Footer = () => {
 							"radial-gradient(circle at center, #4C6FDC 0%, #030E2E 71.64%)",
 						opacity: "0.6",
 						filter: "blur(130px)",
-					}}/>
+					}}
+				/>
 			</div>
 		</footer>
 	);
