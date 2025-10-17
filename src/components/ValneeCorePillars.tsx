@@ -8,7 +8,7 @@ export default function ValneesCorePillars() {
   return (
 		<section className="relative w-full  bg-[#000718] text-white px-4 sm:px-8 md:px-12 lg:px-20 py-24 sm:pb-60 sm:pt-10 overflow-hidden">
 			<div className="max-w-7xl mx-auto">
-				<div className="absolute -right-[40%] -top-[30%] w-full h-full opacity-100">
+				<div className="absolute -right-[40%] -top-[30%] md:-top-[20%] w-full h-full opacity-100">
 					<Image
 						src="/images/whyusleftbg.png"
 						alt="Decorative overlay"
@@ -24,7 +24,7 @@ export default function ValneesCorePillars() {
 						className="object-contain scale-150 sm:scale-110"
 					/>
 				</div>
-				<div className="absolute -right-[40%] top-[35%] w-full h-full opacity-100 ">
+				<div className="absolute -right-[40%] top-[25%] w-full h-full opacity-100 ">
 					<Image
 						src="/images/whyusleftbg.png"
 						alt="Decorative overlay"

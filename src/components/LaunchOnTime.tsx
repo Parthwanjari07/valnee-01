@@ -48,7 +48,7 @@ const LaunchOnTime = () => {
 				</div>
 			</div>
 
-			<section className="text-white py-[5em] pb-[15em]  bg-[#000718] px-8 min-h-fit  ">
+			<section className="text-white py-[5em] pb-[15em]  bg-[#000718] px-[2em] md:px-[8em] lg:px-[12em] xl:px-[20em] min-h-fit  ">
 				<div className=" bg-transparent launch-time-outer-box py-20">
 					<div className="text-center z-[2] text-white font-semibold opacity-100 text-2xl sm:text-3xl lg:text-4xl">
 						Launch on{" "}
