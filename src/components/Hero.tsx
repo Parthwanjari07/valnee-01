@@ -7,7 +7,7 @@ import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 export default function Hero() {
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#00020D]">
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#000718]">
       {/* Video on bottom half */}
       {/* <video
         className="absolute inset-0 bottom-0 w-full h-screen lg:h-auto object-cover"
@@ -88,10 +88,10 @@ export default function Hero() {
                   <span 
                     className="inline-flex items-center justify-center px-4 sm:px-5 py-1 sm:py-1 bg-white rounded-3xl whitespace-nowrap"
                     style={{ 
-                      transform: 'rotate(-2deg)',
+                      transform: 'rotate(-1.8deg)',
                       fontFamily: 'var(--font-cal-sans)',
                       color: '#3FA9E0',
-                      fontSize: 'clamp(1.5rem, 5vw, 3.25rem)',
+                      fontSize: 'clamp(1.5rem, 5vw, 2.6rem)',
                       fontWeight: 600,
                       lineHeight: '150%'
                     }}
