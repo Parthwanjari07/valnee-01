@@ -62,14 +62,16 @@ const LaunchOnTime = () => {
 					<div className="mt-[4em] px-[1em] sm:px-[4em]">
 						{content.map((val, key) => (
 
-								<div key={val.id} style={{ fontFamily: "Lora" }} className="relative">
+								<div key={val.id + key} style={{ fontFamily: "Lora" }} className="relative">
 									{/* Left Side */}
 									{val.id % 2 !== 0 ? (
 										<div className="flex mt-[4em] sm:mt-0 items-center">
-											<img
+											<Image
 												className="w-25 h-25 z-1"
 												src={val.icon}
 												alt=""
+												width={25}
+												height={25}
 											/>
 											<div
 												style={{
@@ -84,10 +86,12 @@ const LaunchOnTime = () => {
 										</div>
 									) : (
 										<div className="flex flex-row-reverse  mt-[4em] sm:mt-0 items-center">
-											<img
+											<Image
 												className="w-25 h-25 z-1"
 												src={val.icon}
 												alt=""
+												width={25}
+												height={25}
 											/>
 											<div
 												style={{

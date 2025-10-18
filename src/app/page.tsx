@@ -1,7 +1,6 @@
 // src/app/page.tsx
 import Hero from "@/components/Hero";
 import FaqSection from "@/components/FAQ";
-import CTASection from "@/components/cta";
 import Image from "next/image";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import NewFooter from "@/components/NewFooter";
@@ -11,7 +10,6 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import CardEffect from "@/components/CardEffect";
 import LaunchOnTime from "@/components/LaunchOnTime";
 import ValneesCorePillars from "@/components/ValneeCorePillars";
-import BuildNextBigThing from "@/components/NextBigThing";
 
 
 export default function HomePage() {

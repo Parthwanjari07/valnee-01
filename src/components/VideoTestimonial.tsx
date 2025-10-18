@@ -1,19 +1,9 @@
 "use client";
-import { Volume2, VolumeX } from "lucide-react";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 export default function VideoTestimonial() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
-
-  const toggleMute = () => {
-    const video = videoRef.current;
-    if (video) {
-      video.muted = !video.muted;
-      setIsMuted(video.muted);
-    }
-  };
 
   return (
     <div className="relative flex items-center justify-center w-full text-white font-sans overflow-hidden mb-16">
