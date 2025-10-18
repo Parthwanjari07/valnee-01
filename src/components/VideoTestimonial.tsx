@@ -1,19 +1,9 @@
 "use client";
-import { Volume2, VolumeX } from "lucide-react";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 export default function VideoTestimonial() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
-
-  const toggleMute = () => {
-    const video = videoRef.current;
-    if (video) {
-      video.muted = !video.muted;
-      setIsMuted(video.muted);
-    }
-  };
 
   return (
     <div className="relative flex items-center justify-center w-full text-white font-sans overflow-hidden mb-16">
@@ -58,12 +48,13 @@ export default function VideoTestimonial() {
                   loop
                   playsInline
                   muted
+                  controls
                   preload="auto"
                 >
                   Your browser does not support the video.
                 </video>
 
-                <button
+                {/* <button
                   onClick={toggleMute}
                   className="absolute bottom-4 right-4 bg-black/40 backdrop-blur-md border border-white/20 rounded-full p-2.5 text-white hover:bg-black/60 transition-all duration-300"
                 >
@@ -72,7 +63,7 @@ export default function VideoTestimonial() {
                   ) : (
                     <Volume2 className="w-5 h-5" />
                   )}
-                </button>
+                </button> */}
               </div>
             </div>
 

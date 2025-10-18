@@ -29,14 +29,14 @@ const MeetTheFounder = () => {
 
   return (
 		<>
-			<div className="relative my-[10em] z-[0] rounded-2xl">
+			<div className="relative rounded-2xl">
 				{/* <img
 					// style={{scale:"1.1"}}
 					className="bg-cover w-[100%] rounded-2xl h-[50em] absolute z-[-1]"
 					src="./images/tile1-bg.png"
 					alt="bg-img"
 				/> */}
-				<div style={{ top: "-30em" }} className="absolute">
+				<div style={{ top: "-10em" }} className="absolute z-[2]">
 					<Image
 						width={800}
 						height={800}
@@ -44,9 +44,9 @@ const MeetTheFounder = () => {
 						alt="bg-circles-blue"
 					/>
 				</div>
-				<div style={{ top: "-15em", right: "0" }} className="absolute">
+				<div style={{ top: "-5em", right: "0" }} className="absolute z-[2]">
 					<Image
-						width={800}
+						width={1000}
 						height={800}
 						src="/landingPg/radialBlueCircleRight.svg"
 						alt="bg-circles-blue"
@@ -54,58 +54,9 @@ const MeetTheFounder = () => {
 				</div>
 			</div>
 			<section
-				// style={{
-				// 	maskImage:
-				// 		"linear-gradient(to bottom, transparent 0%, black 25%)",
-				// 	WebkitMaskImage:
-				// 		"linear-gradient(to bottom, transparent 0%, black 25%)", // For older browser compatibility
-				// }}
-				className="relative w-full flex justify-center items-start py-30 sm:py-60 overflow-hidden">
+				className="relative w-full bg-[#000718] flex justify-center items-start py-30 sm:py-50 overflow-hidden">
 				{/* Container */}
-				<div className="relative w-full max-w-[1446px] flex flex-col md:flex-row justify-center items-center md:items-start px-4 md:px-8 lg:px-20 gap-8 md:gap-12 lg:gap-[83px] isolate">
-					{/* Left Glow Effect - Hidden on mobile */}
-					{/* <div className="hidden md:block absolute w-[983.31px] h-[1051.62px] left-0 -translate-x-1/2 top-[-300px] pointer-events-none z-0">
-						<div
-							className="absolute h-[757.23px] w-full top-[-331px] opacity-60"
-							style={{
-								background:
-									"radial-gradient(100.48% 125.67% at 16.65% 14.14%, #4C6FDC 0%, #030E2E 71.64%)",
-								filter: "blur(130px)",
-								transform: "matrix(0.95, -0.3, 0.22, 0.98, 0, 0)",
-							}}
-						/>
-						<div
-							className="absolute h-[700.23px] w-full top-[-218px] opacity-60"
-							style={{
-								background:
-									"radial-gradient(100.48% 125.67% at 16.65% 14.14%, #4C6FDC 0%, #030E2E 71.64%)",
-								filter: "blur(130px)",
-								transform: "matrix(0.95, -0.3, 0.22, 0.98, 0, 0)",
-							}}
-						/>
-					</div> */}
-
-					{/* Right Glow Effect - Hidden on mobile */}
-					{/* <div className="hidden md:block absolute w-[1263px] h-[1051.62px] right-0 translate-x-1/3 top-[-69px] pointer-events-none z-[1]">
-						<div
-							className="absolute h-[769.11px] w-full top-[-69px] opacity-60"
-							style={{
-								background:
-									"radial-gradient(100.48% 125.67% at 16.65% 14.14%, #4C6FDC 0%, #030E2E 71.64%)",
-								filter: "blur(130px)",
-								transform: "matrix(-0.97, -0.24, -0.28, 0.96, 0, 0)",
-							}}
-						/>
-						<div
-							className="absolute h-[669.11px] w-full top-[0px] opacity-60"
-							style={{
-								background:
-									"radial-gradient(100.48% 125.67% at 16.65% 14.14%, #4C6FDC 0%, #030E2E 71.64%)",
-								filter: "blur(130px)",
-								transform: "matrix(-0.97, -0.24, -0.28, 0.96, 0, 0)",
-							}}
-						/>
-					</div> */}
+				<div className="relative w-full max-w-[1446px] z-[2] flex flex-col md:flex-row justify-center items-center md:items-start px-4 md:px-8 lg:px-20 gap-8 md:gap-12 lg:gap-[83px] isolate">
 
 					{/* Photo Card */}
 					<div

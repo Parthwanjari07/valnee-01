@@ -70,7 +70,7 @@ export default function TestimonialCarousel() {
   const current = testimonials[index];
 
   return (
-    <section className="relative w-full flex flex-col items-center justify-center py-16 md:py-20 bg-[#0b1120]  bg-no-repeat text-white overflow-hidden">
+    <section className="relative w-full flex flex-col items-center justify-center py-16 md:py-20 bg-[#000718]  bg-no-repeat text-white overflow-hidden">
       <div className="absolute -right-[40%] top-[5%] w-full h-1/2 opacity-90 z-10">
         <Image
           src="/images/videotestibg.svg"
@@ -82,7 +82,7 @@ export default function TestimonialCarousel() {
       <div className="text-center mb-12 md:mb-16 px-4">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-thin text-white max-w-3xl mx-auto tracking-wide">
           Trusted by{" "}
-          <span className="text-cyan-400 font-thin font-[lobster]">
+          <span className="text-cyan-200 font-thin font-[lobster]">
             Founders
           </span>{" "}
           Who Build Fast and Think Bigger
