@@ -108,12 +108,12 @@ export default function Hero() {
           <p className="relative z-20 mt-14 max-w-4xl text-sm sm:text-base md:text-lg px-4" style={{ color: '#D1D5DB' }}>
             We translate your vision into a scalable, launch-ready MVP, so you can focus on building your <span className="font-semibold" style={{ color: '#FFFFFF' }}>business.</span>
           </p>
-          <div className="relative z-20 mt-8 sm:mt-10 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none px-4">
+          <div className="relative z-20 mt-8 sm:mt-10 md:mt-12 flex flex-row sm:flex-row items-center justify-evenly sm:justify-center gap-5 sm:gap-4 w-full max-w-md sm:max-w-none px-4">
             {/* Black primary button */}
 {/* CTA Button */}
           <button 
             onClick={() => window.location.href = "/contact"}
-            className="flex flex-row justify-center items-center gap-2 bg-white rounded-xl flex-none px-4 py-2.5 md:px-4 md:py-2.5 w-full sm:w-auto min-w-[218px] h-auto md:h-[56px] hover:bg-gray-100 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 ease-out cursor-pointer group"
+            className="flex flex-col  sm:flex-row  justify-center items-center gap-2  bg-white rounded-xl flex-none px-4 py-2.5 md:px-4 md:py-2.5 w-[40%] sm:w-auto sm:min-w-[218px] h-auto md:h-[56px] hover:bg-gray-100 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 ease-out cursor-pointer group"
           >
             <span 
               className="text-black text-center text-lg md:text-xl leading-[150%] [font-family:var(--font-sf-pro)] group-hover:text-gray-800 transition-colors duration-300"
@@ -150,12 +150,12 @@ export default function Hero() {
               rel="noopener noreferrer"
               borderRadius="0.85rem"
               duration={3000}
-              containerClassName="w-full sm:w-[218px] h-12 sm:h-[56px] hover:scale-110 transition-transform duration-300"
-              className="bg-black border-white text-white font-medium"
+              containerClassName="w-[40%] sm:w-[218px] h-full sm:h-[56px] hover:scale-110 transition-transform duration-300"
+              className="bg-black  border-white text-white font-medium"
               borderClassName="bg-[radial-gradient(white_40%,transparent_60%)]"
               aria-label="Download Brochure"
             >
-              <div className="flex items-center justify-center gap-2 w-full h-full px-5 sm:px-6">
+              <div className="flex items-center justify-center shrink-0 max-w-[40%] h-full px-5 sm:px-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -171,7 +171,7 @@ export default function Hero() {
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" x2="12" y1="15" y2="3" />
                 </svg>
-                <span className="whitespace-nowrap">Download Brochure</span>
+                <span className="whitespace-normal text-xl sm:text-lg sm:whitespace-nowrap">Download Brochure</span>
               </div>
             </MovingBorderButton>
           </div>
