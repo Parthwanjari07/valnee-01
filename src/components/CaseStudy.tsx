@@ -84,7 +84,7 @@ function CaseStudy() {
 									</h2>
 
 									<p className="text-slate-200 font-thin leading-5 text-lg mb-7">
-										{caseStudy.description}
+										{caseStudy.left_description}
 									</p>
 
 									<Link

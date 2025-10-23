@@ -29,13 +29,13 @@ const faqs: FaqItem[] = [
   {
     question: "What is average cost of an app?",
     answer:
-      "The cost of building an app depends on its features, complexity, and scope. On average, most MVPs or standard apps range between ₹xx–₹xx ($xx–$xx).",
+      "The cost of building an app depends on its features, complexity, and scope. On average, most MVPs or standard apps range between $1299 - $2999.",
 
   },
   {
     question: "I have an app idea where do I start from?",
     answer:
-      "Begin by outlining how users will interact with your app—just a simple paragraph or 2–3 sentences on the concept.",
+      "Begin by outlining how users will interact with your app—just a simple paragraph or 2-3 sentences on the concept.",
 
   },
   {
