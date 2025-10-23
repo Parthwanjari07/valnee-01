@@ -44,7 +44,9 @@ const MeetTheFounder = () => {
 						alt="bg-circles-blue"
 					/>
 				</div>
-				<div style={{ top: "-5em", right: "0" }} className="absolute z-[2]">
+				<div
+					style={{ top: "-5em", right: "0" }}
+					className="absolute z-[2]">
 					<Image
 						width={1000}
 						height={800}
@@ -53,11 +55,9 @@ const MeetTheFounder = () => {
 					/>
 				</div>
 			</div>
-			<section
-				className="relative w-full bg-[#000718] flex justify-center items-start py-30 sm:py-50 overflow-hidden">
+			<section className="relative w-full bg-[#000718] flex justify-center items-start py-30 sm:py-50 overflow-hidden">
 				{/* Container */}
-				<div className="relative w-full max-w-[1446px] z-[2] flex flex-col md:flex-row justify-center items-center md:items-start px-4 md:px-8 lg:px-20 gap-8 md:gap-12 lg:gap-[83px] isolate">
-
+				<div className="relative w-full max-w-[1446px] z-[2] flex flex-col md:flex-row justify-center items-center px-4 md:px-8 lg:px-20 gap-8 md:gap-12 lg:gap-[83px] isolate">
 					{/* Photo Card */}
 					<div
 						className="relative w-full sm:w-[90%] md:w-[440px] h-[400px] sm:h-[440px] md:h-[460px] rounded-2xl overflow-hidden flex-none z-[3]"
@@ -99,30 +99,29 @@ const MeetTheFounder = () => {
 					</div>
 
 					{/* Content */}
-					<div className="flex flex-col items-start gap-8 md:gap-10 lg:gap-[60px] w-full md:w-auto md:flex-1 md:max-w-[763px] flex-none z-[4]">
+					<div className="flex flex-col items-start gap-6 md:gap-6 lg:gap-8 w-full md:w-auto md:flex-1 md:max-w-[763px] flex-none z-[4]">
 						{/* Title */}
-						<h2 className="text-white w-full text-2xl sm:text-3xl md:text-3xl lg:text-[52px] leading-tight md:leading-[60px] lg:leading-[70px] font-bold [font-family:var(--font-sf-pro)]">
+						<h2 className="text-white text-center flex justify-center sm:justify-start w-full text-xl whitespace-nowrap sm:text-2xl md:text-3xl lg:text-[52px] leading-tight md:leading-[60px] lg:leading-[70px] font-bold [font-family:var(--font-sf-pro)]">
 							Meet the Founder
 						</h2>
 
 						{/* Text Content */}
-						<div className="flex flex-col items-start gap-5 md:gap-6 lg:gap-[20px] w-full">
+						<div className="flex flex-col items-start gap-2 md:gap-6 lg:gap-[20px] w-full">
 							<p
-								className="text-white w-full text-lg  leading-relaxed md:leading-[31px] font-lora"
+								className="text-white w-full text-xs sm:text-lg leading-relaxed md:leading-[38px] font-lora"
 								style={{
 									fontFamily: "lora, serif",
 								}}>
-								My journey started as a freelancer…
-							</p>
-							<p
-								className="text-white w-full text-lg leading-relaxed md:leading-[38px] font-lora"
-								style={{
-									fontFamily: "lora, serif",
-								}}>
-								I saw firsthand the struggles non-technical clients
-								faced... Valnee was created to be the solution I wish my
-								clients had: a partner focused on technical translation,
-								clear communication, and quick validation.
+								I started out as a freelancer working with non-technical
+								founders who had great ideas but lacked the tech team to
+								bring them to life. I witnessed too many projects delayed,
+								freelancers vanishing, and agencies over-promising. That
+								led me to create Valnee Solutions — your reliable technical
+								partner. We help non-tech founders turn their ideas into
+								working products through smart, scalable digital solutions.
+								At Valnee Solutions, our promise is simple: clear vision +
+								fast execution + quality code. Let&apos;s build something great
+								together.
 							</p>
 						</div>
 
