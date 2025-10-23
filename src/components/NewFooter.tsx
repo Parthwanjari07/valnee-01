@@ -164,7 +164,7 @@ const Footer = () => {
 										Terms of Services
 									</Link>
 								</li>
-								<li>
+								{/* <li>
 									<Link
 										href="/cookies-policy"
 										className="text-gray-400 hover:text-white transition-colors text-sm">
@@ -177,7 +177,7 @@ const Footer = () => {
 										className="text-gray-400 hover:text-white transition-colors text-sm">
 										Affiliate Policy
 									</Link>
-								</li>
+								</li> */}
 								<li>
 									<Link
 										href="/privacy-policy"
