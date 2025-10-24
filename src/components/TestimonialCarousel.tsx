@@ -7,38 +7,38 @@ import Image from "next/image";
 import VideoTestimonial from "./VideoTestimonial";
 
 const testimonials = [
-  {
-    id: 1,
-    name: "Anshika Agarwal",
-    title: "Executive Director - Sci-Fi Systems & Solutions",
-    logo: "/images/testimonial.png",
-    message:
-      "The final landing page was professional, on-brand, and easy to use. We appreciated your patience, commitment, and willingness to refine the design until it matched our vision, and we’d recommend your services with confidence.",
-  },
-  {
-    id: 2,
-    name: "Rahul Mehta",
-    title: "Founder - NovaLabs",
-    logo: "/images/testimonial.png",
-    message:
-      "You brought our product vision to life seamlessly. The speed and clarity throughout the project were unmatched.",
-  },
-  {
-    id: 3,
-    name: "Priya Sharma",
-    title: "CEO - TechSphere",
-    logo: "/images/testimonial.png",
-    message:
-      "From design to execution, everything was top-notch. A pleasure collaborating with a team that truly listens.",
-  },
-  {
-    id: 4,
-    name: "Aman Verma",
-    title: "CTO - CloudGen",
-    logo: "/images/testimonial.png",
-    message:
-      "We were impressed by the creativity and precision in every iteration. You exceeded expectations at every step.",
-  },
+	{
+		id: 1,
+		name: "Anshika Agarwal",
+		title: "Executive Director - Sci-Fi Systems & Solutions",
+		logo: "/landingPg/testimonial.svg",
+		message:
+			"The final landing page was professional, on-brand, and easy to use. We appreciated your patience, commitment, and willingness to refine the design until it matched our vision, and we’d recommend your services with confidence.",
+	},
+	{
+		id: 2,
+		name: "Rahul Mehta",
+		title: "Founder - NovaLabs",
+		logo: "/landingPg/testimonial.svg",
+		message:
+			"You brought our product vision to life seamlessly. The speed and clarity throughout the project were unmatched.",
+	},
+	{
+		id: 3,
+		name: "Priya Sharma",
+		title: "CEO - TechSphere",
+		logo: "/landingPg/testimonial.svg",
+		message:
+			"From design to execution, everything was top-notch. A pleasure collaborating with a team that truly listens.",
+	},
+	{
+		id: 4,
+		name: "Aman Verma",
+		title: "CTO - CloudGen",
+		logo: "/landingPg/testimonial.svg",
+		message:
+			"We were impressed by the creativity and precision in every iteration. You exceeded expectations at every step.",
+	},
 ];
 const variants = {
   enter: (direction: number) => ({
