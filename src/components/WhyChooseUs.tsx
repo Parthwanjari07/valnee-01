@@ -28,18 +28,26 @@ export default function WhyChooseUs() {
 							className="object-contain scale-150 sm:scale-300"
 						/>
 					</div>
-					<p className="text-sm sm:text-base md:text-xl italic text-white leading-relaxed">
-						You shouldn&apos;t have to risk your entire vision on a developer
-						you can&apos;t trust or an agency that treats you like a budget
-						line. Valnee Solutions was built to eliminate that gamble.
+					<p className="text-sm sm:text-base md:text-xl italic font-[lora] text-white leading-relaxed">
+						You shouldn&apos;t have to risk your entire vision on a
+						developer you can&apos;t trust or an agency that treats you
+						like a budget line.{" "}
+						<span className="text-cyan-400 not-italic font-[lobster] font-semibold">
+							Valnee Solutions{" "}
+						</span>
+						was built to eliminate that gamble.
 					</p>
 
-					<p className="text-sm sm:text-base md:text-xl italic text-white leading-relaxed">
+					<p className="text-sm sm:text-base font-[lora] md:text-xl italic text-white leading-relaxed">
 						We combine the speed and focus of a small team with the rigor
 						and accountability of a top-tier firm. The result is a
 						predictable, strategic MVP process that guarantees a clean,
-						scalable product delivered on time. We give non-technical
-						founders the clarity and technical control they need to win.
+						scalable product delivered on time. We give{" "}
+						<span className="text-cyan-400 not-italic font-[lobster] font-semibold">
+							{" "}non-technical founders
+						</span>{" "}
+						 the clarity and technical control they
+						need to win.
 					</p>
 
 					<GradientCTAButton

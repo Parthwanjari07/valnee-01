@@ -252,6 +252,7 @@ export type Blog = {
   blogSlugReadingTime: string
   blogSlugAuthorName: string
   is_active: boolean
+  tags: string[]
 }
 
 // 2. ADD FUNCTION TO GET ALL BLOGS

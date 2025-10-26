@@ -2,40 +2,43 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { getAllCaseStudies, CaseStudy as CaseStudyType } from "@/lib/supabase";
+import {
+	getAllCaseStudies,
+	CaseStudy as CaseStudyType,
+} from "@/lib/supabase";
 
 function CaseStudy() {
-  const [caseStudies, setCaseStudies] = useState<CaseStudyType[]>([]);
-  const [loading, setLoading] = useState(true);
+	const [caseStudies, setCaseStudies] = useState<CaseStudyType[]>([]);
+	const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchCaseStudies = async () => {
-      try {
-        const data = await getAllCaseStudies();
-        setCaseStudies(data);
-      } catch (error) {
-        console.error("Error fetching case studies:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+	useEffect(() => {
+		const fetchCaseStudies = async () => {
+			try {
+				const data = await getAllCaseStudies();
+				setCaseStudies(data);
+			} catch (error) {
+				console.error("Error fetching case studies:", error);
+			} finally {
+				setLoading(false);
+			}
+		};
 
-    fetchCaseStudies();
-  }, []);
+		fetchCaseStudies();
+	}, []);
 
-  if (loading) {
-    return (
-      <main className="relative bg-[url('/images/contact_bg.png')] bg-cover bg-center bg-no-repeat min-h-screen">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 md:pt-36 pb-20 md:pb-28">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-400"></div>
-          </div>
-        </div>
-      </main>
-    );
-  }
+	if (loading) {
+		return (
+			<main className="relative bg-[url('/images/contact_bg.png')] bg-cover bg-center bg-no-repeat min-h-screen">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 md:pt-36 pb-20 md:pb-28">
+					<div className="text-center">
+						<div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-400"></div>
+					</div>
+				</div>
+			</main>
+		);
+	}
 
-  return (
+	return (
 		<main className="relative bg-[url('/images/contact_bg.png')] bg-cover bg-center bg-no-repeat p-8 md:p-16">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 md:pt-36 pb-20 md:pb-28">
 				{/* Header Section */}
@@ -83,8 +86,15 @@ function CaseStudy() {
 										{caseStudy.title}
 									</h2>
 
-									<p className="text-slate-200 font-thin leading-5 text-lg mb-7">
-										{caseStudy.left_description}
+									<p className="text-slate-200 font-[lora] font-thin leading-5 text-sm mb-7 flex flex-wrap gap-1 sm:gap-2">
+										{caseStudy &&
+											caseStudy.tags.map((tag, index) => (
+												<>
+													<span className="whitespace-nowrap font-[lora] bg-blue-900 px-4 py-1 rounded-xl" key={index}>
+														{tag}
+													</span>
+												</>
+											))}
 									</p>
 
 									<Link
@@ -144,7 +154,7 @@ function CaseStudy() {
 									</div>
 								)}
 
-								<div className="space-y-6 text-gray-400 leading-6 text-xl">
+								<div className="space-y-6 text-gray-400 font-[lora] leading-6 text-md">
 									<p>{caseStudy.description}</p>
 
 									{caseStudy.author_name && (

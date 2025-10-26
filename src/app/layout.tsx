@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import localFont from "next/font/local";
 import Script from "next/script";
 import type { Viewport } from "next";
-import DisableZoom from "@/components/DisableZoom";
 
 const calSans = localFont({
   src: "../fonts/CalSans-SemiBold.woff2",
@@ -46,7 +45,6 @@ export default function RootLayout({
           backgroundColor: "#00020d",
         }}
       >
-        <DisableZoom />
         <Navbar />
         {children}
       </body>

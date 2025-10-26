@@ -16,6 +16,7 @@ type Blog = {
 	blogSlugCategory: string;
 	blogSlugReadingTime: string;
 	blogSlugAuthorName: string;
+	tags:string[];
 };
 
 type MoreBlog = {

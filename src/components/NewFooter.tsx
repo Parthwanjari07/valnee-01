@@ -124,13 +124,6 @@ const Footer = () => {
 									<Link
 										href="#"
 										className="text-gray-400 hover:text-white transition-colors text-sm">
-										How it works
-									</Link>
-								</li>
-								<li>
-									<Link
-										href="#"
-										className="text-gray-400 hover:text-white transition-colors text-sm">
 										Who we serve
 									</Link>
 								</li>
@@ -162,6 +155,13 @@ const Footer = () => {
 										href="/terms-of-service"
 										className="text-gray-400 hover:text-white transition-colors text-sm">
 										Terms of Services
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/refund-policy "
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Refund Policy
 									</Link>
 								</li>
 								{/* <li>
@@ -196,23 +196,26 @@ const Footer = () => {
 							<ul className="space-y-3">
 								<li>
 									<Link
-										href="#"
+										href="https://github.com/valnee-Solutions"
+										target="_blank"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										GitHub
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="https://www.linkedin.com/company/valnee-solutions"
+										target="_blank"
 										className="text-gray-400 hover:text-white transition-colors text-sm">
 										LinkedIn
 									</Link>
 								</li>
 								<li>
 									<Link
-										href="#"
+										href="https://x.com/Valneesolutions"
+										target="_blank"
 										className="text-gray-400 hover:text-white transition-colors text-sm">
-										Facebook
-									</Link>
-								</li>
-								<li>
-									<Link
-										href="#"
-										className="text-gray-400 hover:text-white transition-colors text-sm">
-										Instagram
+										X
 									</Link>
 								</li>
 							</ul>
