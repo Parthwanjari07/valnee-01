@@ -265,10 +265,10 @@ export default function NewBlogClient() {
 			setImagePreview(null);
 			if (fileInputRef.current) fileInputRef.current.value = "";
 			setTagsInput("");
-		} catch (error: any) {
+		} catch (error) {
 			console.error("Error during blog upload:", error);
 			setStatusMessage(
-				`Error: ${error.message || "Failed to upload blog."}`
+				`Error: "Failed to upload blog."}`
 			);
 			setIsError(true);
 		} finally {
@@ -302,7 +302,7 @@ export default function NewBlogClient() {
 			.filter((s) => s),
 	};
 
-	const moreBlogsForPreview: any[] = []; // Empty array for preview context
+	const moreBlogsForPreview: [] = []; // Empty array for preview context
 
 	// --- JSX ---
 	return (
