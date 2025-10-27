@@ -2,9 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import BlogCard from "@/components/BlogCard";
-import Image from "next/image"
+import Image from "next/image";
 import { Cross, CrossIcon, X } from "lucide-react";
-  
 
 type TempBlog = {
 	imageStored: string;
@@ -14,8 +13,9 @@ type TempBlog = {
 	slug: string;
 	tags: string[];
 	blogSlugPublicationDate: string;
-	blogSlugReadingTime:string;
-	blogSlugAuthorName:string;
+	blogSlugReadingTime: string;
+	blogSlugAuthorName: string;
+	markdowncontent: string;
 };
 
 type BlogsClientProps = {
@@ -23,15 +23,13 @@ type BlogsClientProps = {
 	initialBlogs: TempBlog[];
 };
 
-export default function BlogsClient({
-	initialBlogs,
-}: BlogsClientProps) {
+export default function BlogsClient({ initialBlogs }: BlogsClientProps) {
 	const getInitialWidth = () => {
-  if (typeof window !== "undefined") {
-    return window.innerWidth;
-  }
-  return 0; // Default for server
-};
+		if (typeof window !== "undefined") {
+			return window.innerWidth;
+		}
+		return 0; // Default for server
+	};
 	const [showLoadMore, setShowLoadMore] = useState<boolean>(true);
 	const [selectedTags, setSelectedTags] = useState<string[]>([]);
 	const [allTags, setAllTags] = useState<string[]>([]);
@@ -41,56 +39,56 @@ export default function BlogsClient({
 	});
 
 	const [filterModalOpen, setFilterModalOpen] = useState<boolean>(false);
-	
+
 	const handleLoadMore = () => {
 		setNumberBlogCards((prevNumber) => prevNumber + 4);
 	};
 
-let filteredBlogs: TempBlog[] = []; // Default to empty array
-if (Array.isArray(initialBlogs)) {
-	// Check if prop is valid
-	if (selectedTags.length === 0) {
-		filteredBlogs = initialBlogs;
-	} else {
-		filteredBlogs = initialBlogs.filter(
-			(blog) =>
-				Array.isArray(blog.tags) &&
-				blog.tags.some((tag) => selectedTags.includes(tag))
-		);
+	let filteredBlogs: TempBlog[] = []; // Default to empty array
+	if (Array.isArray(initialBlogs)) {
+		// Check if prop is valid
+		if (selectedTags.length === 0) {
+			filteredBlogs = initialBlogs;
+		} else {
+			filteredBlogs = initialBlogs.filter(
+				(blog) =>
+					Array.isArray(blog.tags) &&
+					blog.tags.some((tag) => selectedTags.includes(tag))
+			);
+		}
 	}
-}
 
-// 4. Update 'showLoadMore' to use the filtered list
-useEffect(() => {
-	if (numberBlogCards >= filteredBlogs.length) {
-		setShowLoadMore(false);
-	} else {
-		setShowLoadMore(true);
-	}
-}, [numberBlogCards, filteredBlogs.length]);
+	// 4. Update 'showLoadMore' to use the filtered list
+	useEffect(() => {
+		if (numberBlogCards >= filteredBlogs.length) {
+			setShowLoadMore(false);
+		} else {
+			setShowLoadMore(true);
+		}
+	}, [numberBlogCards, filteredBlogs.length]);
 
-useEffect(() => {
-	if (filterModalOpen) {
-		document.body.style.overflow = "hidden";
-	} else {
-		document.body.style.overflow = "auto";
-	}
-	return () => {
-		document.body.style.overflow = "auto";
-	};
-}, [filterModalOpen]);
+	useEffect(() => {
+		if (filterModalOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "auto";
+		}
+		return () => {
+			document.body.style.overflow = "auto";
+		};
+	}, [filterModalOpen]);
 
-// 5. Populate allTags when component mounts
-useEffect(() => {
-	const allTagsFromBlogs = initialBlogs.flatMap((blog) => blog.tags);
-	const validTags = allTagsFromBlogs.filter((tag) => tag); // Remove any null/undefined tags
-	const uniqueTags = Array.from(new Set(validTags));
-	setAllTags(uniqueTags);
-}, [initialBlogs]);
+	// 5. Populate allTags when component mounts
+	useEffect(() => {
+		const allTagsFromBlogs = initialBlogs.flatMap((blog) => blog.tags);
+		const validTags = allTagsFromBlogs.filter((tag) => tag); // Remove any null/undefined tags
+		const uniqueTags = Array.from(new Set(validTags));
+		setAllTags(uniqueTags);
+	}, [initialBlogs]);
 
-	const handleFilterModalOpen = ()=>{
+	const handleFilterModalOpen = () => {
 		setFilterModalOpen(true);
-	}
+	};
 	const handleFilterModalClose = () => {
 		setFilterModalOpen(false);
 	};
@@ -120,42 +118,44 @@ useEffect(() => {
 				/>
 			</div>
 			{/* Filter Modal */}
-			{filterModalOpen && (
-				<div className="fixed z-[99] h-[90vh] md:h-[80vh] md:top-[12vh] w-[90vw] bg-transparent backdrop-blur-2xl top-[8vh] left-[5vw] rounded-[5em] border-gray-800 border-[3px] overflow-y-auto">
-					<div className="relative p-8">
-						<div
-							onClick={handleFilterModalClose}
-							className="absolute transition-all duration-300 hover:scale-[1.1] hover:cursor-pointer ease-in-out  text-white left-[5vw] border border-red-600 p-2 rounded-full top-[4vh] z-[99]">
-							<X className="text-red-600" />
+
+			<div
+				className={`fixed z-[99] transition-all ease-in-out duration-300 h-[90vh] md:h-[80vh] md:top-[12vh] w-[90vw] bg-transparent backdrop-blur-2xl top-[8vh] left-[5vw] rounded-[5em] border-gray-800 border-[3px] overflow-y-auto ${
+					filterModalOpen ? "opacity-100 visible" : "opacity-0 invisible"
+				}`}>
+				<div className="relative p-8">
+					<div
+						onClick={handleFilterModalClose}
+						className="absolute transition-all duration-300 hover:scale-[1.1] hover:cursor-pointer ease-in-out  text-white left-[5vw] border border-red-600 p-2 rounded-full top-[4vh] z-[99]">
+						<X className="text-red-600" />
+					</div>
+					<div className="py-[8em] px-5 flex flex-col gap-[4em] text-white">
+						<div className=" text-5xl text-center font-[lora]">
+							Filters
 						</div>
-						<div className="py-[8em] px-5 flex flex-col gap-[4em] text-white">
-							<div className=" text-5xl text-center font-[lora]">
-								Filters
-							</div>
-							<div className="text-center text-xl text-gray-300">
-								Choose Your Preferences
-							</div>
-							{/* 8. Render the filter buttons */}
-							<div className="flex flex-wrap gap-4 justify-center">
-								{allTags.map((tag) => (
-									<button
-										key={tag}
-										onClick={() => handleTagClick(tag)}
-										className={`px-6 py-3 rounded-full border text-lg transition-all
+						<div className="text-center text-xl text-gray-300">
+							Choose Your Preferences
+						</div>
+						{/* 8. Render the filter buttons */}
+						<div className="flex flex-wrap gap-4 justify-center">
+							{allTags.map((tag) => (
+								<button
+									key={tag}
+									onClick={() => handleTagClick(tag)}
+									className={`px-6 py-3 rounded-full border text-lg transition-all
                       ${
 												selectedTags.includes(tag)
 													? "bg-white text-black border-white"
 													: "bg-transparent text-white border-gray-600 hover:border-white hover:bg-white/10"
 											}
                     `}>
-										{tag}
-									</button>
-								))}
-							</div>
+									{tag}
+								</button>
+							))}
 						</div>
 					</div>
 				</div>
-			)}
+			</div>
 			<div className="pointer-events-none absolute -left-32 top-20 hidden h-[280px] w-[280px] rounded-full bg-cyan-500/10 blur-[150px] lg:block" />
 			<div className="pointer-events-none absolute -right-24 bottom-0 hidden h-[320px] w-[320px] rounded-full  lg:block" />
 

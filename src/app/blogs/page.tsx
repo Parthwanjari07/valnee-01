@@ -18,50 +18,6 @@ console.log(`[BUILD LOG /blogs] Fetched ${allBlogs.length} blogs.`);
     console.log(`[BUILD LOG /blogs] Error fetching blogs, using empty array.`);
 	}
 
-	// Static Testing data
-	// const allBlogs = [
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-1",
-	// 	},
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-2",
-	// 	},
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-3",
-	// 	},
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-4",
-	// 	},
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-5",
-	// 	},
-	// ];
-
 	return (
 		<>
 			<section className="relative min-h-screen  overflow-hidden">

@@ -4,19 +4,23 @@ import { useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+	const pathname = usePathname()
 
   const handleBookCall = () => {
     window.open("https://calendly.com/parthwanjari07/30min", "_blank");
   };
 
   return (
-		<nav className="fixed top-0 w-full z-50 bg-transparent">
+		<nav className={`fixed top-0 w-full z-500 bg-transparent`}>
 			{/* Glassmorphism container (desktop only) */}
 			<div className="max-w-7xl mx-auto lg:mt-6">
-				<div className="flex justify-between px-4 sm:px-6 lg:px-8 items-center h-14 md:h-16 lg:rounded-[18px] lg:border lg:border-white/10 lg:bg-black/10 lg:backdrop-blur-md">
+				<div
+					className={`flex justify-between px-4 sm:px-6 lg:px-8 items-center h-14 md:h-16 lg:rounded-[18px] lg:border lg:border-white/10 lg:bg-black/10 lg:backdrop-blur-xl opacity-10"
+					`}>
 					{/* Logo */}
 					<Link
 						href="/"
@@ -87,7 +91,7 @@ const Navbar = () => {
 
 					{/* Mobile menu button */}
 					<button
-						className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors duration-200"
+						className="lg:hidden relative z-600 text-white p-2 hover:bg-white/10 rounded-lg transition-colors duration-200"
 						onClick={() => setIsOpen(!isOpen)}
 						aria-label="Toggle menu">
 						{isOpen ? <X size={24} /> : <Menu size={24} />}

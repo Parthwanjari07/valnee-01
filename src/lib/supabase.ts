@@ -251,6 +251,7 @@ export type Blog = {
   blogSlugCategory: string
   blogSlugReadingTime: string
   blogSlugAuthorName: string
+  markdowncontent: string
   is_active: boolean
   tags: string[]
 }

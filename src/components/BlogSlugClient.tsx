@@ -6,16 +6,18 @@ import Link from "next/link";
 import { ArrowDown, ArrowUpRight, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 type Blog = {
 	imageStored: string;
 	blogSlugTitle: string;
-	blogSlugHeadings: string[];
-	blogSlugContent: string[];
+	blogSlugHeadings?: string[];
+	blogSlugContent?: string[];
 	blogSlugPublicationDate: string;
 	blogSlugCategory: string;
 	blogSlugReadingTime: string;
 	blogSlugAuthorName: string;
+	markdowncontent:string;
 	tags:string[];
 };
 
@@ -46,13 +48,34 @@ export default function BlogsSlugClient({
 		router.push('/');
 	};
 
+	function extractHeadings(markdowncontent: string): string[] {
+		const headings: string[] = [];
+		// Regex Explanation:
+		// ^       - Start of the line (due to 'm' flag)
+		// #{1,6}  - Matches 1 to 6 '#' characters
+		// \s+     - Matches one or more spaces after the '#'
+		// (.*)    - Captures the heading text itself
+		// $       - End of the line (due to 'm' flag)
+		// gm      - g: global (find all matches), m: multiline (^/$ match lines)
+		const headingRegex = /^#{1,6}\s+(.*)$/gm;
+
+		let match;
+		while ((match = headingRegex.exec(markdowncontent)) !== null) {
+			// match[1] contains the captured group (the text after '# ')
+			if (match[1]) {
+				headings.push(match[1].trim()); // Add the trimmed heading text
+			}
+		}
+
+		return headings;
+	}
+
 	return (
 		<>
 			{/* Back to Home Button */}
 			<button
 				onClick={handleBackToHome}
-				className="fixed top-8 left-6 z-50 flex items-center gap-2 px-4 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 group"
-			>
+				className="fixed top-8 left-6 z-50 flex items-center gap-2 px-4 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 group">
 				<ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
 				<span className="text-sm font-medium">Home</span>
 			</button>
@@ -86,20 +109,24 @@ export default function BlogsSlugClient({
 						className={`lg:col-span-2 space-y-16 blog-content ${
 							showLoadMore ? `overflow-hidden` : `h-full`
 						}`}>
-						{blog.blogSlugHeadings.map((heading, index) => (
-							<article className="" key={index} id={`section-${index}`}>
-								<h2 className="mb-6">
-									{heading}
-								</h2>
-								<div className="space-y-6">
-									{blog.blogSlugContent[index]
-										.split("\n\n")
-										.map((paragraph, pIndex) => (
-											<p key={pIndex}>{paragraph}</p>
-										))}
-								</div>
-							</article>
-						))}
+						{blog?.blogSlugHeadings &&
+							blog.blogSlugHeadings.map((heading, index) => (
+								<article className="" key={index} id={`section-${index}`}>
+									<h2 className="mb-6">{heading}</h2>
+									<div className="space-y-6">
+										{blog.blogSlugContent && blog.blogSlugContent[index]
+											.split("\n\n")
+											.map((paragraph, pIndex) => (
+												<p key={pIndex}>{paragraph}</p>
+											))}
+									</div>
+								</article>
+							))}
+						<article className="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl prose-invert max-w-none text-gray-300 prose-headings:text-white prose-a:text-cyan-400 hover:prose-a:text-cyan-300 prose-strong:text-white">
+							<ReactMarkdown remarkPlugins={[remarkGfm]}>
+								{blog.markdowncontent}
+							</ReactMarkdown>
+						</article>
 						{showLoadMore && (
 							<div
 								className="text-center w-full  absolute bottom-0 left-1/2 -translate-x-1/2 z-5 pt-12 pb-4"
@@ -158,14 +185,25 @@ export default function BlogsSlugClient({
 								<ul
 									style={{ listStyleType: "circle" }}
 									className="list-decimal list-inside space-y-3 text-cyan-400">
-									{blog.blogSlugHeadings.map((heading, index) => (
-										<li key={index}>
-											<a
-												href={`#section-${index}`}
-												className="text-white transition-colors">
-												{heading}
-											</a>
-										</li>
+									{blog?.blogSlugHeadings &&
+										blog.blogSlugHeadings.length !== 0 &&
+										blog.blogSlugHeadings.map((heading, index) => (
+											<li key={index}>
+												<a
+													href={`#section-${index}`}
+													className="text-white transition-colors">
+													{heading}
+												</a>
+											</li>
+										))}
+									{blog?.markdowncontent && extractHeadings(blog.markdowncontent).map((heading, index) => (
+											<li key={index}>
+												<a
+													href={`#section-${index}`}
+													className="text-white transition-colors">
+													{heading}
+												</a>
+											</li>
 									))}
 								</ul>
 							</div>
@@ -187,7 +225,9 @@ export default function BlogsSlugClient({
 					</div>
 					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 						{moreBlogs.length === 0 ? (
-							<div className="text-center text-xl ">No Other Blogs Yet</div>
+							<div className="text-center text-xl ">
+								No Other Blogs Yet
+							</div>
 						) : (
 							moreBlogs.map((post) => (
 								<div
