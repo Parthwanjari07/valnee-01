@@ -17,8 +17,8 @@ type Blog = {
 	blogSlugCategory: string;
 	blogSlugReadingTime: string;
 	blogSlugAuthorName: string;
-	markdowncontent:string;
-	tags:string[];
+	markdowncontent: string;
+	tags: string[];
 };
 
 type MoreBlog = {
@@ -39,13 +39,13 @@ export default function BlogsSlugClient({
 }: BlogSlugClientProps) {
 	const router = useRouter();
 	const [showLoadMore, setShowLoadMore] = useState<boolean>(true);
-	
+
 	const handleShowMoreClick = () => {
 		setShowLoadMore(false);
 	};
 
 	const handleBackToHome = () => {
-		router.push('/');
+		router.push("/");
 	};
 
 	function extractHeadings(markdowncontent: string): string[] {
@@ -109,7 +109,7 @@ export default function BlogsSlugClient({
 						className={`lg:col-span-2 space-y-16 blog-content ${
 							showLoadMore ? `overflow-hidden` : `h-full`
 						}`}>
-						{blog?.blogSlugHeadings &&
+						{/* {blog?.blogSlugHeadings &&
 							blog.blogSlugHeadings.map((heading, index) => (
 								<article className="" key={index} id={`section-${index}`}>
 									<h2 className="mb-6">{heading}</h2>
@@ -121,21 +121,23 @@ export default function BlogsSlugClient({
 											))}
 									</div>
 								</article>
-							))}
+							))} */}
 						<article className="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl prose-invert max-w-none text-gray-300 prose-headings:text-white prose-a:text-cyan-400 hover:prose-a:text-cyan-300 prose-strong:text-white">
 							<ReactMarkdown remarkPlugins={[remarkGfm]}>
-								{blog.markdowncontent}
+								{blog?.markdowncontent}
 							</ReactMarkdown>
 						</article>
 						{showLoadMore && (
 							<div
-								className="text-center w-full  absolute bottom-0 left-1/2 -translate-x-1/2 z-5 pt-12 pb-4"
-								style={{
-									backdropFilter: `blur(1.5px)`,
-								}}>
+								// Positioned at bottom, transparent background
+								// Applies a blur to whatever is BEHIND it (the fading text)
+								className="text-center w-full absolute bottom-0 left-0 right-0 z-10
+               pt-12 pb-6 bg-transparent backdrop-blur-[2px] pointer-events-none" 
+							>
 								<button
 									onClick={handleShowMoreClick}
-									className="inline-flex bg-white items-center gap-2 px-6 py-3 border border-gray-600 text-black rounded-lg hover:bg-gray-100 transition-colors">
+									className="inline-flex bg-white items-center gap-2 px-6 py-3 border border-gray-600 text-black rounded-lg hover:bg-gray-100 transition-colors pointer-events-auto" // Make button clickable
+								>
 									Read more <ArrowDown color="black" className="w-5 h-5" />
 								</button>
 							</div>
@@ -196,15 +198,18 @@ export default function BlogsSlugClient({
 												</a>
 											</li>
 										))}
-									{blog?.markdowncontent && extractHeadings(blog.markdowncontent).map((heading, index) => (
-											<li key={index}>
-												<a
-													href={`#section-${index}`}
-													className="text-white transition-colors">
-													{heading}
-												</a>
-											</li>
-									))}
+									{blog?.markdowncontent &&
+										extractHeadings(blog.markdowncontent).map(
+											(heading, index) => (
+												<li key={index}>
+													<a
+														href={`#section-${index}`}
+														className="text-white transition-colors">
+														{heading}
+													</a>
+												</li>
+											)
+										)}
 								</ul>
 							</div>
 						</div>
