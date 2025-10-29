@@ -70,18 +70,19 @@ export default function BlogCard({
 			</div>
 			{/* Card NewFooter  */}
 			<Link className="block" href={`/blogs/${slug}`}>
-			<div className="bg-white flex p-2 rounded-lg justify-center gap-2 items-center">
-				<div className="text-[#000000] text-xs font-semibold">
-					Read More
-				</div>
-				<div>
-					<Image
-						className="w-3 h-3"
-						src="./images/arrow-up-right.svg"
-						alt="arrow"
-						width={12}
-						height={12}
-					/>
+				<div className="bg-white flex p-2 rounded-lg justify-center gap-2 items-center">
+					<div className="text-[#000000] text-xs font-semibold">
+						Read More
+					</div>
+					<div>
+						<Image
+							className="w-3 h-3"
+							src="./images/arrow-up-right.svg"
+							alt="arrow"
+							width={12}
+							height={12}
+						/>
+					</div>
 				</div>
 			</Link>
 		</section>

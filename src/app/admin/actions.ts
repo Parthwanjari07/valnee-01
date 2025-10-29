@@ -1,8 +1,13 @@
 "use server";
 
 import { cookies } from 'next/headers';
-import { supabase } from '@/lib/supabase'; // Make sure you can import supabase server-side
+import { createClient } from '@supabase/supabase-js';
 import bcrypt from 'bcrypt';
+
+const supabaseAdmin = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY! // This must be set in .env
+);
 
 // Define the cookie name consistently
 const AUTH_COOKIE_NAME = 'admin-auth-session'; // Changed name slightly
@@ -14,37 +19,37 @@ export async function handleLogin(username: string, plainPasswordAttempt: string
   }
 
   try {
-    // 1. Fetch user from your custom table
-    const { data: adminUser, error: queryError } = await supabase
+    // 1. Fetch user from your custom table using SERVICE ROLE KEY
+    const { data: adminUser, error: queryError } = await supabaseAdmin
       .from('admin_users')
-      .select('password') // Select the HASHED password column (RENAME IT!)
+      .select('password')
       .eq('username', username)
-      .single(); // Expect only one user
+      .single();
 
     if (queryError || !adminUser) {
       console.error("DB Query Error or User not found:", queryError);
       return { success: false, error: 'Invalid username or password.' }; // Generic error
     }
 
-    const storedHash = adminUser.password; // Use the correct column name
+    const storedHash = adminUser.password;
 
     // 2. Compare the provided password with the stored hash
     const match = await bcrypt.compare(plainPasswordAttempt, storedHash);
 
     if (match) {
       // 3. Passwords match - Set a simple session cookie
-      const sessionValue = JSON.stringify({ username: username, loggedInAt: Date.now() }); // Example session value
+      const sessionValue = JSON.stringify({ username: username, loggedInAt: Date.now() });
       (await cookies()).set(AUTH_COOKIE_NAME, sessionValue, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         path: '/',
         maxAge: 60 * 60 * 24, // 1 day expiry
-        sameSite: 'strict', // Recommended for security
+        sameSite: 'strict',
       });
       return { success: true };
     } else {
       // Passwords don't match
-      return { success: false, error: 'Invalid username or password.' }; // Generic error
+      return { success: false, error: 'Invalid username or password.' };
     }
 
   } catch (error) {
