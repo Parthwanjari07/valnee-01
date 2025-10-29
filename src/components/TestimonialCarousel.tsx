@@ -17,27 +17,11 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Rahul Mehta",
-    title: "Founder - NovaLabs",
+    name: "Vinay Israni",
+    title: "College Student",
     logo: "/images/testimonial.png",
     message:
-      "You brought our product vision to life seamlessly. The speed and clarity throughout the project were unmatched.",
-  },
-  {
-    id: 3,
-    name: "Priya Sharma",
-    title: "CEO - TechSphere",
-    logo: "/images/testimonial.png",
-    message:
-      "From design to execution, everything was top-notch. A pleasure collaborating with a team that truly listens.",
-  },
-  {
-    id: 4,
-    name: "Aman Verma",
-    title: "CTO - CloudGen",
-    logo: "/images/testimonial.png",
-    message:
-      "We were impressed by the creativity and precision in every iteration. You exceeded expectations at every step.",
+      "I had the opportunity to work with Parth, and he built an ATS system and AI Resume Analyzer project for me. This project was a great help, and I was able to include it in my college portfolio. His support and technical skills made a big difference in completing my work successfully.",
   },
 ];
 const variants = {

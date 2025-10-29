@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Image from "next/image";
-import Footer from "@/components/Footer";
+import NewFooter from "@/components/NewFooter";
 import { getJobBySlug } from "@/lib/supabase";
 import JobDetailClient from "@/components/JobDetailClient";
 // no Link usage in this layout
@@ -177,7 +177,7 @@ export default async function JobDetailPage({ params }: PageProps) {
         </Suspense>
       </div>
 
-      <Footer />
+      <NewFooter />
     </>
   );
 }

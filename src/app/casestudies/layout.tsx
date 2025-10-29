@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import NewFooter from "@/components/NewFooter";
 
 export default function CaseStudyLayout({
   children,
@@ -10,7 +10,7 @@ export default function CaseStudyLayout({
     <div>
       <Navbar />
       {children}
-      <Footer />
+      <NewFooter />
     </div>
   );
 }

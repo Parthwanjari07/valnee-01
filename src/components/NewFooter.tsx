@@ -1,4 +1,5 @@
-// app/components/Footer.tsx
+// app/components/NewFooter.tsx
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -73,7 +74,7 @@ const SocialCard: React.FC<SocialCardProps> = ({
   </Link>
 );
 
-const Footer = () => {
+const NewFooter = () => {
   return (
 		<footer className="relative  bg-[#000718] text-white">
 			<div
@@ -90,7 +91,7 @@ const Footer = () => {
 				</div>
 
 				<div className="mx-auto relative text-white px-6 lg:px-48 lg:pl-56 pt-24">
-					{/* Section 2: Footer Links */}
+					{/* Section 2: NewFooter Links */}
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 mb-40">
 						{/* Column 1: Brand Info */}
 						<div className="md:col-span-2 lg:col-span-1">
@@ -202,18 +203,18 @@ const Footer = () => {
 									</Link>
 								</li>
 								<li>
-									<Link
-										href="#"
+									<button
+                                        onClick={() => window.open("https://www.instagram.com/valneesolutions", "_blank", "noopener,noreferrer")}
 										className="text-gray-400 hover:text-white transition-colors text-sm">
-										Facebook
-									</Link>
+										
+									</button>
 								</li>
 								<li>
-									<Link
-										href="#"
+									<button
+                                        onClick={() => window.open("https://www.instagram.com/valneesolutions", "_blank", "noopener,noreferrer")}
 										className="text-gray-400 hover:text-white transition-colors text-sm">
 										Instagram
-									</Link>
+									</button>
 								</li>
 							</ul>
 						</div>
@@ -252,4 +253,4 @@ const Footer = () => {
 	);
 };
 
-export default Footer;
+export default NewFooter;

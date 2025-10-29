@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import NewFooter from "@/components/NewFooter";
 import { getAllBlogs, type Blog } from "@/lib/supabase";
 import BlogsClient from "@/components/BlogsClient"; // Import the new client component
 import Image from "next/image";
@@ -109,7 +109,7 @@ export default async function BlogsPage() {
 					)}
 				</section>
 			</section>
-			<Footer />
+			<NewFooter />
 		</>
 	);
 }

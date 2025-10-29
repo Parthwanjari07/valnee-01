@@ -40,7 +40,7 @@ export default function BlogCard({
 					{blogDescription}
 				</div>
 			</div>
-			{/* Card Footer  */}
+			{/* Card NewFooter  */}
 			<Link className="block" href={`/blogs/${slug}`}>
 			<div className="bg-white flex p-2 rounded-lg justify-center gap-2 items-center">
 				<div className="text-[#000000] text-xs font-semibold">
