@@ -744,3 +744,22 @@ line-height: normal;
   background: rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.55);
 }
+
+html {
+	scrollbar-color: #023a88 #000718;
+	scrollbar-width: auto; /* or 'thin' */
+}
+html::-webkit-scrollbar-thumb:hover {
+	background: #003682;
+}
+/* --- WebKit scrollbar styling for Chrome, Safari, etc. --- */
+html::-webkit-scrollbar {
+	height: 6px;
+}
+html::-webkit-scrollbar-thumb:hover {
+	background: #003682;
+}
+
+html {
+  scroll-behavior: smooth;
+}

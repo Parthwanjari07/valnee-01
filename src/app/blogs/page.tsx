@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import NewFooter from "@/components/NewFooter";
 import { getAllBlogs, type Blog } from "@/lib/supabase";
 import BlogsClient from "@/components/BlogsClient"; // Import the new client component
 import Image from "next/image";
@@ -8,54 +8,15 @@ export default async function BlogsPage() {
 
 	// Data fetching now happens on the server
 	try {
-		allBlogs = await getAllBlogs();
-	} catch (error) {
-		console.error("Failed to fetch blogs:", error);
+		const fetchedBlogs = await getAllBlogs();
+		allBlogs = fetchedBlogs || []
+console.log(`[BUILD LOG /blogs] Fetched ${allBlogs.length} blogs.`); 
+  } catch (error) {
+    console.error("Failed to fetch blogs:", error);
+    allBlogs = []; // Ensure it's an array on catch
+     // Add this log
+    console.log(`[BUILD LOG /blogs] Error fetching blogs, using empty array.`);
 	}
-
-	// Static Testing data
-	// const allBlogs = [
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-1",
-	// 	},
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-2",
-	// 	},
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-3",
-	// 	},
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-4",
-	// 	},
-	// 	{
-	// 		imageStored: "./images/blog-img.png",
-	// 		blogAboveTitle: "Lorem ipsum dolor",
-	// 		blogTitle: "Lorem ipsum dolor sit amet",
-	// 		blogDescription:
-	// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	// 		slug: "ai-5",
-	// 	},
-	// ];
 
 	return (
 		<>
@@ -79,8 +40,7 @@ export default async function BlogsPage() {
 					<div className="absolute left-[15%] top-0 h-[320px] w-[320px] rounded-full  " />
 					<div className="absolute right-[8%] top-32 h-[380px] w-[380px] rounded-full  " />
 				</div>
-
-				<section className="relative z-10 mx-auto flex min-h-screen max-w-[1180px] flex-col gap-20 px-6 pb-32 pt-32 md:px-10 lg:gap-24">
+				<section className="relative z-10 mx-auto flex min-h-screen max-w-[100em] flex-col gap-20 px-6 pb-32 pt-32 md:px-10 lg:gap-24">
 					{/* Static Header */}
 					<header className="flex flex-col items-center gap-8 text-center">
 						<div className="relative">
@@ -88,7 +48,7 @@ export default async function BlogsPage() {
 								Blogs
 							</h1>
 						</div>
-						<p className="max-w-3xl text-sm sm:text-lg sm:mx-12 leading-8 text-white">
+						<p className="max-w-3xl font-[lora] text-center text-xs sm:text-sm sm:mx-12 leading-8 text-white">
 							Dive deep into the AI universe with our collection of
 							insightful podcasts. Explore the latest trends,
 							breakthroughs, and discussions on artificial intelligence.
@@ -109,7 +69,7 @@ export default async function BlogsPage() {
 					)}
 				</section>
 			</section>
-			<Footer />
+			<NewFooter />
 		</>
 	);
 }

@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import NewFooter from "@/components/NewFooter";
 
 export default function ContactLayout({
   children,
@@ -10,7 +10,7 @@ export default function ContactLayout({
     <div>
       <Navbar />
       {children}
-      <Footer />
+      <NewFooter />
     </div>
   );
 }
