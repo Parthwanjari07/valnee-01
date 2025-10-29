@@ -32,7 +32,6 @@ export default function HomePage() {
       <WhyChooseUs/>
       <CardEffect/>
       <ValneesCorePillars/>
-      {/* <BuildNextBigThing/> */}
       <MeetTheFounder />
       <TestimonialCarousel/>
       <FaqSection/>

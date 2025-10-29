@@ -125,13 +125,6 @@ const NewFooter = () => {
 									<Link
 										href="#"
 										className="text-gray-400 hover:text-white transition-colors text-sm">
-										How it works
-									</Link>
-								</li>
-								<li>
-									<Link
-										href="#"
-										className="text-gray-400 hover:text-white transition-colors text-sm">
 										Who we serve
 									</Link>
 								</li>
@@ -163,6 +156,13 @@ const NewFooter = () => {
 										href="/terms-of-service"
 										className="text-gray-400 hover:text-white transition-colors text-sm">
 										Terms of Services
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/refund-policy "
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										Refund Policy
 									</Link>
 								</li>
 								{/* <li>
@@ -197,24 +197,29 @@ const NewFooter = () => {
 							<ul className="space-y-3">
 								<li>
 									<Link
-										href="#"
+										href="https://github.com/valnee-Solutions"
+										target="_blank"
+										className="text-gray-400 hover:text-white transition-colors text-sm">
+										GitHub
+									</Link>
+								</li>
+								<li>
+
+									<Link
+										href="https://www.linkedin.com/company/valnee-solutions"
+										target="_blank"
 										className="text-gray-400 hover:text-white transition-colors text-sm">
 										LinkedIn
 									</Link>
 								</li>
 								<li>
-									<button
-                                        onClick={() => window.open("https://www.instagram.com/valneesolutions", "_blank", "noopener,noreferrer")}
+									<Link
+										href="https://x.com/Valneesolutions"
+										target="_blank"
 										className="text-gray-400 hover:text-white transition-colors text-sm">
-										
-									</button>
-								</li>
-								<li>
-									<button
-                                        onClick={() => window.open("https://www.instagram.com/valneesolutions", "_blank", "noopener,noreferrer")}
-										className="text-gray-400 hover:text-white transition-colors text-sm">
-										Instagram
-									</button>
+										X
+									</Link>
+
 								</li>
 							</ul>
 						</div>

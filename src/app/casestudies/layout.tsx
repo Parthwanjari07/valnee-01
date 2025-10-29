@@ -8,7 +8,7 @@ export default function CaseStudyLayout({
 }) {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       {children}
       <NewFooter />
     </div>

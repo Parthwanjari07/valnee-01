@@ -78,9 +78,9 @@ export default function VideoTestimonial() {
               </div>
 
               <div className="relative z-10 md:pr-10">
-                <h2 className="text-2xl sm:text-3xl font-bold text-cyan-300 mb-6">
+                {/* <h2 className="text-2xl sm:text-3xl font-bold text-cyan-300 mb-6">
                   Testimonial
-                </h2>
+                </h2> */}
                 <blockquote className="text-white text-base sm:text-lg font-[lora] leading-relaxed">
                   <p>
                     Valnee Solutions delivered amazing project for us with

@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         hostname: 'framerusercontent.com',
         pathname: '/images/**',
       },
+      {
+        protocol: 'https', // Supabase uses https
+        hostname: 'mfaebogwihppaoyyclzs.supabase.co', // Your Supabase project hostname
+        port: '',
+      },
     ],
   },
 };

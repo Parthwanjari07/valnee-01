@@ -251,7 +251,9 @@ export type Blog = {
   blogSlugCategory: string
   blogSlugReadingTime: string
   blogSlugAuthorName: string
+  markdowncontent: string
   is_active: boolean
+  tags: string[]
 }
 
 // 2. ADD FUNCTION TO GET ALL BLOGS
@@ -305,6 +307,7 @@ export type CaseStudy = {
   is_active: boolean
   updated_at: string
   page_url:string
+  left_description:string
 }
 
 // FUNCTION TO GET ALL CASE STUDIES
