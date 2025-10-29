@@ -1,7 +1,7 @@
 // /blogs/[slug]/page.tsx
 
 import { notFound } from "next/navigation";
-import Footer from "@/components/Footer";
+import NewFooter from "@/components/NewFooter";
 import BlogSlugClient from "@/components/BlogSlugClient";
 import {getAllBlogs, getBlogBySlug} from "@/lib/supabase"
 import Image from "next/image";
@@ -32,7 +32,7 @@ export default async function BlogDetailPage({
 			<main>
 				<BlogSlugClient blog={blogData} moreBlogs={moreBlogs} />
 			</main>
-			<Footer />
+			<NewFooter />
 		</div>
 	);
 }

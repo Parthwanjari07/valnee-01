@@ -7,6 +7,7 @@ import Image from "next/image";
 import VideoTestimonial from "./VideoTestimonial";
 
 const testimonials = [
+
 	{
 		id: 1,
 		name: "Anshika Agarwal",

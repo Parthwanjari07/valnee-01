@@ -1,5 +1,5 @@
 import JobListItem from "@/components/JobListItem";
-import Footer from "@/components/Footer";
+import NewFooter from "@/components/NewFooter";
 import { getAllJobs, type Job } from "@/lib/supabase";
 import Link from "next/link";
 
@@ -87,7 +87,7 @@ export default async function OpportunitiesPage() {
         </div>
       </section>
     </main>
-    <Footer />
+    <NewFooter />
     </>
   );
 }

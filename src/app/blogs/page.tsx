@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import NewFooter from "@/components/NewFooter";
 import { getAllBlogs, type Blog } from "@/lib/supabase";
 import BlogsClient from "@/components/BlogsClient"; // Import the new client component
 import Image from "next/image";
@@ -69,7 +69,7 @@ console.log(`[BUILD LOG /blogs] Fetched ${allBlogs.length} blogs.`);
 					)}
 				</section>
 			</section>
-			<Footer />
+			<NewFooter />
 		</>
 	);
 }

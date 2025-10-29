@@ -111,7 +111,7 @@ const LaunchOnTime = () => {
 					</div>
 					<div className="mt-[12em] sm:mt-[5em] px-[5em] sm:px-0 flex items-center justify-center">
 						<button
-							onClick={() => (window.location.href = "/contact")}
+							onClick={() => (window.location.href = "https://calendly.com/parthwanjari07/30min")}
 							className="flex flex-row justify-center items-center gap-2 bg-white rounded-xl flex-none px-4 py-2.5 md:px-4 md:py-2.5 w-full sm:w-auto min-w-[218px] h-auto md:h-[56px] hover:bg-gray-100 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 ease-out cursor-pointer group">
 							<span className="text-black text-center text-lg md:text-xl leading-[150%] [font-family:var(--font-sf-pro)] group-hover:text-gray-800 transition-colors duration-300">
 								Schedule a free call

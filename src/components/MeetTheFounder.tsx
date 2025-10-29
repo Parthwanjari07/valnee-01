@@ -2,29 +2,11 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 const MeetTheFounder = () => {
-  const router = useRouter();
 
   const handleTalkToFounder = () => {
-    console.log('Talk to Founder button clicked!');
-    
-    // First check if we're on the homepage and there's a contact section
-    const contactSection = document.getElementById('contact');
-    
-    if (contactSection) {
-      // If contact section exists on current page, scroll to it
-      console.log('Contact section found, scrolling to it');
-      contactSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    } else {
-      // If no contact section, navigate to contact page
-      console.log('Contact section not found, navigating to /contact');
-      router.push('/contact');
-    }
+    window.open("https://calendly.com/parthwanjari07/30min", "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -112,16 +94,11 @@ const MeetTheFounder = () => {
 								style={{
 									fontFamily: "lora, serif",
 								}}>
-								I started out as a freelancer working with non-technical
-								founders who had great ideas but lacked the tech team to
-								bring them to life. I witnessed too many projects delayed,
-								freelancers vanishing, and agencies over-promising. That
-								led me to create Valnee Solutions — your reliable technical
-								partner. We help non-tech founders turn their ideas into
-								working products through smart, scalable digital solutions.
-								At Valnee Solutions, our promise is simple: clear vision +
-								fast execution + quality code. Let&apos;s build something great
-								together.
+						I started out as a freelancer working with <span className="[font-family:var(--font-cal-sans)] font-semibold" style={{ color: "#3FA9E0" }}>non-technical founders</span> who had great ideas but lacked the tech team to bring them to life. I witnessed too many projects delayed, freelancers vanishing, and agencies over-promising. That led me to create <span className="[font-family:var(--font-cal-sans)] font-semibold" style={{ color: "#3FA9E0" }}>Valnee Solutions</span> — your <span className="[font-family:var(--font-cal-sans)] font-semibold" style={{ color: "#3FA9E0" }}>reliable technical partner</span>.
+						<br />
+						We help non-tech founders turn their ideas into <span className="font-semibold text-white">working products</span> through <span className="[font-family:var(--font-cal-sans)] font-semibold" style={{ color: "#3FA9E0" }}>smart, scalable digital solutions</span>.
+						<br />
+						<span className="[font-family:var(--font-cal-sans)] font-semibold" style={{ color: "#3FA9E0" }}>Our promise:</span> <span className="[font-family:var(--font-cal-sans)] font-semibold" style={{ color: "#3FA9E0" }}>clear vision</span> + <span className="[font-family:var(--font-cal-sans)] font-semibold" style={{ color: "#3FA9E0" }}>fast execution</span> + <span className="[font-family:var(--font-cal-sans)] font-semibold" style={{ color: "#3FA9E0" }}>quality code</span>. Let&apos;s build something great together.
 							</p>
 						</div>
 

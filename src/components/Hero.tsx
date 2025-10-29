@@ -101,55 +101,44 @@ export default function Hero() {
 							/>
 						</div>
 
-						<h1
-							className="relative z-10  text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-[1.7em] sm:leading-tight text-white"
-							style={{ color: "#FFFFFF" }}>
-							<span className="block sm:whitespace-nowrap">
-								Stop Hiring{" "}
-								<span
-									className="font-[family-name:var(--font-lobster)]"
-									style={{ fontWeight: 480 }}>
-									Freelancers
-								</span>{" "}
-								Who{" "}
-								<span className="inline-flex items-center gap-1 text-white/80">
-									Disappear{" "}
-									<Image
-										src="/icons/emoji.svg"
-										alt="emoji"
-										width={48}
-										height={48}
-										className="inline-block w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14"
-									/>
-								</span>
-							</span>
-							<span className="block mt-2 sm:whitespace-nowrap">
-								<span className="inline-flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-2 gap-y-1 sm:gap-3">
-									<span
-										className="inline-flex items-center justify-center px-4 sm:px-5 py-1 sm:py-1 bg-white rounded-3xl whitespace-nowrap"
-										style={{
-											transform: "rotate(-1.8deg)",
-											fontFamily: "var(--font-cal-sans)",
-											color: "#3FA9E0",
-											fontSize: "clamp(1.5rem, 5vw, 2.6rem)",
-											fontWeight: 600,
-											lineHeight: "150%",
-										}}>
-										Start Building
-									</span>
-									<span className="sm:whitespace-nowrap">
-										With a Partner Who{" "}
-										<span
-											className="font-[family-name:var(--font-lobster)]"
-											style={{ fontWeight: 480 }}>
-											Delivers.
-										</span>
-									</span>
-								</span>
-							</span>
-							<span className="pointer-events-none absolute inset-x-0 -bottom-8 mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-60" />
-						</h1>
-					</div>
+
+          <p className="relative z-20 mt-14 max-w-4xl text-sm sm:text-base md:text-lg px-4" style={{ color: '#D1D5DB' }}>
+            We translate your vision into a scalable, launch-ready MVP, so you can focus on building your <span className="font-semibold" style={{ color: '#FFFFFF' }}>business.</span>
+          </p>
+          <div className="relative z-20 mt-8 sm:mt-10 md:mt-12 flex flex-row sm:flex-row items-center justify-evenly sm:justify-center gap-5 sm:gap-4 w-full max-w-md sm:max-w-none px-4">
+            {/* Black primary button */}
+{/* CTA Button */}
+          <button 
+            onClick={() => window.open("https://calendly.com/parthwanjari07/30min", "_blank", "noopener,noreferrer")}
+            className="flex flex-col  sm:flex-row  justify-center items-center gap-2  bg-white rounded-xl flex-none px-4 py-2.5 md:px-4 md:py-2.5 w-[40%] sm:w-auto sm:min-w-[218px] h-auto md:h-[56px] hover:bg-gray-100 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 ease-out cursor-pointer group"
+            >
+            <span 
+              className="text-black text-center text-lg md:text-xl leading-[150%] [font-family:var(--font-sf-pro)] group-hover:text-gray-800 transition-colors duration-300"
+            >
+              Talk to Founder
+            </span>
+            <div 
+              className="flex items-center justify-center bg-black rounded-lg p-2.5 w-9 h-9 group-hover:bg-gray-800 group-hover:rotate-12 transition-all duration-300 ease-out"
+            >
+              <svg 
+                width="16" 
+                height="16" 
+                viewBox="0 0 16 16" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="transform rotate-[-30deg] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300 ease-out"
+              >
+                <path 
+                  d="M2 8L14 8M14 8L8 2M14 8L8 14" 
+                  stroke="white" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </button>
+
 
 					<p
 						className="relative z-20 mt-14 max-w-4xl text-sm sm:text-base md:text-lg px-4"
